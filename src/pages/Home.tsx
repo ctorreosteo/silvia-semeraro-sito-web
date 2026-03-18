@@ -17,6 +17,12 @@ type CompareItem = {
   quote?: string
 }
 
+type FaqItem = {
+  id: string
+  question: string
+  answer: string
+}
+
 const ANSIA_PAIN_POINTS: PainPoint[] = [
   {
     id: 'rumore-mentale',
@@ -150,6 +156,69 @@ const COMPARE_ITEMS: CompareItem[] = [
     limit:
       'Ogni tregua insegna al sistema lo stesso messaggio: “Da solo non sono al sicuro, devo verificare”. E la vita diventa controllo, non libertà.',
     shift: 'Interrompiamo il meccanismo alla radice: non ti “forzo” a smettere, ti porto nel punto in cui non ti serve più.',
+  },
+]
+
+const FAQ_ITEMS: FaqItem[] = [
+  {
+    id: 'ansia-vs-panico',
+    question: 'Come faccio a capire se quello che provo è ansia o attacchi di panico?',
+    answer:
+      'Molte persone si fanno questa domanda perché i sintomi sono molto simili e spaventano. L’ansia è più costante, mentre il panico è improvviso e molto intenso. Capire la differenza è fondamentale, perché cambia completamente il modo in cui si lavora sul problema e su come si interviene.',
+  },
+  {
+    id: 'liberarsi-davvero',
+    question: 'È possibile liberarsi davvero dall’ansia o bisogna conviverci per sempre?',
+    answer:
+      'Molti pensano che l’ansia sia qualcosa da gestire a vita. In realtà non sei “fatto così”. Se lavori sul meccanismo corretto, puoi smettere di esserne limitato e tornare a vivere senza quella paura costante che ti accompagna ogni giorno.',
+  },
+  {
+    id: 'ansia-quando-va-bene',
+    question: 'Perché l’ansia mi viene anche quando va tutto bene?',
+    answer:
+      'È una delle cose più frustranti. Non c’è un motivo evidente, eppure il corpo si attiva lo stesso. Succede perché il sistema nervoso è rimasto in uno stato di allerta, indipendentemente da quello che sta succedendo fuori.',
+  },
+  {
+    id: 'fermarsi-panico',
+    question: 'Come faccio a fermare un attacco di panico quando sta iniziando?',
+    answer:
+      'Quando il panico parte, sembra ingestibile. In realtà esistono strategie precise per gestire quel momento senza scappare e senza peggiorare il loop, ma vanno imparate e allenate nel modo corretto.',
+  },
+  {
+    id: 'controllo-peggiora',
+    question: 'Perché più cerco di controllare l’ansia, più peggiora?',
+    answer:
+      'Molti provano a controllare il respiro, i pensieri o le sensazioni. Il problema è che il cervello interpreta quel controllo come un segnale di pericolo, e mantiene il sistema in allerta. È per questo che spesso sembra peggiorare.',
+  },
+  {
+    id: 'sintomi-fisici',
+    question: 'È normale avere sintomi fisici così forti anche se “non ho nulla”?',
+    answer:
+      'Tachicardia, respiro corto, vertigini, nausea… sono sintomi reali. Non è “tutto nella testa”. È il corpo che reagisce a uno stato di allerta del sistema nervoso, anche in assenza di un pericolo reale.',
+  },
+  {
+    id: 'vita-normale',
+    question: 'Posso tornare a fare una vita normale senza paura?',
+    answer:
+      'Chi soffre di ansia o panico spesso ha limitato la propria vita: viaggi, lavoro, relazioni. La risposta è sì, ma non evitando il problema. Serve imparare a gestire quello che succede dentro mentre vivi.',
+  },
+  {
+    id: 'durata-percorso',
+    question: 'Quanto dura il percorso?',
+    answer:
+      'Il percorso ha una durata di 90 giorni ed è strutturato in modo progressivo, per accompagnarti passo dopo passo a uscire dal loop ansia-panico e costruire autonomia reale, non dipendenza.',
+  },
+  {
+    id: 'dove-percorso',
+    question: 'Dove si effettua il percorso?',
+    answer:
+      'Puoi scegliere se fare il percorso in presenza, nei due studi in cui lavoro a Torino, oppure completamente online da remoto. In questo modo puoi adattarlo alle tue esigenze e iniziare senza ostacoli.',
+  },
+  {
+    id: 'panico-durante-percorso',
+    question: 'E se durante il percorso mi torna un attacco di panico?',
+    answer:
+      'È una paura molto comune. In realtà il percorso serve proprio a questo: darti strumenti concreti per gestire quei momenti senza tornare al punto di partenza, ma anzi utilizzarli per rafforzarti.',
   },
 ]
 
@@ -453,6 +522,147 @@ export function Home() {
         </div>
       </section>
 
+      <section className="section homePromise" aria-labelledby="promise-title">
+        <div className="homePromiseShell">
+          <header className="homePromiseHead">
+            <p className="homePromiseKicker">Soluzione / promessa</p>
+            <h2 id="promise-title" className="homePromiseTitle">
+              Non si tratta di “non provare più ansia”.
+              <span className="homePromiseTitleSub">Si tratta di smettere di esserne dominato.</span>
+            </h2>
+            <p className="homePromiseLead">
+              Se oggi vivi controllandoti, anticipando, evitando e tenendo sempre un piano B, il punto non è “capire di più”.
+              Il punto è cambiare la risposta automatica nel momento reale in cui il sistema si attiva.
+            </p>
+          </header>
+
+          <div className="homePromiseGrid" aria-label="Promessa, paure e metodo">
+            <article className="homePromisePane homePromisePaneStory" aria-labelledby="promise-story-title">
+              <header className="homePromisePaneHead">
+                <p className="homePromisePaneTag">Risultato promesso</p>
+                <h3 id="promise-story-title" className="homePromisePaneTitle">
+                  Una giornata “normale” senza doverti monitorare
+                </h3>
+              </header>
+
+              <div className="homePromisePaneBody">
+                <p>
+                  Prova a immaginare, anche solo per un attimo, come sarebbe la tua giornata se non dovessi più controllarti
+                  continuamente.
+                </p>
+                <p>
+                  Ti svegli al mattino e, invece di fare il check automatico su come sta il tuo corpo, sul battito, sul respiro o
+                  su eventuali sensazioni strane, semplicemente inizi la giornata. Senza quel sottofondo costante di tensione che ti
+                  accompagna appena apri gli occhi.
+                </p>
+                <p>
+                  Esci di casa senza dover pensare a dove potresti sentirti male, senza dover individuare mentalmente vie di fuga,
+                  senza dover avere sempre un piano B. Vai al lavoro, parli con le persone, vivi le situazioni quotidiane con una
+                  sensazione di normalità che magari oggi ti sembra lontana.
+                </p>
+                <p>
+                  E soprattutto, il tuo corpo smette di essere qualcosa da controllare e da temere, e torna a essere un posto in cui
+                  sentirti al sicuro. Se arriva una sensazione, non scatta più il panico. La riconosci, la lasci passare, e continui
+                  a fare quello che stavi facendo.
+                </p>
+                <p>
+                  Questo non significa non provare mai più ansia. Significa non esserne più dominato. Significa tornare ad avere il
+                  controllo della tua vita, senza dover combattere ogni giorno contro quello che senti.
+                </p>
+              </div>
+            </article>
+
+            <aside className="homePromisePane homePromisePaneFears" aria-labelledby="promise-fears-title">
+              <header className="homePromisePaneHead">
+                <p className="homePromisePaneTag homePromisePaneTagAlt">Gestione delle paure</p>
+                <h3 id="promise-fears-title" className="homePromisePaneTitle">
+                  “E se non funzionasse anche per me?”
+                </h3>
+              </header>
+
+              <div className="homePromisePaneBody">
+                <p>
+                  È molto probabile che, mentre stai leggendo, una parte di te stia pensando: <strong>“E se non funzionasse anche per me?”</strong>
+                </p>
+                <p>
+                  Magari hai già provato altre strade, hai cercato soluzioni, hai investito tempo, energie e forse anche soldi… e non
+                  hai ottenuto il cambiamento che speravi. È normale che oggi tu abbia dei dubbi.
+                </p>
+                <p>
+                  Così come è normale avere paura di iniziare. Paura che possa essere l’ennesimo tentativo andato a vuoto, paura di
+                  non farcela, o addirittura paura di stare peggio entrando davvero nel problema invece di evitarlo.
+                </p>
+                <p>
+                  Qui non ti viene chiesto di fidarti ciecamente o di “crederci” senza senso. Non devi essere già pronto, forte o
+                  sicuro di te. Devi semplicemente essere disposto a guardare quello che stai vivendo in modo diverso da come hai
+                  fatto finora.
+                </p>
+                <p>
+                  Il percorso è strutturato per accompagnarti passo dopo passo, anche nei momenti in cui la tua mente ti dirà di
+                  mollare o di tornare indietro. <strong>Non sarai lasciato solo</strong> a gestire tutto questo — ed è proprio questa la differenza
+                  che permette di arrivare a un cambiamento reale.
+                </p>
+              </div>
+            </aside>
+
+            <article className="homePromisePane homePromisePaneMethod" aria-labelledby="promise-method-title">
+              <header className="homePromisePaneHead">
+                <p className="homePromisePaneTag homePromisePaneTagMethod">Metodo (visivo)</p>
+                <h3 id="promise-method-title" className="homePromisePaneTitle">
+                  Il loop ansia-panico cambia solo se lavori su 3 livelli insieme
+                </h3>
+              </header>
+
+              <div className="homePromisePaneBody">
+                <p className="homePromiseMethodLead">
+                  Se lavori su una sola parte (solo pensieri, solo corpo o solo evitamento), il meccanismo resta attivo: cambia forma,
+                  ma continua a esserci.
+                </p>
+
+                <div className="homePromiseMethodDiagram" role="list" aria-label="Corpo, mente, azione">
+                  <div className="homePromiseNode homePromiseNodeBody" role="listitem">
+                    <div className="homePromiseNodeBadge">1</div>
+                    <div className="homePromiseNodeCopy">
+                      <p className="homePromiseNodeTitle">Corpo</p>
+                      <p className="homePromiseNodeText">
+                        Impari a leggere e regolare le reazioni fisiche. Tachicardia, respiro corto o tensione smettono di essere
+                        qualcosa da combattere.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="homePromiseNode homePromiseNodeMind" role="listitem">
+                    <div className="homePromiseNodeBadge">2</div>
+                    <div className="homePromiseNodeCopy">
+                      <p className="homePromiseNodeTitle">Mente</p>
+                      <p className="homePromiseNodeText">
+                        Interrompi il ciclo di controllo, analisi e pensieri catastrofici. Esci dal loop “e se succede…”.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="homePromiseNode homePromiseNodeAction" role="listitem">
+                    <div className="homePromiseNodeBadge">3</div>
+                    <div className="homePromiseNodeCopy">
+                      <p className="homePromiseNodeTitle">Azione</p>
+                      <p className="homePromiseNodeText">
+                        Porti tutto nella vita reale: torni gradualmente nelle situazioni che oggi eviti, fino a riprenderti gli
+                        spazi.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <p className="homePromiseMethodNote">
+                  La differenza è l’integrazione: insegnare al tuo sistema mente-corpo che sei al sicuro <em>mentre</em> torni a vivere
+                  davvero.
+                </p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
       <section className="section homeCompare" aria-labelledby="compare-title">
         <div className="homeComparePanel" aria-label="Noi vs loro (senza sconti)">
           <figure className="homeComparePanelMedia" aria-label="Foto di Silvia">
@@ -643,6 +853,32 @@ export function Home() {
               </div>
             </div>
           </div>
+        </div>
+      </section>
+
+      <section className="section homeFaq" aria-labelledby="faq-title">
+        <header className="homeFaqHead">
+          <p className="homeFaqKicker">FAQ</p>
+          <h2 id="faq-title" className="homeFaqTitle">
+            Hai domande? Ho le risposte
+          </h2>
+          <p className="homeFaqLead">
+            Le domande più frequenti su ansia, attacchi di panico e sul percorso.
+          </p>
+        </header>
+
+        <div className="homeFaqGrid" aria-label="Domande frequenti">
+          {FAQ_ITEMS.map((item) => (
+            <details key={item.id} className="homeFaqItem">
+              <summary className="homeFaqSummary">
+                <span className="homeFaqQ">{item.question}</span>
+                <span className="homeFaqIcon" aria-hidden="true" />
+              </summary>
+              <div className="homeFaqA">
+                <p className="homeFaqAText">{item.answer}</p>
+              </div>
+            </details>
+          ))}
         </div>
       </section>
     </>

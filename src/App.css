@@ -818,6 +818,258 @@
   opacity: 0.88;
 }
 
+/* ==========================
+   Home: Soluzione / promessa (UI diversa)
+   ========================== */
+
+.homePromise {
+  position: relative;
+}
+
+.homePromiseShell {
+  position: relative;
+  border-radius: 22px;
+  overflow: hidden;
+  border: 1px solid color-mix(in oklab, #ffffff 10%, transparent);
+  background:
+    radial-gradient(900px 460px at 18% 12%, color-mix(in oklab, var(--accent) 28%, transparent), transparent 55%),
+    radial-gradient(700px 420px at 82% 18%, color-mix(in oklab, #8b5cf6 22%, transparent), transparent 56%),
+    radial-gradient(900px 520px at 50% 110%, color-mix(in oklab, #22c55e 16%, transparent), transparent 62%),
+    linear-gradient(180deg, #0b1020, #070a12);
+  box-shadow:
+    0 1px 0 color-mix(in oklab, #fff 10%, transparent),
+    0 30px 90px color-mix(in oklab, #000 55%, transparent);
+}
+
+.homePromiseShell::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, color-mix(in oklab, #fff 5%, transparent), transparent 30%, color-mix(in oklab, #000 25%, transparent)),
+    radial-gradient(1200px 520px at 50% 0%, color-mix(in oklab, #fff 6%, transparent), transparent 55%);
+  opacity: 0.9;
+  pointer-events: none;
+}
+
+.homePromiseHead {
+  position: relative;
+  padding: 22px 22px 18px;
+  border-bottom: 1px solid color-mix(in oklab, #ffffff 12%, transparent);
+}
+
+.homePromiseKicker {
+  margin: 0 0 10px;
+  font-size: 12px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  font-weight: 900;
+  color: color-mix(in oklab, #fff 78%, transparent);
+}
+
+.homePromiseTitle {
+  margin: 0;
+  font-size: clamp(22px, 2.6vw, 34px);
+  font-weight: 950;
+  letter-spacing: -0.02em;
+  line-height: 1.08;
+  text-wrap: balance;
+  color: #f5f7ff;
+}
+
+.homePromiseTitleSub {
+  display: block;
+  margin-top: 0.25em;
+  color: color-mix(in oklab, #fff 78%, transparent);
+  font-weight: 900;
+}
+
+.homePromiseLead {
+  position: relative;
+  margin: 14px 0 0;
+  max-width: 98ch;
+  color: color-mix(in oklab, #fff 78%, transparent);
+  line-height: 1.45;
+}
+
+.homePromiseGrid {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr 1fr;
+  gap: 14px;
+  padding: 16px 16px 18px;
+}
+
+.homePromisePane {
+  border-radius: 18px;
+  border: 1px solid color-mix(in oklab, #ffffff 12%, transparent);
+  background: color-mix(in oklab, #0b1020 72%, transparent);
+  box-shadow:
+    0 1px 0 color-mix(in oklab, #fff 8%, transparent),
+    0 24px 60px color-mix(in oklab, #000 45%, transparent);
+  overflow: hidden;
+  min-width: 0;
+  backdrop-filter: blur(10px);
+}
+
+.homePromisePaneHead {
+  padding: 16px 16px 14px;
+  border-bottom: 1px solid color-mix(in oklab, #ffffff 10%, transparent);
+  background:
+    radial-gradient(900px 120px at 15% 0%, color-mix(in oklab, var(--accent) 22%, transparent), transparent 62%),
+    linear-gradient(180deg, color-mix(in oklab, #fff 6%, transparent), transparent);
+}
+
+.homePromisePaneTag {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 10px;
+  border-radius: 999px;
+  border: 1px solid color-mix(in oklab, #ffffff 16%, transparent);
+  background: color-mix(in oklab, #ffffff 8%, transparent);
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-weight: 900;
+  margin: 0 0 10px;
+  color: color-mix(in oklab, #fff 86%, transparent);
+}
+
+.homePromisePaneTagAlt {
+  border-color: color-mix(in oklab, #f97316 35%, transparent);
+  background: color-mix(in oklab, #f97316 10%, transparent);
+}
+
+.homePromisePaneTagMethod {
+  border-color: color-mix(in oklab, #22c55e 35%, transparent);
+  background: color-mix(in oklab, #22c55e 10%, transparent);
+}
+
+.homePromisePaneTitle {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 950;
+  letter-spacing: -0.01em;
+  line-height: 1.15;
+  text-wrap: balance;
+  color: #f5f7ff;
+}
+
+.homePromisePaneBody {
+  padding: 14px 16px 16px;
+  color: color-mix(in oklab, #fff 78%, transparent);
+}
+
+.homePromisePaneBody p {
+  margin: 0;
+  line-height: 1.5;
+}
+
+.homePromisePaneBody p + p {
+  margin-top: 12px;
+}
+
+.homePromisePaneBody strong {
+  color: #ffffff;
+}
+
+.homePromiseMethodLead {
+  margin-top: 0;
+}
+
+.homePromiseMethodDiagram {
+  margin-top: 14px;
+  display: grid;
+  gap: 10px;
+  position: relative;
+}
+
+.homePromiseMethodDiagram::before {
+  content: '';
+  position: absolute;
+  left: 18px;
+  top: 12px;
+  bottom: 12px;
+  width: 2px;
+  background: linear-gradient(
+    180deg,
+    color-mix(in oklab, var(--accent) 70%, transparent),
+    color-mix(in oklab, #8b5cf6 70%, transparent),
+    color-mix(in oklab, #22c55e 70%, transparent)
+  );
+  border-radius: 999px;
+  opacity: 0.75;
+}
+
+.homePromiseNode {
+  display: grid;
+  grid-template-columns: 36px minmax(0, 1fr);
+  gap: 12px;
+  padding: 14px 14px;
+  border-radius: 16px;
+  border: 1px solid color-mix(in oklab, #ffffff 12%, transparent);
+  background: color-mix(in oklab, #ffffff 6%, transparent);
+  box-shadow: 0 1px 0 color-mix(in oklab, #fff 8%, transparent);
+  position: relative;
+}
+
+.homePromiseNodeBadge {
+  width: 36px;
+  height: 36px;
+  border-radius: 14px;
+  display: grid;
+  place-items: center;
+  font-weight: 950;
+  letter-spacing: 0.02em;
+  border: 1px solid color-mix(in oklab, #ffffff 16%, transparent);
+  background: color-mix(in oklab, #000 22%, transparent);
+  color: #ffffff;
+  box-shadow: 0 10px 26px color-mix(in oklab, #000 45%, transparent);
+  position: relative;
+  z-index: 1;
+}
+
+.homePromiseNodeTitle {
+  margin: 0;
+  font-weight: 950;
+  letter-spacing: -0.01em;
+  color: #ffffff;
+}
+
+.homePromiseNodeText {
+  margin: 8px 0 0;
+  color: color-mix(in oklab, #fff 76%, transparent);
+}
+
+.homePromiseNodeBody .homePromiseNodeBadge {
+  border-color: color-mix(in oklab, var(--accent) 55%, transparent);
+  background: color-mix(in oklab, var(--accent) 22%, transparent);
+}
+
+.homePromiseNodeMind .homePromiseNodeBadge {
+  border-color: color-mix(in oklab, #8b5cf6 55%, transparent);
+  background: color-mix(in oklab, #8b5cf6 22%, transparent);
+}
+
+.homePromiseNodeAction .homePromiseNodeBadge {
+  border-color: color-mix(in oklab, #22c55e 55%, transparent);
+  background: color-mix(in oklab, #22c55e 18%, transparent);
+}
+
+.homePromiseMethodNote {
+  margin-top: 14px;
+  padding-top: 12px;
+  border-top: 1px solid color-mix(in oklab, #ffffff 10%, transparent);
+  color: color-mix(in oklab, #fff 74%, transparent);
+}
+
+.homePromiseMethodNote em {
+  color: #ffffff;
+  font-style: normal;
+  font-weight: 900;
+}
+
 .homeCompareHead {
   position: relative;
   margin: 0 0 16px;
@@ -1291,6 +1543,173 @@
 .homeCompareTableCellHead {
   font-weight: 900;
   letter-spacing: -0.01em;
+}
+
+/* ==========================
+   Home: FAQ
+   ========================== */
+
+.homeFaqHead {
+  margin: 0 0 14px;
+  padding: 0;
+}
+
+.homeFaqKicker {
+  margin: 0 0 10px;
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: 900;
+  opacity: 0.88;
+}
+
+.homeFaqTitle {
+  margin: 0;
+  font-size: clamp(22px, 2.6vw, 32px);
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  line-height: 1.12;
+  text-wrap: balance;
+  color: var(--text-h);
+}
+
+.homeFaqLead {
+  margin: 12px 0 0;
+  max-width: 92ch;
+  opacity: 0.92;
+}
+
+.homeFaqGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.homeFaqItem {
+  border-radius: 18px;
+  border: 1px solid color-mix(in oklab, var(--border) 70%, transparent);
+  background: color-mix(in oklab, var(--surface) 96%, transparent);
+  box-shadow:
+    0 1px 0 color-mix(in oklab, #000 6%, transparent),
+    0 18px 44px color-mix(in oklab, #000 9%, transparent);
+  overflow: hidden;
+  min-width: 0;
+  position: relative;
+}
+
+.homeFaqItem::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 18px;
+  pointer-events: none;
+  box-shadow: inset 0 0 0 1px color-mix(in oklab, #000 6%, transparent);
+  opacity: 0.4;
+}
+
+.homeFaqSummary {
+  list-style: none;
+  cursor: pointer;
+  user-select: none;
+  padding: 14px 14px 12px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 12px;
+  align-items: start;
+  border-bottom: 1px solid color-mix(in oklab, var(--border) 65%, transparent);
+  background: linear-gradient(
+    180deg,
+    color-mix(in oklab, var(--surface) 96%, transparent),
+    color-mix(in oklab, var(--bg) 55%, var(--surface))
+  );
+}
+
+.homeFaqSummary::-webkit-details-marker {
+  display: none;
+}
+
+.homeFaqSummary:focus-visible {
+  outline: 2px solid var(--text);
+  outline-offset: 2px;
+}
+
+.homeFaqQ {
+  font-weight: 900;
+  letter-spacing: -0.01em;
+  line-height: 1.22;
+  text-wrap: balance;
+  color: var(--text-h);
+}
+
+.homeFaqIcon {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: color-mix(in oklab, var(--surface) 92%, transparent);
+  box-shadow: 0 1px 0 color-mix(in oklab, #000 5%, transparent);
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.homeFaqIcon::before,
+.homeFaqIcon::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 16px;
+  height: 2px;
+  background: color-mix(in oklab, var(--text-h) 92%, var(--text));
+  transform: translate(-50%, -50%);
+  border-radius: 999px;
+}
+
+.homeFaqIcon::after {
+  transform: translate(-50%, -50%) rotate(90deg);
+}
+
+.homeFaqA {
+  padding: 12px 14px 14px;
+}
+
+.homeFaqAText {
+  margin: 0;
+  opacity: 0.94;
+  line-height: 1.45;
+}
+
+.homeFaqItem[open] {
+  border-color: color-mix(in oklab, #000 22%, transparent);
+  background: linear-gradient(
+    180deg,
+    color-mix(in oklab, var(--bg) 70%, white),
+    color-mix(in oklab, var(--surface) 96%, transparent)
+  );
+}
+
+.homeFaqItem[open] .homeFaqIcon::after {
+  transform: translate(-50%, -50%) rotate(0deg);
+  opacity: 0;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .homeFaqItem {
+    transition:
+      background 180ms ease-out,
+      border-color 180ms ease-out,
+      transform 180ms ease-out;
+  }
+
+  .homeFaqItem:hover {
+    transform: translateY(-1px);
+  }
+
+  .homeFaqIcon::after {
+    transition:
+      transform 160ms ease-out,
+      opacity 160ms ease-out;
+  }
 }
 
 .eyebrow {
@@ -1825,6 +2244,31 @@
     border-radius: 16px;
   }
 
+  .homePromiseShell {
+    border-radius: 18px;
+  }
+
+  .homePromiseHead {
+    padding: 18px 14px 16px;
+  }
+
+  .homePromiseGrid {
+    grid-template-columns: 1fr;
+    padding: 14px 14px 16px;
+  }
+
+  .homePromisePane {
+    border-radius: 16px;
+  }
+
+  .homePromisePaneHead {
+    padding: 14px 14px 12px;
+  }
+
+  .homePromisePaneBody {
+    padding: 12px 14px 14px;
+  }
+
   .homeCompareTop {
     grid-template-columns: 1fr;
   }
@@ -1884,6 +2328,28 @@
   .homeCompareTableCell {
     padding: 10px 12px;
     font-size: 15px;
+  }
+
+  .homeFaqHead {
+    padding: 0;
+  }
+
+  .homeFaqGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .homeFaqItem {
+    border-radius: 16px;
+  }
+
+  .homeFaqItem::after {
+    border-radius: 16px;
+  }
+
+  .homeFaqIcon {
+    width: 42px;
+    height: 42px;
+    border-radius: 12px;
   }
 
   .ctaRow {
