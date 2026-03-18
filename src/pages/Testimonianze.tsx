@@ -32,6 +32,22 @@ export function Testimonianze() {
           </p>
         </blockquote>
       </div>
+
+      <div className="prose">
+        <h2>Intanto puoi vedere la testimonianza di Edoardo</h2>
+        <figure className="storyHero" aria-label="Testimonianza video di Edoardo">
+          <div className="videoEmbed">
+            <iframe
+              src="https://iframe.videodelivery.net/e0c69f9ac5bd76f59657509da498f7e9"
+              title="Video: testimonianza Edoardo"
+              loading="lazy"
+              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            />
+          </div>
+        </figure>
+      </div>
+
       <DualCtas />
     </section>
   )
