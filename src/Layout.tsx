@@ -15,12 +15,11 @@ export function Layout() {
   const navItems = useMemo(
     () => [
       { to: '/', label: 'Home' },
+      { to: '/percorsi', label: 'Percorso e Academia Online' },
       { to: '/la-mia-storia', label: 'La mia storia' },
       { to: '/la-mia-formazione', label: 'I miei studi' },
       { to: '/testimonianze', label: 'Testimonianze' },
-      { to: '/percorsi', label: 'Percorsi' },
       { to: '/contatti-e-dove-lavoro', label: 'Contatti e dove lavoro' },
-      { to: '/risorse-gratuite', label: 'Risorse gratuite' },
     ],
     [],
   )
