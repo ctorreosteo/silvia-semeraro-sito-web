@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+import { DualCtas } from '../components/DualCtas'
 
 type EducationBlock = {
   id: string
@@ -76,7 +76,7 @@ export function LaMiaFormazione() {
     <article className="section pageSection eduPage">
       <header className="pageHeader eduHeader">
         <p className="eyebrow">Studi e metodo</p>
-        <h1>La mia formazione</h1>
+        <h1>I miei studi</h1>
         <div className="storyMeta" aria-label="Dettagli pagina">
           <span className="storyMetaItem">Approccio integrato</span>
           <span className="storyMetaDot" aria-hidden="true">
@@ -91,7 +91,7 @@ export function LaMiaFormazione() {
           offrirti un metodo scientifico, strutturato ed efficace.
         </p>
 
-        <nav className="storyNav eduNav" aria-label="Indice formazione">
+        <nav className="storyNav eduNav" aria-label="Indice studi">
           {blocks.map((b) => (
             <a key={b.id} className="storyNavLink" href={`#${b.id}`}>
               {b.index}. {b.title}
@@ -103,7 +103,7 @@ export function LaMiaFormazione() {
           <img
             className="storyHeroImg"
             src="/Immagini/foto7.png"
-            alt="Formazione e metodo: corpo, mente e strategia"
+            alt="Studi e metodo: corpo, mente e strategia"
             loading="eager"
             decoding="async"
           />
@@ -192,17 +192,7 @@ export function LaMiaFormazione() {
                 L’obiettivo non è “resistere” ai sintomi: è tornare a muoverti nel mondo con sicurezza,
                 presenza e libertà.
               </p>
-              <div className="ctaRow">
-                <Link className="button primary" to="/contatti-e-dove-lavoro">
-                  Contattami
-                </Link>
-                <Link className="button ghost" to="/percorsi">
-                  Vedi i percorsi
-                </Link>
-                <Link className="button ghost" to="/risorse-gratuite">
-                  Risorse gratuite
-                </Link>
-              </div>
+              <DualCtas />
             </div>
           </section>
         </div>

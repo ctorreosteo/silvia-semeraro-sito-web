@@ -1,3 +1,5 @@
+import { DualCtas } from '../components/DualCtas'
+
 export function CookiePolicy() {
   return (
     <section className="section pageSection">
@@ -11,6 +13,8 @@ export function CookiePolicy() {
           scrivimi pure via email.
         </p>
       </div>
+
+      <DualCtas />
     </section>
   )
 }

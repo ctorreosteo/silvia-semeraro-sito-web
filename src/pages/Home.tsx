@@ -1,5 +1,5 @@
 import { useMemo, useRef, useState } from 'react'
-import { Link } from 'react-router-dom'
+import { DualCtas } from '../components/DualCtas'
 
 type PainPoint = {
   id: string
@@ -278,7 +278,7 @@ export function Home() {
   }
 
   return (
-    <>
+    <div className="homePage">
       <section className="hero homeHero" aria-labelledby="hero-title">
         <div className="homeHeroCopy">
           <p className="homeHeroTag" aria-label="Etichetta">
@@ -289,7 +289,7 @@ export function Home() {
               Ogni giorno mi alzo con una sola <span className="homeHeroAccent">Missione</span>:
             </span>
             <span className="homeHeroTitleLine2">
-              aiutare chi soffre di ansia e attacchi di panico a uscirne in modo stabile, nella vita vera.
+              Aiutare chi soffre di Ansia e Attacchi di Panico a uscirne in maniera Veloce.
             </span>
           </h1>
         </div>
@@ -306,14 +306,7 @@ export function Home() {
           </div>
         </figure>
 
-        <div className="ctaRow homeHeroCtas">
-          <Link className="button primary" to="/contatti-e-dove-lavoro">
-            Prenota una consulenza
-          </Link>
-          <Link className="button ghost" to="/percorsi">
-            Scopri i percorsi
-          </Link>
-        </div>
+        <DualCtas className="homeHeroCtas" />
       </section>
 
       <section className="section homeFit" aria-labelledby="fit-title">
@@ -404,6 +397,8 @@ export function Home() {
             </div>
           </section>
         </div>
+
+        <DualCtas />
       </section>
 
       <section className="section homePain" aria-labelledby="pain-title">
@@ -520,6 +515,8 @@ export function Home() {
             </p>
           </section>
         </div>
+
+        <DualCtas />
       </section>
 
       <section className="section homePromise" aria-labelledby="promise-title">
@@ -661,6 +658,8 @@ export function Home() {
             </article>
           </div>
         </div>
+
+        <DualCtas />
       </section>
 
       <section className="section homeCompare" aria-labelledby="compare-title">
@@ -710,14 +709,7 @@ export function Home() {
                   </li>
                 </ul>
 
-                <div className="homeCompareAsideCtas">
-                  <Link className="button primary" to="/percorsi">
-                    Vedi come funziona
-                  </Link>
-                  <Link className="button ghost" to="/contatti-e-dove-lavoro">
-                    Parliamone
-                  </Link>
-                </div>
+                <DualCtas className="homeCompareAsideCtas" />
               </div>
             </aside>
 
@@ -854,6 +846,8 @@ export function Home() {
             </div>
           </div>
         </div>
+
+        <DualCtas />
       </section>
 
       <section className="section homeFaq" aria-labelledby="faq-title">
@@ -880,8 +874,10 @@ export function Home() {
             </details>
           ))}
         </div>
+
+        <DualCtas />
       </section>
-    </>
+    </div>
   )
 }
 

@@ -1,3 +1,5 @@
+import { DualCtas } from '../components/DualCtas'
+
 export function RisorseGratuite() {
   return (
     <section className="section pageSection">
@@ -6,6 +8,7 @@ export function RisorseGratuite() {
         Placeholder: PDF, checklist, esercizi, mini-guide, newsletter e link a
         contenuti gratuiti.
       </p>
+      <DualCtas />
     </section>
   )
 }

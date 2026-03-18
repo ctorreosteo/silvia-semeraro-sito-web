@@ -1,3 +1,5 @@
+import { DualCtas } from '../components/DualCtas'
+
 export function Percorsi() {
   return (
     <section className="section pageSection">
@@ -7,6 +9,7 @@ export function Percorsi() {
         gestione delle emozioni, strumenti pratici) e come si svolgono gli
         incontri.
       </p>
+      <DualCtas />
     </section>
   )
 }

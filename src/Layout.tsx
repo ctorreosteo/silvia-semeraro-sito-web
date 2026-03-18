@@ -16,7 +16,7 @@ export function Layout() {
     () => [
       { to: '/', label: 'Home' },
       { to: '/la-mia-storia', label: 'La mia storia' },
-      { to: '/la-mia-formazione', label: 'Formazione' },
+      { to: '/la-mia-formazione', label: 'I miei studi' },
       { to: '/testimonianze', label: 'Testimonianze' },
       { to: '/percorsi', label: 'Percorsi' },
       { to: '/contatti-e-dove-lavoro', label: 'Contatti e dove lavoro' },
@@ -137,9 +137,9 @@ export function Layout() {
               </span>
               <a
                 className="footerContactLink"
-                href="mailto:silvia.semeraro97@gmail.com"
+                href="mailto:silvia.mentalcoach@gmail.com"
               >
-                silvia.semeraro97@gmail.com
+                silvia.mentalcoach@gmail.com
               </a>
             </div>
 

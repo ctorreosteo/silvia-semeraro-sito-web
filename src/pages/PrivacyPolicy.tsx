@@ -1,3 +1,5 @@
+import { DualCtas } from '../components/DualCtas'
+
 export function PrivacyPolicy() {
   return (
     <section className="section pageSection">
@@ -11,6 +13,8 @@ export function PrivacyPolicy() {
           contattarmi via email.
         </p>
       </div>
+
+      <DualCtas />
     </section>
   )
 }

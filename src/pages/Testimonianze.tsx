@@ -1,3 +1,5 @@
+import { DualCtas } from '../components/DualCtas'
+
 export function Testimonianze() {
   return (
     <section className="section pageSection">
@@ -6,6 +8,7 @@ export function Testimonianze() {
         Placeholder: qui inseriremo recensioni, storie e risultati (con
         consenso), più eventuali link a Google/Instagram.
       </p>
+      <DualCtas />
     </section>
   )
 }

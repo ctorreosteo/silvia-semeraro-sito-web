@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+import { DualCtas } from '../components/DualCtas'
 
 export function LaMiaStoria() {
   return (
@@ -372,17 +372,7 @@ export function LaMiaStoria() {
           </p>
         </blockquote>
 
-        <div className="ctaRow">
-          <Link className="button primary" to="/contatti-e-dove-lavoro">
-            Contattami
-          </Link>
-          <Link className="button ghost" to="/percorsi">
-            Vedi i percorsi
-          </Link>
-          <Link className="button ghost" to="/risorse-gratuite">
-            Risorse gratuite
-          </Link>
-        </div>
+        <DualCtas />
       </div>
     </article>
   )

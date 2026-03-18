@@ -229,6 +229,10 @@
   align-items: start;
 }
 
+.homePage > section + section {
+  margin-top: 64px;
+}
+
 .homeHero h1 {
   font-size: clamp(30px, 3.4vw, 46px);
   line-height: 1.08;
@@ -238,7 +242,6 @@
 }
 
 .homeHeroTitleLine1 {
-  display: block;
   white-space: normal;
   font-weight: 900;
   color: color-mix(in oklab, var(--text-h) 88%, var(--text));
@@ -1727,7 +1730,7 @@
 
 .ctaRow {
   display: flex;
-  gap: 12px;
+  gap: 14px;
   flex-wrap: wrap;
   margin-top: 18px;
 }
@@ -1736,12 +1739,40 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  text-align: center;
   padding: 10px 14px;
   border-radius: 12px;
   border: 1px solid var(--border);
   text-decoration: none;
   color: var(--text-h);
   background: color-mix(in oklab, var(--surface) 92%, transparent);
+  font-size: 15px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  line-height: 1.05;
+}
+
+.ctaRow .button {
+  padding: 14px 18px;
+  min-height: 52px;
+  font-size: 16px;
+  letter-spacing: 0.08em;
+  border-radius: 14px;
+  box-shadow:
+    0 1px 0 color-mix(in oklab, #000 6%, transparent),
+    0 18px 44px color-mix(in oklab, #000 10%, transparent);
+}
+
+.ctaRow .button:hover {
+  transform: translateY(-1px);
+  background: color-mix(in oklab, var(--bg) 55%, white);
+  border-color: color-mix(in oklab, var(--border) 92%, transparent);
+}
+
+.ctaRow .button:focus-visible {
+  outline: 3px solid color-mix(in oklab, var(--accent) 55%, var(--text));
+  outline-offset: 2px;
 }
 
 .button.primary {
@@ -1752,6 +1783,16 @@
 
 .button.ghost {
   background: transparent;
+}
+
+.ctaRow .button.primary {
+  box-shadow:
+    0 1px 0 color-mix(in oklab, #000 8%, transparent),
+    0 20px 55px color-mix(in oklab, var(--accent) 32%, transparent);
+}
+
+.ctaRow .button.ghost {
+  background: color-mix(in oklab, var(--surface) 88%, transparent);
 }
 
 .section {
@@ -2630,7 +2671,7 @@
 }
 
 /* ==========================
-   La mia formazione (UI)
+   I miei studi (UI)
    ========================== */
 
 .eduPage {
