@@ -5,6 +5,10 @@ function getNavClassName({ isActive }: { isActive: boolean }) {
   return isActive ? 'navLink navLinkActive' : 'navLink'
 }
 
+function getFooterNavClassName({ isActive }: { isActive: boolean }) {
+  return isActive ? 'footerLink footerLinkActive' : 'footerLink'
+}
+
 export function Layout() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
@@ -108,7 +112,81 @@ export function Layout() {
       </main>
 
       <footer className="footer">
-        <small>© {new Date().getFullYear()} Silvia Semeraro</small>
+        <div className="footerInner">
+          <div className="footerBrand">
+            <NavLink className="footerBrandLink" to="/" aria-label="Homepage">
+              <img
+                className="footerLogo"
+                src="/Logo.png"
+                width={46}
+                height={46}
+                alt="Silvia Semeraro"
+                loading="lazy"
+              />
+              <div className="footerBrandText">
+                <strong className="footerTitle">Silvia Semeraro</strong>
+              </div>
+            </NavLink>
+
+            <div className="footerContacts" aria-label="Contatti">
+              <a className="footerContactLink" href="tel:+393479336648">
+                3479336648
+              </a>
+              <span className="footerSep" aria-hidden="true">
+                ·
+              </span>
+              <a
+                className="footerContactLink"
+                href="mailto:silvia.semeraro97@gmail.com"
+              >
+                silvia.semeraro97@gmail.com
+              </a>
+            </div>
+
+            <div className="footerLocation">
+              <span className="footerLocationLabel">Dove ricevo:</span> in 2 studi a
+              Torino oppure online da remoto
+            </div>
+          </div>
+
+          <div className="footerCols">
+            <div className="footerCol">
+              <div className="footerColTitle">Pagine</div>
+              <nav
+                className="footerLinks footerLinksGrid2"
+                aria-label="Link pagine"
+              >
+                {navItems.map((item) => (
+                  <NavLink
+                    key={item.to}
+                    className={getFooterNavClassName}
+                    to={item.to}
+                  >
+                    {item.label}
+                  </NavLink>
+                ))}
+              </nav>
+            </div>
+
+            <div className="footerCol footerColRight">
+              <div className="footerColTitle">Info legali</div>
+              <nav className="footerLinks" aria-label="Link legali">
+                <NavLink className={getFooterNavClassName} to="/privacy-policy">
+                  Privacy Policy
+                </NavLink>
+                <NavLink className={getFooterNavClassName} to="/cookie-policy">
+                  Cookie Policy
+                </NavLink>
+              </nav>
+            </div>
+          </div>
+        </div>
+
+        <div className="footerBottom">
+          <small className="footerCopyright">
+            © {new Date().getFullYear()} Silvia Semeraro
+          </small>
+        </div>
       </footer>
     </div>
   )
