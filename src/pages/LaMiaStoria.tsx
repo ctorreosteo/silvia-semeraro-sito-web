@@ -5,6 +5,13 @@ export function LaMiaStoria() {
     <article className="section pageSection">
       <header className="pageHeader">
         <h1>La mia storia</h1>
+        <div className="storyMeta" aria-label="Dettagli pagina">
+          <span className="storyMetaItem">Aggiornato di recente</span>
+          <span className="storyMetaDot" aria-hidden="true">
+            •
+          </span>
+          <span className="storyMetaItem">Lettura ~3 min</span>
+        </div>
         <p className="lead">
           Se ti senti “difettosa”, “fragile” o semplicemente <strong>rotta</strong>… resta qui.
           Questa non è la solita lezione clinica. Questa è la mia storia. 👋🏼 Io sono Silvia!
@@ -23,8 +30,29 @@ export function LaMiaStoria() {
           ci ho vissuto, ci ho dormito e ci ho urlato contro per anni. Ti racconto
           come sono passata dal non riuscire a camminare per il dolore, chiusa in
           casa con le coperte di pile a settembre, alla creazione di un’<strong>Accademia</strong>{' '}
-          per insegnare alle persone a essere <em>efficaci, reali e finalmente libere</em>.
+          per insegnare alle persone a essere <em>efficaci, reali e finalmente libere</em> ✨.
         </p>
+
+        <nav className="storyNav" aria-label="Indice capitoli">
+          <a className="storyNavLink" href="#ansia-e-panico">
+            Ansia e panico
+          </a>
+          <a className="storyNavLink" href="#quando-il-mondo-si-restringe">
+            Quando il mondo si restringe
+          </a>
+          <a className="storyNavLink" href="#la-radice">
+            La radice
+          </a>
+          <a className="storyNavLink" href="#pandemia-e-collasso">
+            Pandemia e collasso
+          </a>
+          <a className="storyNavLink" href="#la-svolta">
+            La svolta
+          </a>
+          <a className="storyNavLink" href="#oggi">
+            Oggi
+          </a>
+        </nav>
       </header>
 
       <div className="prose storyProse">
@@ -45,7 +73,7 @@ export function LaMiaStoria() {
               alle 4 con il cuore che batte un ritmo irregolare e la mente che costruisce{' '}
               <em>scenari catastrofici</em>. “E se perdessi il lavoro? E se succedesse qualcosa
               ai miei figli?”. È il sentirsi <u>sulle spine</u>, costantemente in attesa di una
-              brutta notizia che non arriva, ma che sei certa sia dietro l’angolo.
+              brutta notizia che non arriva, ma che sei certa sia dietro l’angolo 😮‍💨.
             </p>
             <figure className="storyInline">
               <img
@@ -64,7 +92,7 @@ export function LaMiaStoria() {
               ti brucia il viso, seguita da un gelo che ti fa tremare le ginocchia. Il
               cuore non batte più: colpisce contro lo sterno come se volesse sfondarlo.
               Cerchi di fare un respiro profondo ma i polmoni sembrano <em>sigillati</em>. Più
-              cerchi aria, più senti che l’ossigeno è finito.
+              cerchi aria, più senti che l’ossigeno è finito 💥.
             </p>
             <p>
               In quel momento la voce nella tua testa non parla: <strong>urla</strong>. Ti dice che
@@ -81,7 +109,7 @@ export function LaMiaStoria() {
             e la prima cosa che fai, prima ancora di aprire gli occhi, è “sentire” come
             stai. “Il cuore batte bene? Ho la gola chiusa? Come sento le gambe?”. E se
             senti anche solo un piccolo sussulto, un <u>battito fuori tempo</u>, la tua
-            giornata è finita. La tua mente ha già deciso: oggi si soffre.
+            giornata è finita. La tua mente ha già deciso: oggi si soffre 🧠.
           </p>
         </blockquote>
 
@@ -106,16 +134,17 @@ export function LaMiaStoria() {
               di possibilità; ora è diventato un corridoio stretto fatto solo di{' '}
               <em>“posti sicuri”</em> e <em>“persone sicure”</em>. Hai smesso di viaggiare, di
               frequentare certi locali, forse di guidare o di stare da sola a casa perché
-              temi che nessuno possa soccorrerti.
+              temi che nessuno possa soccorrerti 🧷.
             </p>
             <p>
               E ti dicono: <strong>“Devi solo rilassarti”</strong>. Una frase che è come benzina sul
-              fuoco. Come se fosse colpa tua. Come se potessi spegnere un incendio boschivo
+              fuoco 🔥. Come se fosse colpa tua. Come se potessi spegnere un incendio boschivo
               con un bicchiere d’acqua.
             </p>
             <p>
               Per anni mi hanno detto che avrei dovuto convivere con le gocce, che la mia
               mente era <em>“fragile”</em>, un <u>difetto di fabbrica</u>. E io ci ho creduto.
+              {' '}💔
             </p>
             <p>
               Il problema non sei tu che li prendi. Il problema è un sistema che troppo
@@ -147,13 +176,13 @@ export function LaMiaStoria() {
             <p>
               Avevo solo 13 anni. Una sera qualunque: torniamo a casa e troviamo mia nonna
               colpita da un malore violento. Vedere la <em>fragilità della vita</em> manifestarsi
-              così, senza preavviso, mi ha spaventata a morte.
+              così, senza preavviso, mi ha spaventata a morte 🕯️.
             </p>
             <p>
               In quel secondo il mio cervello di adolescente ha registrato un pensiero
               terribile: “E se fossimo tornati dieci minuti più tardi? Sarebbe ancora viva?”.
               In quel secondo è nata la paura dell’imprevedibile. Il terrore che la catastrofe
-              sia sempre lì, pronta a colpirti appena abbassi la guardia.
+              sia sempre lì, pronta a colpirti appena abbassi la guardia. 😰
             </p>
             <p>
               Ho sepolto quel trauma sotto una vita frenetica. Ero una <u>ginnasta agonista</u>:
@@ -164,7 +193,7 @@ export function LaMiaStoria() {
               palestra fino alle 20, studio fino a notte fonda. Volevo dimostrare di essere
               una supereroina. Ma <em>il corpo ha le sue leggi</em>. Gli <strong>attacchi di panico</strong> hanno
               iniziato a colpirmi ovunque: al cinema nell’oscurità soffocante, tra gli amici
-              mentre fingevo un sorriso, in macchina.
+              mentre fingevo un sorriso, in macchina. 🫀
             </p>
             <p>
               Ricordo le volte in cui dovevo accostare d’urgenza perché sentivo il cuore
@@ -194,11 +223,11 @@ export function LaMiaStoria() {
                 </p>
                 <p>
                   Lo stress è stato devastante. Sono tornata a vivere nel letto, <strong>paralizzata</strong>.
-                  Igienizzavo tutto, <em>terrorizzata di fare la sua fine</em>.
+              Igienizzavo tutto, <em>terrorizzata di fare la sua fine</em> 🫧.
                 </p>
                 <p>
                   Quella chiamata dei medici alle 11:30 di sera, in cui dicevano che non sapevano
-                  se ce l’avrebbe fatta, mi è rimasta dentro come un senso di <u>angoscia perenne</u>.
+              se ce l’avrebbe fatta, mi è rimasta dentro come un senso di <u>angoscia perenne</u> 🫁.
                 </p>
                 <p>
                   Quando le cose sembravano tornare alla normalità ho sepolto tutto di nuovo
@@ -228,7 +257,7 @@ export function LaMiaStoria() {
             <p>
               Mi sono licenziata. Quel passo verso l’ignoto mi ha fatta sentire <u>nuda</u>,
               terribilmente sola. Mi ero tolta l’armatura del “fare” e non sapevo più chi
-              fossi senza i miei mille impegni.
+              fossi senza i miei mille impegni. 🕳️
             </p>
             <p>
               In quella solitudine il mio corpo ha reagito spurgando anni di <em>tossine mentali</em>.
@@ -248,7 +277,7 @@ export function LaMiaStoria() {
             </p>
             <p>
               La nostra casa è diventata un <u>laboratorio di ricerca</u> sull’essere umano. Lui è
-              stato il mio pilastro, il mio mentore.
+              stato il mio pilastro, il mio mentore. 🔬
             </p>
             <p>
               Ho iniziato a testare l’<strong>efficacia</strong> di ciò che imparavo: quando sentivo il
@@ -281,11 +310,11 @@ export function LaMiaStoria() {
             <p>
               La mia ansia è tornata a bussare ferocemente. Ma mi sono fatta una domanda che mi ha
               salvata: “Saresti disposta a diventare un’<em>ameba</em> e non realizzare quello che vuoi
-              costruire?”.
+              costruire?”. 🚪
             </p>
             <p>
               Ho scelto di dire no. Ho scelto di non essere un’<em>ameba</em>. Ho scelto di essere{' '}
-              <strong>reale</strong>.
+              <strong>reale</strong> 🧩.
             </p>
             <p>
               Ho capito che dovevo smettere di “curare” la malattia e iniziare a{' '}
@@ -293,7 +322,7 @@ export function LaMiaStoria() {
             </p>
             <p>
               Dopo mesi, senza farmaci a vita, la mia pelle era guarita. Non era magia: era{' '}
-              <em>studio, consapevolezza e amore</em>.
+              <em>studio, consapevolezza e amore</em> 🌿.
             </p>
             <p>
               La magia è avvenuta quando ho smesso di vedere il mio corpo come un traditore e ho
@@ -319,14 +348,14 @@ export function LaMiaStoria() {
             </p>
             <p>
               Qui non sei un paziente con un’etichetta addosso. Sei una persona che sta per{' '}
-              <strong>riprendere in mano il proprio corpo e la propria vita</strong>.
+              <strong>riprendere in mano il proprio corpo e la propria vita</strong>. ✊
             </p>
             <p>
               E non devi farlo da sola: chi ti accompagna in questo percorso sa esattamente che sapore ha
               quella paura, sa cosa vuol dire <em>sentirsi rotta</em>, e sa che quella sensibilità che oggi ti
               sembra una condanna può diventare la tua <u>forza più grande</u>.
             </p>
-            <p>La cosa che meriti di più in questo momento è tornare a respirare a pieni polmoni.</p>
+            <p>La cosa che meriti di più in questo momento è tornare a respirare a pieni polmoni. 🌬️</p>
             <p>
               Non diventare una supereroina: essere un essere umano <strong>reale, libero e finalmente efficace</strong>.
             </p>
@@ -339,7 +368,7 @@ export function LaMiaStoria() {
             la prova che sei rotta: sono la prova che sei <u>sopravvissuta</u>. Il tuo sistema nervoso non è
             mai stato il tuo nemico. Ha sempre cercato di proteggerti; ha solo urlato in una{' '}
             <em>lingua che nessuno ti aveva insegnato a capire</em>. Adesso è il momento di impararla. È ora di
-            smettere di scappare. È ora di <strong>tornare a respirare</strong>.
+            smettere di scappare. È ora di <strong>tornare a respirare</strong> ❤️
           </p>
         </blockquote>
 

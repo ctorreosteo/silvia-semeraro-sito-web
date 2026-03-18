@@ -39,6 +39,27 @@ body {
   margin: 0;
 }
 
+img,
+video,
+canvas,
+svg {
+  max-width: 100%;
+}
+
+/* Evita overflow da stringhe non spezzabili (URL, parole lunghe) */
+p,
+a,
+li,
+blockquote {
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+pre {
+  max-width: 100%;
+  overflow-x: auto;
+}
+
 h1,
 h2 {
   font-weight: 800;

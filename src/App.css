@@ -22,6 +22,7 @@
   display: inline-flex;
   align-items: center;
   gap: 10px;
+  min-width: 0;
   color: var(--text-h);
   text-decoration: none;
 }
@@ -44,6 +45,7 @@
   gap: 12px;
   flex-wrap: wrap;
   justify-content: flex-end;
+  min-width: 0;
 }
 
 .menuButton {
@@ -161,13 +163,14 @@
 
 .mobileNavLinks .navLink {
   display: block;
-  padding: 13px 12px;
+  padding: 13px 12px 13px 28px;
   border: 1px solid color-mix(in oklab, var(--border) 80%, transparent);
   border-radius: 16px;
   background: color-mix(in oklab, var(--surface) 96%, transparent);
   box-shadow:
     0 1px 0 color-mix(in oklab, #000 6%, transparent),
     0 12px 30px color-mix(in oklab, #000 8%, transparent);
+  position: relative;
 }
 
 .mobileNavLinks .navLinkActive {
@@ -179,7 +182,7 @@
 .mobileNavLinks .navLinkActive::before {
   content: '';
   position: absolute;
-  left: 10px;
+  left: 14px;
   top: 50%;
   width: 6px;
   height: 6px;
@@ -211,6 +214,7 @@
   width: min(1024px, 100%);
   margin: 0 auto;
   padding: 28px 20px 44px;
+  min-width: 0;
 }
 
 .hero {
@@ -276,6 +280,72 @@
 .pageHeader h1 {
   font-size: clamp(44px, 9vw, 80px);
   font-weight: 900;
+}
+
+.storyMeta {
+  margin-top: 10px;
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 10px;
+  border-radius: 999px;
+  border: 1px solid color-mix(in oklab, var(--border) 70%, transparent);
+  background: color-mix(in oklab, var(--surface) 92%, transparent);
+  box-shadow: 0 1px 0 color-mix(in oklab, #000 5%, transparent);
+  font-size: 13px;
+  letter-spacing: 0.02em;
+  color: color-mix(in oklab, var(--text) 88%, transparent);
+}
+
+.storyMetaDot {
+  opacity: 0.7;
+}
+
+.storyNav {
+  margin: 14px 0 0;
+  max-width: 78ch;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding-top: 12px;
+  border-top: 1px solid color-mix(in oklab, var(--border) 65%, transparent);
+}
+
+.storyNavLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 10px;
+  border-radius: 999px;
+  border: 1px solid color-mix(in oklab, var(--border) 75%, transparent);
+  background: color-mix(in oklab, var(--surface) 92%, transparent);
+  color: var(--text-h);
+  text-decoration: none;
+  font-size: 14px;
+  line-height: 1;
+  box-shadow:
+    0 1px 0 color-mix(in oklab, #000 5%, transparent),
+    0 12px 26px color-mix(in oklab, #000 7%, transparent);
+}
+
+.storyNavLink:hover {
+  background: color-mix(in oklab, var(--bg) 55%, white);
+  border-color: color-mix(in oklab, var(--border) 92%, transparent);
+}
+
+.storyNavLink:focus-visible {
+  outline: 2px solid var(--text);
+  outline-offset: 2px;
+}
+
+.storyNavLink::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 999px;
+  background: var(--accent);
+  box-shadow: 0 0 0 3px color-mix(in oklab, var(--accent) 20%, transparent);
 }
 
 .prose {
@@ -528,6 +598,7 @@
   grid-template-columns: 1.2fr 0.9fr;
   gap: 18px;
   align-items: start;
+  min-width: 0;
 }
 
 .storyBandMedia {
@@ -669,6 +740,18 @@
 
   .storyPullQuote {
     padding: 14px 14px;
+  }
+
+  .storyNav {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 4px;
+  }
+
+  .storyNavLink {
+    flex: 0 0 auto;
+    white-space: nowrap;
   }
 }
 
