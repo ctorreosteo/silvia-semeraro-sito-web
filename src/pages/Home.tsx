@@ -1,6 +1,12 @@
 import { useMemo, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 
+type PainPoint = {
+  id: string
+  title: string
+  description: string
+}
+
 type CompareItem = {
   id: string
   label: string
@@ -10,6 +16,84 @@ type CompareItem = {
   shift: string
   quote?: string
 }
+
+const ANSIA_PAIN_POINTS: PainPoint[] = [
+  {
+    id: 'rumore-mentale',
+    title: 'Vivere sempre con il “rumore mentale” acceso',
+    description:
+      'Non è solo pensare troppo. È non riuscire mai a spegnere davvero. Anche quando dovresti rilassarti, la mente continua a girare: scenari, problemi, “e se…”. Ti sembra di non avere mai un vero momento di pausa. E più cerchi di fermarti, più i pensieri aumentano. Non sei mai completamente presente, perché una parte di te è sempre altrove, a cercare di controllare il futuro.',
+  },
+  {
+    id: 'allerta-costante',
+    title: 'Sentirti costantemente in allerta senza un motivo reale',
+    description:
+      'È come vivere con un allarme acceso anche quando non sta succedendo niente. Il corpo è teso, il respiro corto, le spalle rigide. Non c’è un pericolo reale, ma la sensazione è quella. E questa tensione continua ti consuma, perché non hai mai un vero momento di “ok, sono tranquillo”. È una stanchezza che non passa nemmeno quando ti fermi.',
+  },
+  {
+    id: 'non-fidarti-corpo',
+    title: 'Non fidarti più del tuo corpo',
+    description:
+      'Ogni sensazione diventa un potenziale problema. Il cuore accelera e pensi che ci sia qualcosa che non va. Il respiro cambia e ti preoccupi. Inizi a controllarti continuamente. Il risultato? Più controlli, più amplifichi tutto. E così il corpo diventa qualcosa da gestire, non un posto in cui sentirti al sicuro.',
+  },
+  {
+    id: 'rimandare-paura',
+    title: 'Rimandare continuamente per paura di non farcela',
+    description:
+      'Sai cosa dovresti fare. Sai anche che probabilmente ne saresti capace. Ma rimandi. Perché dentro c’è sempre quel dubbio: “E se non reggo?”, “E se va male?”. Così aspetti il momento perfetto, la condizione ideale… che non arriva mai. E nel frattempo la tua vita resta ferma.',
+  },
+  {
+    id: 'inadeguato-altri',
+    title: 'Sentirti inadeguato rispetto agli altri',
+    description:
+      'Guardi gli altri e ti sembra che per loro sia tutto più semplice. Parlano, decidono, agiscono senza pensarci troppo. Tu invece ti senti sempre un passo indietro, come se avessi qualcosa in meno. Questo crea un senso di inferiorità silenzioso, che ti porta a chiuderti sempre di più.',
+  },
+  {
+    id: 'stanco-sempre',
+    title: 'Essere sempre stanco, anche senza fare nulla',
+    description:
+      'L’ansia ti consuma energia anche quando sei fermo. Il corpo è sempre attivo, la mente sempre accesa. Dormi ma non recuperi, ti svegli già stanco, e durante il giorno fai fatica a concentrarti. Non è pigrizia. È un sistema nervoso che non si spegne mai.',
+  },
+]
+
+const PANICO_PAIN_POINTS: PainPoint[] = [
+  {
+    id: 'paura-ritorni',
+    title: 'La paura costante che possa succedere di nuovo',
+    description:
+      'Il vero problema non è solo l’attacco. È quello che succede dopo. Anche quando stai bene, vivi con la paura che possa tornare da un momento all’altro. E questo ti tiene sempre in allerta. Non sei mai davvero tranquillo.',
+  },
+  {
+    id: 'morire-infarto',
+    title: 'Sentire che stai per morire o avere un infarto',
+    description:
+      'Durante un attacco, la sensazione è reale. Il cuore impazzisce, il respiro si blocca, il petto si stringe. E nella mente arriva subito il pensiero: “Sto morendo”. Anche se poi passa, quella paura resta. E la prossima volta fa ancora più paura.',
+  },
+  {
+    id: 'perdere-controllo',
+    title: 'Perdere il controllo davanti agli altri',
+    description:
+      'Non è solo stare male. È farlo davanti agli altri. La paura di svenire, di crollare, di “fare una scena”. Questo rende tutto più intenso, perché non puoi semplicemente sparire. Ti senti intrappolato.',
+  },
+  {
+    id: 'evitare-luoghi',
+    title: 'Evitare luoghi e situazioni per paura del panico',
+    description:
+      'Inizi a evitare. Prima i posti affollati, poi le situazioni scomode, poi sempre di più. Ogni evitamento ti dà sollievo… ma restringe la tua vita. Fino a sentirti limitato anche nelle cose più semplici.',
+  },
+  {
+    id: 'non-stare-solo',
+    title: 'Non riuscire più a stare da solo',
+    description:
+      'Hai bisogno di qualcuno. Una persona, un riferimento, qualcosa che ti faccia sentire al sicuro. L’idea di stare da solo ti mette ansia, perché pensi: “E se succede qualcosa?”. E così perdi autonomia.',
+  },
+  {
+    id: 'derealizzazione',
+    title: 'Sentirti fuori dalla realtà (derealizzazione)',
+    description:
+      'Durante il panico, a volte tutto sembra irreale. I suoni lontani, la realtà ovattata, come se fossi dentro un film. È una sensazione fortissima e spaventosa, perché sembra di perdere il contatto con il mondo. E questo aumenta ancora di più la paura di impazzire.',
+  },
+]
 
 const COMPARE_ITEMS: CompareItem[] = [
   {
@@ -73,10 +157,25 @@ export function Home() {
   const railRef = useRef<HTMLDivElement | null>(null)
   const [activeId, setActiveId] = useState(COMPARE_ITEMS[0]?.id ?? 'psicoterapia')
 
+  const ansiaRailRef = useRef<HTMLDivElement | null>(null)
+  const panicoRailRef = useRef<HTMLDivElement | null>(null)
+  const [ansiaActiveId, setAnsiaActiveId] = useState(ANSIA_PAIN_POINTS[0]?.id ?? 'rumore-mentale')
+  const [panicoActiveId, setPanicoActiveId] = useState(PANICO_PAIN_POINTS[0]?.id ?? 'paura-ritorni')
+
   const activeIndex = useMemo(() => {
     const idx = COMPARE_ITEMS.findIndex((i) => i.id === activeId)
     return idx === -1 ? 0 : idx
   }, [activeId])
+
+  const ansiaActiveIndex = useMemo(() => {
+    const idx = ANSIA_PAIN_POINTS.findIndex((i) => i.id === ansiaActiveId)
+    return idx === -1 ? 0 : idx
+  }, [ansiaActiveId])
+
+  const panicoActiveIndex = useMemo(() => {
+    const idx = PANICO_PAIN_POINTS.findIndex((i) => i.id === panicoActiveId)
+    return idx === -1 ? 0 : idx
+  }, [panicoActiveId])
 
   function scrollToItem(id: string) {
     setActiveId(id)
@@ -92,6 +191,23 @@ export function Home() {
     if (id) scrollToItem(id)
   }
 
+  function scrollPain(kind: 'ansia' | 'panico', id: string) {
+    if (kind === 'ansia') setAnsiaActiveId(id)
+    if (kind === 'panico') setPanicoActiveId(id)
+    const rail = kind === 'ansia' ? ansiaRailRef.current : panicoRailRef.current
+    if (!rail) return
+    const el = rail.querySelector<HTMLElement>(`[data-pain-card="${kind}:${id}"]`)
+    el?.scrollIntoView({ behavior: 'smooth', inline: 'start', block: 'nearest' })
+  }
+
+  function stepPain(kind: 'ansia' | 'panico', dir: -1 | 1) {
+    const items = kind === 'ansia' ? ANSIA_PAIN_POINTS : PANICO_PAIN_POINTS
+    const activeIdx = kind === 'ansia' ? ansiaActiveIndex : panicoActiveIndex
+    const next = Math.max(0, Math.min(items.length - 1, activeIdx + dir))
+    const id = items[next]?.id
+    if (id) scrollPain(kind, id)
+  }
+
   return (
     <>
       <section className="hero homeHero" aria-labelledby="hero-title">
@@ -104,7 +220,7 @@ export function Home() {
               Ogni giorno mi alzo con una sola <span className="homeHeroAccent">Missione</span>:
             </span>
             <span className="homeHeroTitleLine2">
-              aiutare chi soffre di ansia e attacchi di panico a risolvere definitivamente il problema.
+              aiutare chi soffre di ansia e attacchi di panico a uscirne in modo stabile, nella vita vera.
             </span>
           </h1>
         </div>
@@ -173,163 +289,312 @@ export function Home() {
             </ul>
           </section>
 
-          <figure className="homeFitPortrait" aria-label="Foto di Silvia">
+          <section
+            className="homeFitCard homeFitCardYes homeFitCardYesCombined"
+            aria-label="Per chi è il percorso di Silvia"
+          >
+            <div className="homeFitYesInner">
+              <figure className="homeFitYesPortrait" aria-label="Foto di Silvia">
+                <img
+                  className="homeFitYesPortraitImg"
+                  src="/Immagini/foto1.png"
+                  alt="Silvia Semeraro"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </figure>
+
+              <div className="homeFitYesContent">
+                <div className="homeFitCardTop">
+                  <p className="homeFitCardTag">Per chi è davvero</p>
+                  <h3 className="homeFitCardTitle">Il percorso di Silvia</h3>
+                </div>
+                <ul className="homeFitList homeFitListYes">
+                  <li>
+                    È per chi è stanco di vivere con il <strong>corpo sempre in allarme</strong>: tachicardia, fame
+                    d’aria, tensione, nausea, tremori, insonnia, e vuole finalmente <u>capire quei segnali</u>
+                    invece di <em>temerli</em>.
+                  </li>
+                  <li>
+                    È per chi sente che <strong>ansia o panico</strong> stanno <u>restringendo la propria vita</u>:
+                    evitare luoghi, persone, riunioni, viaggi, guida, momenti sociali o opportunità lavorative,
+                    e vuole <strong>riprendersi i propri spazi</strong>.
+                  </li>
+                  <li>
+                    È per chi non vuole più sentirsi <em>fragile</em>, <em>rotto</em> o dipendente da qualcosa o qualcuno
+                    per stare bene, ma desidera costruire <strong>autonomia reale</strong> e <u>fiducia concreta</u> in se
+                    stesso.
+                  </li>
+                  <li>
+                    È per chi vuole un percorso <strong>pratico</strong>, <em>umano</em> e <strong>trasformativo</strong>: non solo
+                    parole, ma <u>strumenti</u> da usare nella <em>vita vera</em> per tornare a essere <strong>libero</strong>,
+                    <strong>presente</strong> ed <strong>efficace</strong>.
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </section>
+        </div>
+      </section>
+
+      <section className="section homePain" aria-labelledby="pain-title">
+        <div className="homePainPanel" aria-label="Introduzione pain points">
+          <figure className="homePainPanelMedia" aria-label="Foto di Silvia">
             <img
-              className="homeFitPortraitImg"
-              src="/Immagini/foto1.png"
+              className="homePainPanelMediaImg"
+              src="/Immagini/foto2.png"
               alt="Silvia Semeraro"
               loading="lazy"
               decoding="async"
             />
           </figure>
 
-          <section className="homeFitCard homeFitCardYes" aria-label="Per chi è il percorso di Silvia">
-            <div className="homeFitCardTop">
-              <p className="homeFitCardTag">Per chi è davvero</p>
-              <h3 className="homeFitCardTitle">Il percorso di Silvia</h3>
-            </div>
-            <ul className="homeFitList homeFitListYes">
-              <li>
-                È per chi è stanco di vivere con il <strong>corpo sempre in allarme</strong>: tachicardia, fame
-                d’aria, tensione, nausea, tremori, insonnia, e vuole finalmente <u>capire quei segnali</u>
-                invece di <em>temerli</em>.
-              </li>
-              <li>
-                È per chi sente che <strong>ansia o panico</strong> stanno <u>restringendo la propria vita</u>:
-                evitare luoghi, persone, riunioni, viaggi, guida, momenti sociali o opportunità lavorative,
-                e vuole <strong>riprendersi i propri spazi</strong>.
-              </li>
-              <li>
-                È per chi non vuole più sentirsi <em>fragile</em>, <em>rotto</em> o dipendente da qualcosa o qualcuno
-                per stare bene, ma desidera costruire <strong>autonomia reale</strong> e <u>fiducia concreta</u> in se
-                stesso.
-              </li>
-              <li>
-                È per chi vuole un percorso <strong>pratico</strong>, <em>umano</em> e <strong>trasformativo</strong>: non solo
-                parole, ma <u>strumenti</u> da usare nella <em>vita vera</em> per tornare a essere <strong>libero</strong>,
-                <strong>presente</strong> ed <strong>efficace</strong>.
-              </li>
-            </ul>
-          </section>
+          <header className="homePainHead">
+            <p className="homePainKicker">Pain points (senza zucchero)</p>
+            <h2 id="pain-title" className="homePainTitle">
+              Se ti riconosci qui, non è “carattere”.
+              <span className="homePainTitleSub">È un sistema che si è incastrato.</span>
+            </h2>
+            <p className="homePainLead">
+              Li separiamo in modo netto: <strong>ansia</strong> (stato) e <strong>attacchi di panico</strong> (evento).
+              Così capisci subito dov’è il tuo punto critico.
+            </p>
+          </header>
         </div>
-      </section>
 
-      <section className="section homeCompare" aria-labelledby="compare-title">
-        <header className="homeCompareHead">
-          <p className="homeCompareKicker">Noi vs loro (senza sconti)</p>
-          <h2 id="compare-title" className="homeCompareTitle">
-            Il mio percorso vs le soluzioni che hai già provato
-          </h2>
-          <p className="homeCompareLead">
-            Se sei qui, probabilmente non stai cercando <strong>un’altra soluzione</strong>. Stai cercando quella che
-            ti fa smettere di vivere in funzione di quello che senti nel corpo — perché quello che ansia e panico ti
-            rubano, ogni giorno, è <strong>libertà</strong>.
-          </p>
-        </header>
-
-        <div className="homeCompareTop">
-          <aside className="homeCompareAside" aria-label="Sintesi del confronto">
-            <div className="homeCompareAsideCard">
-              <p className="homeCompareAsideTag">Il punto non è “gestire”</p>
-              <p className="homeCompareAsideText">
-                Molte soluzioni diffuse sono costruite per aiutarti a <strong>gestire</strong>… non a uscire davvero.
-              </p>
-              <div className="homeCompareAsideDivider" role="separator" />
-              <ul className="homeComparePills" aria-label="Cosa cambia nel mio percorso">
-                <li className="homeComparePill">
-                  <span className="homeComparePillK">Focus</span>
-                  <span className="homeComparePillV">momento reale di attivazione</span>
-                </li>
-                <li className="homeComparePill">
-                  <span className="homeComparePillK">Obiettivo</span>
-                  <span className="homeComparePillV">autonomia, non appoggi</span>
-                </li>
-                <li className="homeComparePill">
-                  <span className="homeComparePillK">Risultato</span>
-                  <span className="homeComparePillV">vita che si riallarga</span>
-                </li>
-              </ul>
-
-              <div className="homeCompareAsideCtas">
-                <Link className="button primary" to="/percorsi">
-                  Vedi come funziona
-                </Link>
-                <Link className="button ghost" to="/contatti-e-dove-lavoro">
-                  Parliamone
-                </Link>
+        <div className="homePainBlocks" aria-label="Caroselli pain points">
+          <section className="homePainBlock" aria-labelledby="pain-ansia-title">
+            <header className="homePainBlockHead">
+              <div className="homePainBlockHeadCopy">
+                <p className="homePainBlockTag">Ansia</p>
+                <h3 id="pain-ansia-title" className="homePainBlockTitle">
+                  Stato continuo
+                </h3>
+                <p className="homePainBlockLead">È quel sottofondo che non stacca mai.</p>
               </div>
-            </div>
-          </aside>
-
-          <div className="homeCompareRailWrap" aria-label="Confronto orizzontale">
-            <div className="homeCompareRailControls" aria-label="Controlli scorrimento">
-              <button className="homeCompareRailBtn" type="button" onClick={() => stepRail(-1)} aria-label="Precedente">
-                ‹
-              </button>
-              <div className="homeCompareRailTabs" role="tablist" aria-label="Categorie">
-                {COMPARE_ITEMS.map((item) => (
-                  <button
-                    key={item.id}
-                    role="tab"
-                    aria-selected={item.id === activeId}
-                    className={`homeCompareTab ${item.id === activeId ? 'homeCompareTabActive' : ''}`}
-                    type="button"
-                    onClick={() => scrollToItem(item.id)}
-                  >
-                    {item.label}
-                  </button>
-                ))}
+              <div className="homePainControls" aria-label="Controlli carosello ansia">
+                <button className="homePainBtn" type="button" onClick={() => stepPain('ansia', -1)} aria-label="Precedente">
+                  ‹
+                </button>
+                <button className="homePainBtn" type="button" onClick={() => stepPain('ansia', 1)} aria-label="Successivo">
+                  ›
+                </button>
               </div>
-              <button className="homeCompareRailBtn" type="button" onClick={() => stepRail(1)} aria-label="Successivo">
-                ›
-              </button>
-            </div>
+            </header>
 
-            <div className="homeCompareRail" ref={railRef}>
-              {COMPARE_ITEMS.map((item) => (
+            <div className="homePainRail" ref={ansiaRailRef} aria-label="Pain points ansia">
+              {ANSIA_PAIN_POINTS.map((item) => (
                 <article
                   key={item.id}
-                  className={`homeCompareCard ${item.id === activeId ? 'homeCompareCardActive' : ''}`}
-                  data-compare-card={item.id}
+                  className={`homePainCard ${item.id === ansiaActiveId ? 'homePainCardActive' : ''}`}
+                  data-pain-card={`ansia:${item.id}`}
                   tabIndex={-1}
                   aria-label={item.title}
                 >
-                  <header className="homeCompareCardHead">
-                    <p className="homeCompareCardTag">Soluzione comune</p>
-                    <h3 className="homeCompareCardTitle">{item.title}</h3>
+                  <header className="homePainCardHead">
+                    <p className="homePainCardTag">Ansia</p>
+                    <h4 className="homePainCardTitle">{item.title}</h4>
                   </header>
-
-                  <div className="homeCompareCardBody">
-                    <div className="homeCompareRow">
-                      <p className="homeCompareRowK">Cosa ti promette</p>
-                      <p className="homeCompareRowV">{item.promise}</p>
-                    </div>
-                    <div className="homeCompareRow homeCompareRowWarn">
-                      <p className="homeCompareRowK">Dove si rompe</p>
-                      <p className="homeCompareRowV">{item.limit}</p>
-                    </div>
-                    <div className="homeCompareRow homeCompareRowShift">
-                      <p className="homeCompareRowK">Nel mio percorso</p>
-                      <p className="homeCompareRowV">{item.shift}</p>
-                    </div>
+                  <div className="homePainCardBody">
+                    <p className="homePainCardText">{item.description}</p>
                   </div>
                 </article>
               ))}
             </div>
 
-            <p className="homeCompareHint" aria-label="Suggerimento">
-              Scorri orizzontalmente o usa le categorie: l’idea è semplice — smettere di <strong>monitorare</strong> e
-              ricominciare a <strong>vivere</strong>.
+            <p className="homePainHint" aria-label="Suggerimento">
+              Scorri orizzontalmente oppure usa le frecce.
             </p>
+          </section>
+
+          <section className="homePainBlock" aria-labelledby="pain-panico-title">
+            <header className="homePainBlockHead">
+              <div className="homePainBlockHeadCopy">
+                <p className="homePainBlockTag homePainBlockTagPanic">Attacchi di panico</p>
+                <h3 id="pain-panico-title" className="homePainBlockTitle">
+                  Evento improvviso
+                </h3>
+                <p className="homePainBlockLead">Arriva, esplode, e poi ti cambia i giorni dopo.</p>
+              </div>
+              <div className="homePainControls" aria-label="Controlli carosello attacchi di panico">
+                <button className="homePainBtn" type="button" onClick={() => stepPain('panico', -1)} aria-label="Precedente">
+                  ‹
+                </button>
+                <button className="homePainBtn" type="button" onClick={() => stepPain('panico', 1)} aria-label="Successivo">
+                  ›
+                </button>
+              </div>
+            </header>
+
+            <div className="homePainRail" ref={panicoRailRef} aria-label="Pain points attacchi di panico">
+              {PANICO_PAIN_POINTS.map((item) => (
+                <article
+                  key={item.id}
+                  className={`homePainCard ${item.id === panicoActiveId ? 'homePainCardActive' : ''}`}
+                  data-pain-card={`panico:${item.id}`}
+                  tabIndex={-1}
+                  aria-label={item.title}
+                >
+                  <header className="homePainCardHead">
+                    <p className="homePainCardTag homePainCardTagPanic">Panico</p>
+                    <h4 className="homePainCardTitle">{item.title}</h4>
+                  </header>
+                  <div className="homePainCardBody">
+                    <p className="homePainCardText">{item.description}</p>
+                  </div>
+                </article>
+              ))}
+            </div>
+
+            <p className="homePainHint" aria-label="Suggerimento">
+              Se ti “blocca” la vita dopo, sei qui.
+            </p>
+          </section>
+        </div>
+      </section>
+
+      <section className="section homeCompare" aria-labelledby="compare-title">
+        <div className="homeComparePanel" aria-label="Noi vs loro (senza sconti)">
+          <figure className="homeComparePanelMedia" aria-label="Foto di Silvia">
+            <img
+              className="homeComparePanelMediaImg"
+              src="/Immagini/foto3.png"
+              alt="Silvia Semeraro"
+              loading="lazy"
+              decoding="async"
+            />
+          </figure>
+
+          <header className="homeCompareHead">
+            <p className="homeCompareKicker">Noi vs loro (senza sconti)</p>
+            <h2 id="compare-title" className="homeCompareTitle">
+              Il mio percorso vs le soluzioni che hai già provato
+            </h2>
+            <p className="homeCompareLead">
+              Se sei qui, probabilmente non stai cercando <strong>un’altra soluzione</strong>. Stai cercando quella che
+              ti fa smettere di vivere in funzione di quello che senti nel corpo — perché quello che ansia e panico ti
+              rubano, ogni giorno, è <strong>libertà</strong>.
+            </p>
+          </header>
+
+          <div className="homeCompareTop">
+            <aside className="homeCompareAside" aria-label="Sintesi del confronto">
+              <div className="homeCompareAsideCard">
+                <p className="homeCompareAsideTag">Il punto non è “gestire”</p>
+                <p className="homeCompareAsideText">
+                  Molte soluzioni diffuse sono costruite per aiutarti a <strong>gestire</strong>… non a uscire davvero.
+                </p>
+                <div className="homeCompareAsideDivider" role="separator" />
+                <ul className="homeComparePills" aria-label="Cosa cambia nel mio percorso">
+                  <li className="homeComparePill">
+                    <span className="homeComparePillK">Focus</span>
+                    <span className="homeComparePillV">momento reale di attivazione</span>
+                  </li>
+                  <li className="homeComparePill">
+                    <span className="homeComparePillK">Obiettivo</span>
+                    <span className="homeComparePillV">autonomia, non appoggi</span>
+                  </li>
+                  <li className="homeComparePill">
+                    <span className="homeComparePillK">Risultato</span>
+                    <span className="homeComparePillV">vita che si riallarga</span>
+                  </li>
+                </ul>
+
+                <div className="homeCompareAsideCtas">
+                  <Link className="button primary" to="/percorsi">
+                    Vedi come funziona
+                  </Link>
+                  <Link className="button ghost" to="/contatti-e-dove-lavoro">
+                    Parliamone
+                  </Link>
+                </div>
+              </div>
+            </aside>
+
+            <div className="homeCompareRailWrap" aria-label="Confronto orizzontale">
+              <div className="homeCompareRailControls" aria-label="Controlli scorrimento">
+                <button className="homeCompareRailBtn" type="button" onClick={() => stepRail(-1)} aria-label="Precedente">
+                  ‹
+                </button>
+                <div className="homeCompareRailTabs" role="tablist" aria-label="Categorie">
+                  {COMPARE_ITEMS.map((item) => (
+                    <button
+                      key={item.id}
+                      role="tab"
+                      aria-selected={item.id === activeId}
+                      className={`homeCompareTab ${item.id === activeId ? 'homeCompareTabActive' : ''}`}
+                      type="button"
+                      onClick={() => scrollToItem(item.id)}
+                    >
+                      {item.label}
+                    </button>
+                  ))}
+                </div>
+                <button className="homeCompareRailBtn" type="button" onClick={() => stepRail(1)} aria-label="Successivo">
+                  ›
+                </button>
+              </div>
+
+              <div className="homeCompareRail" ref={railRef}>
+                {COMPARE_ITEMS.map((item) => (
+                  <article
+                    key={item.id}
+                    className={`homeCompareCard ${item.id === activeId ? 'homeCompareCardActive' : ''}`}
+                    data-compare-card={item.id}
+                    tabIndex={-1}
+                    aria-label={item.title}
+                  >
+                    <header className="homeCompareCardHead">
+                      <p className="homeCompareCardTag">Soluzione comune</p>
+                      <h3 className="homeCompareCardTitle">{item.title}</h3>
+                    </header>
+
+                    <div className="homeCompareCardBody">
+                      <div className="homeCompareRow">
+                        <p className="homeCompareRowK">Cosa ti promette</p>
+                        <p className="homeCompareRowV">{item.promise}</p>
+                      </div>
+                      <div className="homeCompareRow homeCompareRowWarn">
+                        <p className="homeCompareRowK">Dove si rompe</p>
+                        <p className="homeCompareRowV">{item.limit}</p>
+                      </div>
+                      <div className="homeCompareRow homeCompareRowShift">
+                        <p className="homeCompareRowK">Nel mio percorso</p>
+                        <p className="homeCompareRowV">{item.shift}</p>
+                      </div>
+                    </div>
+                  </article>
+                ))}
+              </div>
+
+              <p className="homeCompareHint" aria-label="Suggerimento">
+                Scorri orizzontalmente o usa le categorie: l’idea è semplice — smettere di <strong>monitorare</strong> e
+                ricominciare a <strong>vivere</strong>.
+              </p>
+            </div>
           </div>
         </div>
 
         <div className="homeCompareGrid" aria-label="Tabella comparativa">
           <div className="homeCompareGridHead">
-            <h3 className="homeCompareGridTitle">In sintesi: gestione vs libertà</h3>
-            <p className="homeCompareGridLead">
-              Non diventi “senza ansia”. Diventi <strong>libero anche quando il corpo si attiva</strong>.
-            </p>
+            <div className="homeCompareGridHeadInner">
+              <div className="homeCompareGridHeadCopy">
+                <h3 className="homeCompareGridTitle">In sintesi: gestione vs libertà</h3>
+                <p className="homeCompareGridLead">
+                  Non diventi “senza ansia”. Diventi <strong>libero anche quando il corpo si attiva</strong>.
+                </p>
+              </div>
+
+              <figure className="homeCompareGridMedia" aria-label="Immagine riepilogo">
+                <img
+                  className="homeCompareGridMediaImg"
+                  src="/Immagini/foto4.png"
+                  alt="Silvia Semeraro"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </figure>
+            </div>
           </div>
 
           <div className="homeCompareTable" role="table" aria-label="Confronto">
