@@ -1,10 +1,10 @@
-import { useMemo, useRef, useState } from 'react'
+import { useMemo, useRef, useState, type ReactNode } from 'react'
 import { DualCtas } from '../components/DualCtas'
 
 type PainPoint = {
   id: string
   title: string
-  description: string
+  description: ReactNode
 }
 
 type CompareItem = {
@@ -26,39 +26,72 @@ type FaqItem = {
 const ANSIA_PAIN_POINTS: PainPoint[] = [
   {
     id: 'rumore-mentale',
-    title: 'Vivere sempre con il “rumore mentale” acceso',
-    description:
-      'Non è solo pensare troppo. È non riuscire mai a spegnere davvero. Anche quando dovresti rilassarti, la mente continua a girare: scenari, problemi, “e se…”. Ti sembra di non avere mai un vero momento di pausa. E più cerchi di fermarti, più i pensieri aumentano. Non sei mai completamente presente, perché una parte di te è sempre altrove, a cercare di controllare il futuro.',
+    title: 'Vivere sempre con il "rumore mentale" acceso',
+    description: (
+      <>
+        Non è solo <em>pensare troppo</em>. È <strong>non riuscire mai a spegnere davvero</strong>. Anche quando
+        dovresti rilassarti, la mente continua a girare: <u>scenari, problemi, "e se…"</u>. Ti sembra di non avere mai un
+        vero momento di pausa. E più cerchi di fermarti, più i pensieri aumentano. Non sei mai <strong>completamente
+        presente</strong>, perché una parte di te è sempre altrove, a cercare di <u>controllare il futuro</u>.
+      </>
+    ),
   },
   {
     id: 'allerta-costante',
     title: 'Sentirti costantemente in allerta senza un motivo reale',
-    description:
-      'È come vivere con un allarme acceso anche quando non sta succedendo niente. Il corpo è teso, il respiro corto, le spalle rigide. Non c’è un pericolo reale, ma la sensazione è quella. E questa tensione continua ti consuma, perché non hai mai un vero momento di “ok, sono tranquillo”. È una stanchezza che non passa nemmeno quando ti fermi.',
+    description: (
+      <>
+        È come vivere con un <strong>allarme acceso</strong> anche quando non sta succedendo niente. Il corpo è{' '}
+        <u>teso, il respiro corto, le spalle rigide</u>. Non c'è un pericolo reale, ma <em>la sensazione è quella</em>. E
+        questa tensione continua ti consuma, perché non hai mai un vero momento di "ok, sono tranquillo". È una{' '}
+        <strong>stanchezza che non passa</strong> nemmeno quando ti fermi.
+      </>
+    ),
   },
   {
     id: 'non-fidarti-corpo',
     title: 'Non fidarti più del tuo corpo',
-    description:
-      'Ogni sensazione diventa un potenziale problema. Il cuore accelera e pensi che ci sia qualcosa che non va. Il respiro cambia e ti preoccupi. Inizi a controllarti continuamente. Il risultato? Più controlli, più amplifichi tutto. E così il corpo diventa qualcosa da gestire, non un posto in cui sentirti al sicuro.',
+    description: (
+      <>
+        Ogni sensazione diventa un <strong>potenziale problema</strong>. Il cuore accelera e pensi che ci sia qualcosa
+        che non va. Il respiro cambia e ti preoccupi. Inizi a <u>controllarti continuamente</u>. Il risultato?{' '}
+        <em>Più controlli, più amplifichi tutto</em>. E così il corpo diventa qualcosa da gestire, non un posto in cui{' '}
+        <strong>sentirti al sicuro</strong>.
+      </>
+    ),
   },
   {
     id: 'rimandare-paura',
     title: 'Rimandare continuamente per paura di non farcela',
-    description:
-      'Sai cosa dovresti fare. Sai anche che probabilmente ne saresti capace. Ma rimandi. Perché dentro c’è sempre quel dubbio: “E se non reggo?”, “E se va male?”. Così aspetti il momento perfetto, la condizione ideale… che non arriva mai. E nel frattempo la tua vita resta ferma.',
+    description: (
+      <>
+        Sai cosa dovresti fare. Sai anche che probabilmente <em>ne saresti capace</em>. Ma rimandi. Perché dentro c'è
+        sempre quel dubbio: <u>"E se non reggo?", "E se va male?"</u>. Così aspetti il <strong>momento perfetto</strong>,
+        la condizione ideale… che non arriva mai. E nel frattempo <strong>la tua vita resta ferma</strong>.
+      </>
+    ),
   },
   {
     id: 'inadeguato-altri',
     title: 'Sentirti inadeguato rispetto agli altri',
-    description:
-      'Guardi gli altri e ti sembra che per loro sia tutto più semplice. Parlano, decidono, agiscono senza pensarci troppo. Tu invece ti senti sempre un passo indietro, come se avessi qualcosa in meno. Questo crea un senso di inferiorità silenzioso, che ti porta a chiuderti sempre di più.',
+    description: (
+      <>
+        Guardi gli altri e ti sembra che per loro sia <em>tutto più semplice</em>. Parlano, decidono, agiscono senza
+        pensarci troppo. Tu invece ti senti sempre <strong>un passo indietro</strong>, come se avessi qualcosa in meno.
+        Questo crea un <u>senso di inferiorità silenzioso</u>, che ti porta a chiuderti sempre di più.
+      </>
+    ),
   },
   {
     id: 'stanco-sempre',
     title: 'Essere sempre stanco, anche senza fare nulla',
-    description:
-      'L’ansia ti consuma energia anche quando sei fermo. Il corpo è sempre attivo, la mente sempre accesa. Dormi ma non recuperi, ti svegli già stanco, e durante il giorno fai fatica a concentrarti. Non è pigrizia. È un sistema nervoso che non si spegne mai.',
+    description: (
+      <>
+        L'ansia ti <strong>consuma energia</strong> anche quando sei fermo. Il corpo è sempre attivo, la mente sempre
+        accesa. <u>Dormi ma non recuperi</u>, ti svegli già stanco, e durante il giorno fai fatica a concentrarti. Non è{' '}
+        <em>pigrizia</em>. È un <strong>sistema nervoso che non si spegne mai</strong>.
+      </>
+    ),
   },
 ]
 
@@ -66,38 +99,68 @@ const PANICO_PAIN_POINTS: PainPoint[] = [
   {
     id: 'paura-ritorni',
     title: 'La paura costante che possa succedere di nuovo',
-    description:
-      'Il vero problema non è solo l’attacco. È quello che succede dopo. Anche quando stai bene, vivi con la paura che possa tornare da un momento all’altro. E questo ti tiene sempre in allerta. Non sei mai davvero tranquillo.',
+    description: (
+      <>
+        Il vero problema non è solo <strong>l'attacco</strong>. È <u>quello che succede dopo</u>. Anche quando stai
+        bene, vivi con la paura che possa tornare <em>da un momento all'altro</em>. E questo ti tiene sempre in allerta.
+        Non sei mai <strong>davvero tranquillo</strong>.
+      </>
+    ),
   },
   {
     id: 'morire-infarto',
     title: 'Sentire che stai per morire o avere un infarto',
-    description:
-      'Durante un attacco, la sensazione è reale. Il cuore impazzisce, il respiro si blocca, il petto si stringe. E nella mente arriva subito il pensiero: “Sto morendo”. Anche se poi passa, quella paura resta. E la prossima volta fa ancora più paura.',
+    description: (
+      <>
+        Durante un attacco, <em>la sensazione è reale</em>. Il cuore impazzisce, il respiro si blocca, il petto si
+        stringe. E nella mente arriva subito il pensiero: <u>"Sto morendo"</u>. Anche se poi passa, <strong>quella
+        paura resta</strong>. E la prossima volta fa ancora più paura.
+      </>
+    ),
   },
   {
     id: 'perdere-controllo',
     title: 'Perdere il controllo davanti agli altri',
-    description:
-      'Non è solo stare male. È farlo davanti agli altri. La paura di svenire, di crollare, di “fare una scena”. Questo rende tutto più intenso, perché non puoi semplicemente sparire. Ti senti intrappolato.',
+    description: (
+      <>
+        Non è solo stare male. È <strong>farlo davanti agli altri</strong>. La paura di <u>svenire, di crollare, di "fare
+        una scena"</u>. Questo rende tutto più intenso, perché non puoi semplicemente sparire. Ti senti{' '}
+        <em>intrappolato</em>.
+      </>
+    ),
   },
   {
     id: 'evitare-luoghi',
     title: 'Evitare luoghi e situazioni per paura del panico',
-    description:
-      'Inizi a evitare. Prima i posti affollati, poi le situazioni scomode, poi sempre di più. Ogni evitamento ti dà sollievo… ma restringe la tua vita. Fino a sentirti limitato anche nelle cose più semplici.',
+    description: (
+      <>
+        Inizi a <strong>evitare</strong>. Prima i posti affollati, poi le situazioni scomode, poi sempre di più. Ogni
+        evitamento ti dà sollievo… ma <u>restringe la tua vita</u>. Fino a sentirti <em>limitato anche nelle cose più
+        semplici</em>.
+      </>
+    ),
   },
   {
     id: 'non-stare-solo',
     title: 'Non riuscire più a stare da solo',
-    description:
-      'Hai bisogno di qualcuno. Una persona, un riferimento, qualcosa che ti faccia sentire al sicuro. L’idea di stare da solo ti mette ansia, perché pensi: “E se succede qualcosa?”. E così perdi autonomia.',
+    description: (
+      <>
+        Hai bisogno di <strong>qualcuno</strong>. Una persona, un riferimento, qualcosa che ti faccia sentire al sicuro.
+        L'idea di stare da solo ti mette ansia, perché pensi: <u>"E se succede qualcosa?"</u>. E così perdi{' '}
+        <em>autonomia</em>.
+      </>
+    ),
   },
   {
     id: 'derealizzazione',
     title: 'Sentirti fuori dalla realtà (derealizzazione)',
-    description:
-      'Durante il panico, a volte tutto sembra irreale. I suoni lontani, la realtà ovattata, come se fossi dentro un film. È una sensazione fortissima e spaventosa, perché sembra di perdere il contatto con il mondo. E questo aumenta ancora di più la paura di impazzire.',
+    description: (
+      <>
+        Durante il panico, a volte <strong>tutto sembra irreale</strong>. I suoni lontani, la realtà ovattata, <em>come se
+        fossi dentro un film</em>. È una sensazione fortissima e spaventosa, perché sembra di <u>perdere il contatto con
+        il mondo</u>. E questo aumenta ancora di più la paura di impazzire.
+      </>
+    ),
   },
 ]
 
@@ -313,11 +376,11 @@ export function Home() {
         <header className="homeFitHead">
           <p className="homeFitKicker">Chiarezza, prima di tutto</p>
           <h2 id="fit-title" className="homeFitTitle">
-            Il percorso di Silvia è un lavoro vero.
+            Il percorso con me è un lavoro vero, che risolve definitivamente il problema.
             <span className="homeFitTitleSub">E non è per tutti.</span>
           </h2>
           <p className="homeFitLead">
-            Leggi queste due liste come un filtro. Se ti riconosci nella seconda, sei nel posto giusto.
+            Leggi bene qui sotto. Se ti riconosci nella seconda parte, sei nel posto giusto.
           </p>
         </header>
 
@@ -325,12 +388,12 @@ export function Home() {
           <section className="homeFitCard homeFitCardNo" aria-label="Per chi NON è il percorso di Silvia">
             <div className="homeFitCardTop">
               <p className="homeFitCardTag">Per chi NON è</p>
-              <h3 className="homeFitCardTitle">Il percorso di Silvia</h3>
+              <h3 className="homeFitCardTitle">Il percorso con Silvia</h3>
             </div>
             <ul className="homeFitList homeFitListNo">
               <li>
                 Non è per chi cerca la <strong>pillola magica</strong> o <em>la frase giusta</em> che faccia sparire
-                tutto senza <u>mettersi in gioco</u>. Qui non si promettono <strong>scorciatoie</strong>, ma un
+                tutto senza <u>mettersi in gioco</u>. Qui non si promettono <strong>scorciatoie</strong>, ma un{" "}
                 <strong>lavoro vero</strong> per <u>rieducare</u> <em>corpo, mente e comportamento</em>.
               </li>
               <li>
@@ -340,6 +403,7 @@ export function Home() {
               </li>
               <li>
                 Non è per chi vuole continuare a <u>delegare la propria sicurezza</u> a <strong>farmaci</strong>,
+                {" "}
                 <em>rassicurazioni</em>, accompagnatori o rituali protettivi senza mettere mano alla
                 <strong>radice</strong> del <em>meccanismo ansioso</em>.
               </li>
@@ -369,13 +433,13 @@ export function Home() {
               <div className="homeFitYesContent">
                 <div className="homeFitCardTop">
                   <p className="homeFitCardTag">Per chi è davvero</p>
-                  <h3 className="homeFitCardTitle">Il percorso di Silvia</h3>
+                  <h3 className="homeFitCardTitle">Il percorso con Silvia</h3>
                 </div>
                 <ul className="homeFitList homeFitListYes">
                   <li>
                     È per chi è stanco di vivere con il <strong>corpo sempre in allarme</strong>: tachicardia, fame
                     d’aria, tensione, nausea, tremori, insonnia, e vuole finalmente <u>capire quei segnali</u>
-                    invece di <em>temerli</em>.
+                    {" "}invece di <em>temerli</em>.
                   </li>
                   <li>
                     È per chi sente che <strong>ansia o panico</strong> stanno <u>restringendo la propria vita</u>:
@@ -390,7 +454,7 @@ export function Home() {
                   <li>
                     È per chi vuole un percorso <strong>pratico</strong>, <em>umano</em> e <strong>trasformativo</strong>: non solo
                     parole, ma <u>strumenti</u> da usare nella <em>vita vera</em> per tornare a essere <strong>libero</strong>,
-                    <strong>presente</strong> ed <strong>efficace</strong>.
+                    {" "}<strong>presente</strong> ed <strong>efficace</strong>.
                   </li>
                 </ul>
               </div>
@@ -414,14 +478,12 @@ export function Home() {
           </figure>
 
           <header className="homePainHead">
-            <p className="homePainKicker">Pain points (senza zucchero)</p>
+            <p className="homePainKicker">Non sei stufo di convivere con tutto questo?</p>
             <h2 id="pain-title" className="homePainTitle">
-              Se ti riconosci qui, non è “carattere”.
-              <span className="homePainTitleSub">È un sistema che si è incastrato.</span>
+            La sensazione è di essere intrappolato...
             </h2>
             <p className="homePainLead">
-              Li separiamo in modo netto: <strong>ansia</strong> (stato) e <strong>attacchi di panico</strong> (evento).
-              Così capisci subito dov’è il tuo punto critico.
+              Questo è un po' di quello che vivono le persone che  di <strong>ansia</strong> (stato) e <strong>attacchi di panico</strong> e si affidano poi a me.
             </p>
           </header>
         </div>
@@ -432,7 +494,7 @@ export function Home() {
               <div className="homePainBlockHeadCopy">
                 <p className="homePainBlockTag">Ansia</p>
                 <h3 id="pain-ansia-title" className="homePainBlockTitle">
-                  Stato continuo
+                  Stato continuo di allarme
                 </h3>
                 <p className="homePainBlockLead">È quel sottofondo che non stacca mai.</p>
               </div>
@@ -465,10 +527,6 @@ export function Home() {
                 </article>
               ))}
             </div>
-
-            <p className="homePainHint" aria-label="Suggerimento">
-              Scorri orizzontalmente oppure usa le frecce.
-            </p>
           </section>
 
           <section className="homePainBlock" aria-labelledby="pain-panico-title">
@@ -476,7 +534,7 @@ export function Home() {
               <div className="homePainBlockHeadCopy">
                 <p className="homePainBlockTag homePainBlockTagPanic">Attacchi di panico</p>
                 <h3 id="pain-panico-title" className="homePainBlockTitle">
-                  Evento improvviso
+                  Evento improvviso e pesante
                 </h3>
                 <p className="homePainBlockLead">Arriva, esplode, e poi ti cambia i giorni dopo.</p>
               </div>
@@ -509,23 +567,186 @@ export function Home() {
                 </article>
               ))}
             </div>
-
-            <p className="homePainHint" aria-label="Suggerimento">
-              Se ti “blocca” la vita dopo, sei qui.
-            </p>
           </section>
         </div>
 
         <DualCtas />
       </section>
 
+      <section className="section homeCompare" aria-labelledby="compare-title">
+        <div className="homeComparePanel" aria-label="Perché le altre soluzioni non funzionano">
+          <figure className="homeComparePanelMedia" aria-label="Foto di Silvia">
+            <img
+              className="homeComparePanelMediaImg"
+              src="/Immagini/foto3.png"
+              alt="Silvia Semeraro"
+              loading="lazy"
+              decoding="async"
+            />
+          </figure>
+
+          <header className="homeCompareHead">
+            <p className="homeCompareKicker">Ti sei mai chiesto perché le altre soluzioni non funzionano?</p>
+            <h2 id="compare-title" className="homeCompareTitle">
+              Ed è per questo che il mio percorso è completamente diverso!
+            </h2>
+            <p className="homeCompareLead">
+              Se sei qui, sicuramente non stai cercando <strong> l'ennesima soluzione inutile</strong>. Stai cercando quella che
+              ti fa smettere di vivere in funzione di quello che senti nel corpo — perché quello che ansia e panico ti
+              rubano, ogni giorno, è <strong> la libertà</strong>.
+            </p>
+          </header>
+
+          <div className="homeCompareTop">
+            <div className="homeCompareRailWrap" aria-label="Confronto orizzontale">
+              <div className="homeCompareRailControls" aria-label="Controlli scorrimento">
+                <button className="homeCompareRailBtn" type="button" onClick={() => stepRail(-1)} aria-label="Precedente">
+                  ‹
+                </button>
+                <div className="homeCompareRailTabs" role="tablist" aria-label="Categorie">
+                  {COMPARE_ITEMS.map((item) => (
+                    <button
+                      key={item.id}
+                      role="tab"
+                      aria-selected={item.id === activeId}
+                      className={`homeCompareTab ${item.id === activeId ? 'homeCompareTabActive' : ''}`}
+                      type="button"
+                      onClick={() => scrollToItem(item.id)}
+                    >
+                      {item.label}
+                    </button>
+                  ))}
+                </div>
+                <button className="homeCompareRailBtn" type="button" onClick={() => stepRail(1)} aria-label="Successivo">
+                  ›
+                </button>
+              </div>
+
+              <div className="homeCompareRail" ref={railRef}>
+                {COMPARE_ITEMS.map((item) => (
+                  <article
+                    key={item.id}
+                    className={`homeCompareCard ${item.id === activeId ? 'homeCompareCardActive' : ''}`}
+                    data-compare-card={item.id}
+                    tabIndex={-1}
+                    aria-label={item.title}
+                  >
+                    <header className="homeCompareCardHead">
+                      <p className="homeCompareCardTag">Soluzione perditempo</p>
+                      <h3 className="homeCompareCardTitle">{item.title}</h3>
+                    </header>
+
+                    <div className="homeCompareCardBody">
+                      <div className="homeCompareRow">
+                        <p className="homeCompareRowK">Cosa ti promette</p>
+                        <p className="homeCompareRowV">{item.promise}</p>
+                      </div>
+                      <div className="homeCompareRow homeCompareRowWarn">
+                        <p className="homeCompareRowK">Dove si rompe</p>
+                        <p className="homeCompareRowV">{item.limit}</p>
+                      </div>
+                      <div className="homeCompareRow homeCompareRowShift">
+                        <p className="homeCompareRowK">Nel mio percorso</p>
+                        <p className="homeCompareRowV">{item.shift}</p>
+                      </div>
+                    </div>
+                  </article>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="homeCompareGrid" aria-label="Tabella comparativa">
+          <div className="homeCompareGridHead">
+            <div className="homeCompareGridHeadInner">
+              <div className="homeCompareGridHeadCopy">
+                <h3 className="homeCompareGridTitle">In sintesi: gestione vs libertà</h3>
+                <p className="homeCompareGridLead">
+                  L'obiettivo non è eliminare per sempre l'ansia. È sentirti libero e leggero <strong> anche quando il corpo si attiva</strong>.
+                </p>
+              </div>
+
+              <figure className="homeCompareGridMedia" aria-label="Immagine riepilogo">
+                <img
+                  className="homeCompareGridMediaImg"
+                  src="/Immagini/foto4.png"
+                  alt="Silvia Semeraro"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </figure>
+            </div>
+          </div>
+
+          <div className="homeCompareTable" role="table" aria-label="Confronto">
+            <div className="homeCompareTableRow homeCompareTableRowHead" role="row">
+              <div className="homeCompareTableCell homeCompareTableCellHead" role="columnheader">
+                Soluzioni che hai già provato
+              </div>
+              <div className="homeCompareTableCell homeCompareTableCellHead homeCompareTableCellRight" role="columnheader">
+                Il mio percorso
+              </div>
+            </div>
+
+            <div className="homeCompareTableRow" role="row">
+              <div className="homeCompareTableCell" role="cell">
+                Ti aiutano a “stare meglio” per un po’, ma poi non cambia molto
+              </div>
+              <div className="homeCompareTableCell homeCompareTableCellRight" role="cell">
+                Ti allena a stare nel momento e cambiare le risposte automatiche tipiche di chi soffre d'ansia o attacchi di panico
+              </div>
+            </div>
+
+            <div className="homeCompareTableRow" role="row">
+              <div className="homeCompareTableCell" role="cell">
+                Ti danno appoggi (rituali, controlli, piani B)
+              </div>
+              <div className="homeCompareTableCell homeCompareTableCellRight" role="cell">
+                Rendi inutile l'utilizzo di scappatoie, perché starai davvero bene dentro
+              </div>
+            </div>
+
+            <div className="homeCompareTableRow" role="row">
+              <div className="homeCompareTableCell" role="cell">
+                Funzionano soprattutto in condizioni protette
+              </div>
+              <div className="homeCompareTableCell homeCompareTableCellRight" role="cell">
+                Funziona nella vita vera: riunioni, persone, luoghi “difficili”, ecc.
+              </div>
+            </div>
+
+            <div className="homeCompareTableRow" role="row">
+              <div className="homeCompareTableCell" role="cell">
+                Ti fanno solo diventare bravo a capire
+              </div>
+              <div className="homeCompareTableCell homeCompareTableCellRight" role="cell">
+                Ti fa tornare a vivere bene per davvero
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <DualCtas />
+      </section>
+
+     
+
       <section className="section homePromise" aria-labelledby="promise-title">
         <div className="homePromiseShell">
+          <figure className="homePromisePanelMedia" aria-label="Foto di Silvia">
+            <img
+              className="homePromisePanelMediaImg"
+              src="/Immagini/foto1.png"
+              alt="Silvia Semeraro"
+              loading="lazy"
+              decoding="async"
+            />
+          </figure>
           <header className="homePromiseHead">
-            <p className="homePromiseKicker">Soluzione / promessa</p>
+            <p className="homePromiseKicker">Ecco la mia soluzione definitiva per te</p>
             <h2 id="promise-title" className="homePromiseTitle">
-              Non si tratta di “non provare più ansia”.
-              <span className="homePromiseTitleSub">Si tratta di smettere di esserne dominato.</span>
+              L'obiettivo è ritrovare la libertà di vivere in serenità, senza limiti
             </h2>
             <p className="homePromiseLead">
               Se oggi vivi controllandoti, anticipando, evitando e tenendo sempre un piano B, il punto non è “capire di più”.
@@ -536,7 +757,7 @@ export function Home() {
           <div className="homePromiseGrid" aria-label="Promessa, paure e metodo">
             <article className="homePromisePane homePromisePaneStory" aria-labelledby="promise-story-title">
               <header className="homePromisePaneHead">
-                <p className="homePromisePaneTag">Risultato promesso</p>
+                <p className="homePromisePaneTag">Risultato finale</p>
                 <h3 id="promise-story-title" className="homePromisePaneTitle">
                   Una giornata “normale” senza doverti monitorare
                 </h3>
@@ -571,7 +792,7 @@ export function Home() {
 
             <aside className="homePromisePane homePromisePaneFears" aria-labelledby="promise-fears-title">
               <header className="homePromisePaneHead">
-                <p className="homePromisePaneTag homePromisePaneTagAlt">Gestione delle paure</p>
+                <p className="homePromisePaneTag homePromisePaneTagAlt">Hai qualche pensiero?</p>
                 <h3 id="promise-fears-title" className="homePromisePaneTitle">
                   “E se non funzionasse anche per me?”
                 </h3>
@@ -579,34 +800,28 @@ export function Home() {
 
               <div className="homePromisePaneBody">
                 <p>
-                  È molto probabile che, mentre stai leggendo, una parte di te stia pensando: <strong>“E se non funzionasse anche per me?”</strong>
+                  Mentre leggi, è probabile che una parte di te pensi: <strong>“E se non funzionasse anche per me?”</strong>
                 </p>
                 <p>
-                  Magari hai già provato altre strade, hai cercato soluzioni, hai investito tempo, energie e forse anche soldi… e non
-                  hai ottenuto il cambiamento che speravi. È normale che oggi tu abbia dei dubbi.
+                  Magari hai già provato altre strade, investito tempo, energie e magari soldi, senza il cambiamento che speravi. Avere dubbi è normale.
                 </p>
                 <p>
-                  Così come è normale avere paura di iniziare. Paura che possa essere l’ennesimo tentativo andato a vuoto, paura di
-                  non farcela, o addirittura paura di stare peggio entrando davvero nel problema invece di evitarlo.
+                  Come è normale avere paura di iniziare: che sia l’ennesimo tentativo andato a vuoto, di non farcela, o di stare peggio affrontando il problema invece di evitarlo.
                 </p>
                 <p>
-                  Qui non ti viene chiesto di fidarti ciecamente o di “crederci” senza senso. Non devi essere già pronto, forte o
-                  sicuro di te. Devi semplicemente essere disposto a guardare quello che stai vivendo in modo diverso da come hai
-                  fatto finora.
+                  Qui non ti si chiede di fidarti ciecamente. Non devi essere già pronto o sicuro di te: basta essere disposto a guardare quello che vivi in modo diverso da prima.
                 </p>
                 <p>
-                  Il percorso è strutturato per accompagnarti passo dopo passo, anche nei momenti in cui la tua mente ti dirà di
-                  mollare o di tornare indietro. <strong>Non sarai lasciato solo</strong> a gestire tutto questo — ed è proprio questa la differenza
-                  che permette di arrivare a un cambiamento reale.
+                  Il percorso ti accompagna passo dopo passo, anche quando la mente ti dirà di mollare. <strong>Non sarai lasciato solo</strong> — e questo fa la differenza per un cambiamento reale.
                 </p>
               </div>
             </aside>
 
             <article className="homePromisePane homePromisePaneMethod" aria-labelledby="promise-method-title">
               <header className="homePromisePaneHead">
-                <p className="homePromisePaneTag homePromisePaneTagMethod">Metodo (visivo)</p>
+                <p className="homePromisePaneTag homePromisePaneTagMethod">La Roadmap</p>
                 <h3 id="promise-method-title" className="homePromisePaneTitle">
-                  Il loop ansia-panico cambia solo se lavori su 3 livelli insieme
+                  Il loop ansia-panico cambia solo se lavoriamo su 3 livelli insieme
                 </h3>
               </header>
 
@@ -659,196 +874,13 @@ export function Home() {
           </div>
         </div>
 
+        <p className="homePromiseQuestion">
+          Quanto sarebbe bello tornare a vivere senza tutto questo?
+        </p>
         <DualCtas />
       </section>
 
-      <section className="section homeCompare" aria-labelledby="compare-title">
-        <div className="homeComparePanel" aria-label="Noi vs loro (senza sconti)">
-          <figure className="homeComparePanelMedia" aria-label="Foto di Silvia">
-            <img
-              className="homeComparePanelMediaImg"
-              src="/Immagini/foto3.png"
-              alt="Silvia Semeraro"
-              loading="lazy"
-              decoding="async"
-            />
-          </figure>
-
-          <header className="homeCompareHead">
-            <p className="homeCompareKicker">Noi vs loro (senza sconti)</p>
-            <h2 id="compare-title" className="homeCompareTitle">
-              Il mio percorso vs le soluzioni che hai già provato
-            </h2>
-            <p className="homeCompareLead">
-              Se sei qui, probabilmente non stai cercando <strong>un’altra soluzione</strong>. Stai cercando quella che
-              ti fa smettere di vivere in funzione di quello che senti nel corpo — perché quello che ansia e panico ti
-              rubano, ogni giorno, è <strong>libertà</strong>.
-            </p>
-          </header>
-
-          <div className="homeCompareTop">
-            <aside className="homeCompareAside" aria-label="Sintesi del confronto">
-              <div className="homeCompareAsideCard">
-                <p className="homeCompareAsideTag">Il punto non è “gestire”</p>
-                <p className="homeCompareAsideText">
-                  Molte soluzioni diffuse sono costruite per aiutarti a <strong>gestire</strong>… non a uscire davvero.
-                </p>
-                <div className="homeCompareAsideDivider" role="separator" />
-                <ul className="homeComparePills" aria-label="Cosa cambia nel mio percorso">
-                  <li className="homeComparePill">
-                    <span className="homeComparePillK">Focus</span>
-                    <span className="homeComparePillV">momento reale di attivazione</span>
-                  </li>
-                  <li className="homeComparePill">
-                    <span className="homeComparePillK">Obiettivo</span>
-                    <span className="homeComparePillV">autonomia, non appoggi</span>
-                  </li>
-                  <li className="homeComparePill">
-                    <span className="homeComparePillK">Risultato</span>
-                    <span className="homeComparePillV">vita che si riallarga</span>
-                  </li>
-                </ul>
-
-                <DualCtas className="homeCompareAsideCtas" />
-              </div>
-            </aside>
-
-            <div className="homeCompareRailWrap" aria-label="Confronto orizzontale">
-              <div className="homeCompareRailControls" aria-label="Controlli scorrimento">
-                <button className="homeCompareRailBtn" type="button" onClick={() => stepRail(-1)} aria-label="Precedente">
-                  ‹
-                </button>
-                <div className="homeCompareRailTabs" role="tablist" aria-label="Categorie">
-                  {COMPARE_ITEMS.map((item) => (
-                    <button
-                      key={item.id}
-                      role="tab"
-                      aria-selected={item.id === activeId}
-                      className={`homeCompareTab ${item.id === activeId ? 'homeCompareTabActive' : ''}`}
-                      type="button"
-                      onClick={() => scrollToItem(item.id)}
-                    >
-                      {item.label}
-                    </button>
-                  ))}
-                </div>
-                <button className="homeCompareRailBtn" type="button" onClick={() => stepRail(1)} aria-label="Successivo">
-                  ›
-                </button>
-              </div>
-
-              <div className="homeCompareRail" ref={railRef}>
-                {COMPARE_ITEMS.map((item) => (
-                  <article
-                    key={item.id}
-                    className={`homeCompareCard ${item.id === activeId ? 'homeCompareCardActive' : ''}`}
-                    data-compare-card={item.id}
-                    tabIndex={-1}
-                    aria-label={item.title}
-                  >
-                    <header className="homeCompareCardHead">
-                      <p className="homeCompareCardTag">Soluzione comune</p>
-                      <h3 className="homeCompareCardTitle">{item.title}</h3>
-                    </header>
-
-                    <div className="homeCompareCardBody">
-                      <div className="homeCompareRow">
-                        <p className="homeCompareRowK">Cosa ti promette</p>
-                        <p className="homeCompareRowV">{item.promise}</p>
-                      </div>
-                      <div className="homeCompareRow homeCompareRowWarn">
-                        <p className="homeCompareRowK">Dove si rompe</p>
-                        <p className="homeCompareRowV">{item.limit}</p>
-                      </div>
-                      <div className="homeCompareRow homeCompareRowShift">
-                        <p className="homeCompareRowK">Nel mio percorso</p>
-                        <p className="homeCompareRowV">{item.shift}</p>
-                      </div>
-                    </div>
-                  </article>
-                ))}
-              </div>
-
-              <p className="homeCompareHint" aria-label="Suggerimento">
-                Scorri orizzontalmente o usa le categorie: l’idea è semplice — smettere di <strong>monitorare</strong> e
-                ricominciare a <strong>vivere</strong>.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <div className="homeCompareGrid" aria-label="Tabella comparativa">
-          <div className="homeCompareGridHead">
-            <div className="homeCompareGridHeadInner">
-              <div className="homeCompareGridHeadCopy">
-                <h3 className="homeCompareGridTitle">In sintesi: gestione vs libertà</h3>
-                <p className="homeCompareGridLead">
-                  Non diventi “senza ansia”. Diventi <strong>libero anche quando il corpo si attiva</strong>.
-                </p>
-              </div>
-
-              <figure className="homeCompareGridMedia" aria-label="Immagine riepilogo">
-                <img
-                  className="homeCompareGridMediaImg"
-                  src="/Immagini/foto4.png"
-                  alt="Silvia Semeraro"
-                  loading="lazy"
-                  decoding="async"
-                />
-              </figure>
-            </div>
-          </div>
-
-          <div className="homeCompareTable" role="table" aria-label="Confronto">
-            <div className="homeCompareTableRow homeCompareTableRowHead" role="row">
-              <div className="homeCompareTableCell homeCompareTableCellHead" role="columnheader">
-                Soluzioni che hai già provato
-              </div>
-              <div className="homeCompareTableCell homeCompareTableCellHead homeCompareTableCellRight" role="columnheader">
-                Il mio percorso
-              </div>
-            </div>
-
-            <div className="homeCompareTableRow" role="row">
-              <div className="homeCompareTableCell" role="cell">
-                Ti aiutano a “stare meglio” per un po’
-              </div>
-              <div className="homeCompareTableCell homeCompareTableCellRight" role="cell">
-                Ti allena a stare nel momento e cambiare la risposta automatica
-              </div>
-            </div>
-
-            <div className="homeCompareTableRow" role="row">
-              <div className="homeCompareTableCell" role="cell">
-                Ti danno appoggi (rituali, controlli, piani B)
-              </div>
-              <div className="homeCompareTableCell homeCompareTableCellRight" role="cell">
-                Togli, una alla volta, le “sicurezze” che oggi ti tengono fermo
-              </div>
-            </div>
-
-            <div className="homeCompareTableRow" role="row">
-              <div className="homeCompareTableCell" role="cell">
-                Funzionano soprattutto in condizioni protette
-              </div>
-              <div className="homeCompareTableCell homeCompareTableCellRight" role="cell">
-                Funziona nella vita vera: macchina, riunioni, persone, luoghi “difficili”
-              </div>
-            </div>
-
-            <div className="homeCompareTableRow" role="row">
-              <div className="homeCompareTableCell" role="cell">
-                Ti fanno diventare bravo a capire
-              </div>
-              <div className="homeCompareTableCell homeCompareTableCellRight" role="cell">
-                Ti fa tornare bravo a vivere
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <DualCtas />
-      </section>
+     
 
       <section className="section homeFaq" aria-labelledby="faq-title">
         <header className="homeFaqHead">

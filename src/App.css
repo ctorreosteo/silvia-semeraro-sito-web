@@ -328,17 +328,8 @@
 
 .homeFitHead {
   position: relative;
-  margin: 0 0 16px;
-  padding: 18px 18px 16px;
-  border-radius: 18px;
-  border: 1px solid color-mix(in oklab, var(--border) 65%, transparent);
-  background:
-    radial-gradient(1200px 260px at 20% 0%, color-mix(in oklab, var(--surface) 70%, transparent), transparent 55%),
-    radial-gradient(900px 260px at 85% 30%, color-mix(in oklab, var(--bg) 70%, white), transparent 60%),
-    linear-gradient(180deg, color-mix(in oklab, var(--surface) 90%, transparent), transparent);
-  box-shadow:
-    0 1px 0 color-mix(in oklab, #000 6%, transparent),
-    0 26px 70px color-mix(in oklab, #000 10%, transparent);
+  margin: 0 0 24px;
+  padding: 0;
 }
 
 .homeFitKicker {
@@ -656,9 +647,9 @@
   align-items: center;
   padding: 8px 10px;
   border-radius: 999px;
-  border: 1px solid color-mix(in oklab, #1f9d62 55%, var(--border));
-  background: color-mix(in oklab, #1f9d62 12%, var(--surface));
-  color: color-mix(in oklab, #1f9d62 85%, var(--text-h));
+  border: 1px solid color-mix(in oklab, #d9730d 55%, var(--border));
+  background: color-mix(in oklab, #d9730d 12%, var(--surface));
+  color: color-mix(in oklab, #d9730d 85%, var(--text-h));
   font-size: 12px;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -780,9 +771,9 @@
   align-items: center;
   padding: 7px 10px;
   border-radius: 999px;
-  border: 1px solid color-mix(in oklab, #1f9d62 45%, var(--border));
-  background: color-mix(in oklab, #1f9d62 10%, var(--surface));
-  color: color-mix(in oklab, #1f9d62 85%, var(--text-h));
+  border: 1px solid color-mix(in oklab, #d9730d 45%, var(--border));
+  background: color-mix(in oklab, #d9730d 10%, var(--surface));
+  color: color-mix(in oklab, #d9730d 85%, var(--text-h));
   font-size: 12px;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -855,6 +846,22 @@
   pointer-events: none;
 }
 
+.homePromisePanelMedia {
+  margin: 0;
+  position: relative;
+}
+
+.homePromisePanelMediaImg {
+  width: 100%;
+  height: auto;
+  display: block;
+  max-height: 320px;
+  object-fit: cover;
+  object-position: center top;
+  border-bottom: 1px solid color-mix(in oklab, #ffffff 12%, transparent);
+  background: var(--surface);
+}
+
 .homePromiseHead {
   position: relative;
   padding: 22px 22px 18px;
@@ -893,6 +900,18 @@
   max-width: 98ch;
   color: color-mix(in oklab, #fff 78%, transparent);
   line-height: 1.45;
+}
+
+.homePromiseQuestion {
+  position: relative;
+  margin: 0 0 20px;
+  padding: 0 22px;
+  text-align: center;
+  font-size: clamp(18px, 2vw, 22px);
+  font-weight: 700;
+  line-height: 1.35;
+  color: color-mix(in oklab, #fff 92%, transparent);
+  text-wrap: balance;
 }
 
 .homePromiseGrid {
@@ -1387,8 +1406,9 @@
   align-items: center;
   padding: 8px 10px;
   border-radius: 999px;
-  border: 1px solid color-mix(in oklab, var(--border) 75%, transparent);
-  background: color-mix(in oklab, var(--surface) 92%, transparent);
+  border: 1px solid color-mix(in oklab, #d63c3c 55%, var(--border));
+  background: color-mix(in oklab, #d63c3c 12%, var(--surface));
+  color: color-mix(in oklab, #d63c3c 85%, var(--text-h));
   font-size: 12px;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -2205,8 +2225,7 @@
   }
 
   .homeFitHead {
-    padding: 16px 14px 14px;
-    border-radius: 16px;
+    padding: 0;
   }
 
   .homeFitGrid {
@@ -2289,8 +2308,17 @@
     border-radius: 18px;
   }
 
+  .homePromisePanelMediaImg {
+    max-height: 260px;
+  }
+
   .homePromiseHead {
     padding: 18px 14px 16px;
+  }
+
+  .homePromiseQuestion {
+    padding: 0 14px;
+    margin-bottom: 16px;
   }
 
   .homePromiseGrid {
