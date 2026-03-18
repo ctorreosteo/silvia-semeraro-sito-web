@@ -92,10 +92,21 @@ export function Percorsi() {
         <section className="storyBand" id="cosa-include" aria-label="Cosa include">
           <div className="storyBandInner">
             <div className="storyBandHead">
-              <h2 className="proseHead">Cosa include (davvero)</h2>
+              <h2 className="proseHead">Cosa include</h2>
             </div>
 
             <div className="percorsoIncludeGrid" role="list" aria-label="Elementi inclusi">
+              <article className="percorsoIncludeCard percorsoIncludeCardPhoto" role="listitem" aria-label="Foto Silvia Semeraro">
+                <figure className="percorsoIncludeCardPhotoFig">
+                  <img
+                    src="/Immagini/foto18.png"
+                    alt="Silvia Semeraro"
+                    loading="lazy"
+                    decoding="async"
+                    className="percorsoIncludeCardPhotoImg"
+                  />
+                </figure>
+              </article>
               <article className="percorsoIncludeCard" role="listitem" aria-label="Sessioni 1:1 e piano">
                 <h3 className="percorsoIncludeTitle">Sessioni 1:1 + piano</h3>
                 <ul className="percorsoIncludeList">
@@ -175,6 +186,16 @@ export function Percorsi() {
               Lavoriamo in tre passaggi. Ogni fase ha un compito preciso: prima spegnere l’allarme rosso, poi riprogrammare la
               risposta e infine consolidare l’autonomia.
             </p>
+
+            <figure className="percorsoFasiMedia" aria-label="Foto Silvia Semeraro">
+              <img
+                src="/Immagini/foto20.png"
+                alt="Silvia Semeraro"
+                loading="lazy"
+                decoding="async"
+                className="percorsoFasiMediaImg"
+              />
+            </figure>
 
             <div className="percorsoPhases" role="list" aria-label="Fasi">
               <article className="percorsoPhase" role="listitem" aria-label="Decodifica">

@@ -557,15 +557,20 @@
 
 .homePainPanelMedia {
   margin: 0;
+  position: relative;
+  aspect-ratio: 16 / 10;
+  min-height: 200px;
+  overflow: hidden;
 }
 
 .homePainPanelMediaImg {
+  position: absolute;
+  inset: 0;
   width: 100%;
-  height: auto;
+  height: 100%;
   display: block;
-  max-height: 320px;
   object-fit: cover;
-  object-position: center top;
+  object-position: center center;
   border-bottom: 1px solid color-mix(in oklab, var(--border) 70%, transparent);
   background: var(--surface);
 }
@@ -857,7 +862,7 @@
   display: block;
   max-height: 320px;
   object-fit: cover;
-  object-position: center top;
+  object-position: center 38%;
   border-bottom: 1px solid color-mix(in oklab, #ffffff 12%, transparent);
   background: var(--surface);
 }
@@ -904,14 +909,21 @@
 
 .homePromiseQuestion {
   position: relative;
-  margin: 0 0 20px;
-  padding: 0 22px;
+  margin: 2.5rem auto 2.5rem;
+  padding: 0.85rem 1.5rem;
+  max-width: 36ch;
   text-align: center;
   font-size: clamp(18px, 2vw, 22px);
   font-weight: 700;
-  line-height: 1.35;
-  color: color-mix(in oklab, #fff 92%, transparent);
+  line-height: 1.4;
+  letter-spacing: 0.01em;
+  color: #f5f7ff;
   text-wrap: balance;
+  background:
+    linear-gradient(135deg, color-mix(in oklab, var(--accent) 18%, transparent), color-mix(in oklab, #8b5cf6 14%, transparent));
+  border: 1px solid color-mix(in oklab, #fff 18%, transparent);
+  border-radius: 14px;
+  box-shadow: 0 4px 24px color-mix(in oklab, #000 40%, transparent);
 }
 
 .homePromiseGrid {
@@ -1128,7 +1140,7 @@
   display: block;
   max-height: 320px;
   object-fit: cover;
-  object-position: center top;
+  object-position: center 40%;
   border-bottom: 1px solid color-mix(in oklab, var(--border) 70%, transparent);
   background: var(--surface);
 }
@@ -1504,20 +1516,27 @@
   margin: 0;
   display: grid;
   justify-items: end;
-}
-
-.homeCompareGridMediaImg {
-  width: 100%;
-  height: auto;
-  max-height: 200px;
-  object-fit: cover;
-  object-position: center top;
+  position: relative;
+  aspect-ratio: 4 / 3;
+  min-height: 180px;
+  overflow: hidden;
   border-radius: 16px;
   border: 1px solid color-mix(in oklab, var(--border) 70%, transparent);
   background: var(--surface);
   box-shadow:
     0 1px 0 color-mix(in oklab, #000 6%, transparent),
     0 18px 44px color-mix(in oklab, #000 10%, transparent);
+}
+
+.homeCompareGridMediaImg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 38%;
+  border-radius: 16px;
+  background: var(--surface);
 }
 
 .homeCompareGridTitle {
@@ -2166,7 +2185,7 @@
   background: var(--surface);
   max-height: 420px;
   object-fit: cover;
-  object-position: center top;
+  object-position: center 42%;
 }
 
 .storyEndCard {
@@ -2283,8 +2302,9 @@
     border-radius: 16px;
   }
 
-  .homePainPanelMediaImg {
-    max-height: 260px;
+  .homePainPanelMedia {
+    aspect-ratio: 16 / 10;
+    min-height: 180px;
   }
 
   .homePainBlock {
@@ -2317,8 +2337,11 @@
   }
 
   .homePromiseQuestion {
-    padding: 0 14px;
-    margin-bottom: 16px;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    padding: 0.75rem 1rem;
+    max-width: 100%;
+    border-radius: 12px;
   }
 
   .homePromiseGrid {
@@ -2380,8 +2403,13 @@
     justify-items: start;
   }
 
+  .homeCompareGridMedia {
+    aspect-ratio: 4 / 3;
+    min-height: 200px;
+    border-radius: 14px;
+  }
+
   .homeCompareGridMediaImg {
-    max-height: 220px;
     border-radius: 14px;
   }
 
@@ -3014,6 +3042,29 @@
   padding: 14px 14px 14px;
 }
 
+.percorsoIncludeCardPhoto {
+  grid-column: 1 / -1;
+  padding: 0;
+  overflow: hidden;
+}
+
+.percorsoIncludeCardPhotoFig {
+  margin: 0;
+  position: relative;
+  aspect-ratio: 16 / 10;
+  min-height: 200px;
+}
+
+.percorsoIncludeCardPhotoImg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  inset: 0;
+  object-fit: cover;
+  object-position: center center;
+}
+
 .percorsoIncludeTitle {
   margin: 0 0 10px;
   font-size: 16px;
@@ -3037,6 +3088,28 @@
   margin: 10px 0 0;
   opacity: 0.92;
   max-width: 90ch;
+}
+
+.percorsoFasiMedia {
+  margin: 18px 0 0;
+  position: relative;
+  aspect-ratio: 16 / 10;
+  min-height: 220px;
+  overflow: hidden;
+  border-radius: 18px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  box-shadow: 0 2px 18px color-mix(in oklab, #000 6%, transparent);
+}
+
+.percorsoFasiMediaImg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center center;
 }
 
 .percorsoPhases {
@@ -3121,6 +3194,11 @@
   }
 
   .percorsoIncludeCard {
+    border-radius: 16px;
+  }
+
+  .percorsoFasiMedia {
+    min-height: 180px;
     border-radius: 16px;
   }
 

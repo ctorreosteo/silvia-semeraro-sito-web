@@ -78,7 +78,7 @@ export function LaMiaStoria() {
             <figure className="storyInline">
               <img
                 className="storyInlineImg"
-                src="/Immagini/foto2.png"
+                src="/Immagini/foto13.png"
                 alt="Silvia Semeraro"
                 loading="lazy"
                 decoding="async"
@@ -241,7 +241,7 @@ export function LaMiaStoria() {
               </div>
               <figure className="storyBandMedia">
                 <img
-                  src="/Immagini/foto5.png"
+                  src="/Immagini/foto12.png"
                   alt="Silvia Semeraro"
                   loading="lazy"
                   decoding="async"
@@ -368,7 +368,7 @@ export function LaMiaStoria() {
             la prova che sei rotta: sono la prova che sei <u>sopravvissuta</u>. Il tuo sistema nervoso non è
             mai stato il tuo nemico. Ha sempre cercato di proteggerti; ha solo urlato in una{' '}
             <em>lingua che nessuno ti aveva insegnato a capire</em>. Adesso è il momento di impararla. È ora di
-            smettere di scappare. È ora di <strong>tornare a respirare</strong> ❤️
+            smettere di scappare. È ora di <strong>tornare a respirare</strong>. Non vedo l'ora di aiutare anche te ❤️
           </p>
         </blockquote>
 

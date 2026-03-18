@@ -360,7 +360,7 @@ export function Home() {
         <figure className="homeHeroVideo" aria-label="Video introduttivo">
           <div className="videoEmbed">
             <iframe
-              src="https://iframe.videodelivery.net/6ce867ac62c039c989cad30f7699d750"
+              src="https://iframe.videodelivery.net/73aa9aaeccef8bc772ac5b99d5d206dd"
               title="Video: introduzione"
               loading="lazy"
               allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
@@ -470,7 +470,7 @@ export function Home() {
           <figure className="homePainPanelMedia" aria-label="Foto di Silvia">
             <img
               className="homePainPanelMediaImg"
-              src="/Immagini/foto2.png"
+              src="/Immagini/foto17.png"
               alt="Silvia Semeraro"
               loading="lazy"
               decoding="async"
@@ -670,7 +670,7 @@ export function Home() {
               <figure className="homeCompareGridMedia" aria-label="Immagine riepilogo">
                 <img
                   className="homeCompareGridMediaImg"
-                  src="/Immagini/foto4.png"
+                  src="/Immagini/foto19.png"
                   alt="Silvia Semeraro"
                   loading="lazy"
                   decoding="async"

@@ -1,5 +1,6 @@
-import { useMemo, useState } from 'react'
-import { NavLink, Outlet } from 'react-router-dom'
+import { useEffect, useMemo, useState } from 'react'
+import { NavLink, Outlet, useLocation } from 'react-router-dom'
+import { SeoManager } from './seo/SeoManager'
 
 function getNavClassName({ isActive }: { isActive: boolean }) {
   return isActive ? 'navLink navLinkActive' : 'navLink'
@@ -10,7 +11,19 @@ function getFooterNavClassName({ isActive }: { isActive: boolean }) {
 }
 
 export function Layout() {
+  const location = useLocation()
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+
+  useEffect(() => {
+    // When navigating to a new route, ensure the page starts from the top.
+    // Skip hash-based navigation so anchor links can work as expected.
+    if (typeof window === 'undefined') return
+    if (location.hash) return
+
+    window.requestAnimationFrame(() => {
+      window.scrollTo({ top: 0, left: 0, behavior: 'auto' })
+    })
+  }, [location.pathname, location.search, location.hash])
 
   const navItems = useMemo(
     () => [
@@ -18,6 +31,7 @@ export function Layout() {
       { to: '/percorsi', label: 'Percorso e Academia Online' },
       { to: '/la-mia-storia', label: 'La mia storia' },
       { to: '/la-mia-formazione', label: 'I miei studi' },
+      { to: '/eventi', label: 'Eventi' },
       { to: '/testimonianze', label: 'Testimonianze' },
       { to: '/contatti-e-dove-lavoro', label: 'Contatti e dove lavoro' },
     ],
@@ -26,6 +40,7 @@ export function Layout() {
 
   return (
     <div className="page">
+      <SeoManager />
       <header className="header">
         <NavLink className="brand" to="/" aria-label="Homepage">
           <img
