@@ -22,13 +22,15 @@ export function Percorsi() {
         </p>
 
         <figure className="storyHero" aria-label="Foto di Silvia">
-          <img
-            className="storyHeroImg"
-            src="/Immagini/foto11.png"
-            alt="Silvia Semeraro"
-            loading="eager"
-            decoding="async"
-          />
+          <div className="videoEmbed">
+            <iframe
+              src="https://iframe.videodelivery.net/24e61650d9a202961a40a09d38db32bc"
+              title="Video: introduzione percorso"
+              loading="eager"
+              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            />
+          </div>
         </figure>
 
         <nav className="storyNav" aria-label="Indice contenuti">
@@ -245,6 +247,16 @@ export function Percorsi() {
             <p>
               Qui sotto vedi la struttura completa. Ogni seduta chiude con un’azione concreta: non lasciamo “tutto in testa”.
             </p>
+
+            <figure className="storyInline" aria-label="Foto di Silvia">
+              <img
+                className="storyInlineImg"
+                src="/Immagini/foto11.png"
+                alt="Silvia Semeraro"
+                loading="lazy"
+                decoding="async"
+              />
+            </figure>
 
             <div className="percorsoSessions" aria-label="Sedute">
               <details className="homeFaqItem" open>
