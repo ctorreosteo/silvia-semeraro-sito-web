@@ -273,12 +273,19 @@
   margin-bottom: 18px;
 }
 
+.pageHeader h1 {
+  font-size: clamp(44px, 9vw, 80px);
+  font-weight: 900;
+}
+
 .prose {
   max-width: 78ch;
 }
 
 .prose h2 {
   margin-top: 22px;
+  font-size: clamp(26px, 3.5vw, 36px);
+  font-weight: 800;
 }
 
 .prose p {
@@ -322,6 +329,233 @@
   border-radius: 18px;
   border: 1px solid var(--border);
   background: var(--surface);
+}
+
+/* Card con immagine sovrapposta (stile sobrio, non pacchiano) */
+.storyCard {
+  max-width: 78ch;
+  margin: 2.5rem 0;
+  background: var(--surface);
+  border-radius: 14px;
+  border: 1px solid var(--border);
+  box-shadow: 0 2px 18px color-mix(in oklab, #000 6%, transparent);
+  overflow: visible;
+}
+
+.storyCardImage {
+  margin: 0;
+  border-radius: 14px 14px 0 0;
+  overflow: hidden;
+  margin-bottom: -18px;
+  position: relative;
+  z-index: 1;
+}
+
+.storyCardImage img {
+  width: 100%;
+  height: auto;
+  display: block;
+  max-height: 300px;
+  object-fit: cover;
+  object-position: center top;
+  border-radius: 14px 14px 0 0;
+  border: 1px solid var(--border);
+  border-bottom: none;
+  background: var(--surface);
+}
+
+.storyCardBody {
+  padding: 28px 22px 32px;
+  position: relative;
+  z-index: 0;
+}
+
+.storyCardBody .proseHead {
+  margin-top: 0;
+}
+
+.storyCardBody .proseHead + p,
+.storyCardBody p {
+  margin-top: 12px;
+}
+
+/* Card solo testo (es. sezione Oggi) */
+.storyCardTextOnly .storyCardBody {
+  border-radius: 14px;
+}
+
+/* Hero come prima card: immagine che sovrasta la card */
+.storyHeroCard {
+  max-width: 78ch;
+  margin: 1.5rem 0 2rem;
+  background: var(--surface);
+  border-radius: 14px;
+  border: 1px solid var(--border);
+  box-shadow: 0 2px 18px color-mix(in oklab, #000 6%, transparent);
+  overflow: visible;
+}
+
+.storyHeroCardImage {
+  margin: 0;
+  border-radius: 14px 14px 0 0;
+  overflow: hidden;
+  margin-bottom: -18px;
+  position: relative;
+  z-index: 1;
+}
+
+.storyHeroCardImage img {
+  width: 100%;
+  height: auto;
+  display: block;
+  max-height: 380px;
+  object-fit: cover;
+  object-position: center top;
+  border-radius: 14px 14px 0 0;
+  border: 1px solid var(--border);
+  border-bottom: none;
+  background: var(--surface);
+}
+
+.storyHeroCardBody {
+  padding: 20px 22px 24px;
+  position: relative;
+  z-index: 0;
+}
+
+.storyProse {
+  max-width: 78ch;
+}
+
+.storyKicker {
+  margin: 0 0 10px;
+  font-size: 13px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  opacity: 0.88;
+  font-weight: 800;
+}
+
+.storyChapter {
+  display: grid;
+  grid-template-columns: 0.9fr 1.2fr;
+  gap: 18px;
+  align-items: start;
+  margin: 28px 0;
+  padding: 16px 0;
+  border-top: 1px solid color-mix(in oklab, var(--border) 70%, transparent);
+}
+
+.storyChapter:first-child {
+  border-top: 0;
+  padding-top: 0;
+}
+
+.storyChapterNoMedia {
+  grid-template-columns: 1fr;
+}
+
+.storyChapterAlt {
+  grid-template-columns: 1.2fr 0.9fr;
+}
+
+.storyChapterAlt .storyChapterMedia {
+  order: 2;
+}
+
+.storyChapterMedia {
+  margin: 0;
+  position: sticky;
+  top: 92px;
+  align-self: start;
+}
+
+.storyChapterMedia img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 18px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  max-height: 460px;
+  object-fit: cover;
+  object-position: center top;
+  box-shadow: 0 2px 18px color-mix(in oklab, #000 6%, transparent);
+}
+
+.storyChapterContent {
+  min-width: 0;
+}
+
+.storyPullQuote {
+  margin: 22px 0;
+  padding: 18px 18px;
+  border-left: 3px solid var(--text);
+  background: color-mix(in oklab, var(--surface) 92%, transparent);
+  border-radius: 14px;
+}
+
+.storyPullQuote p {
+  margin: 0;
+  font-size: 1.04em;
+}
+
+.storyBand {
+  margin: 32px 0;
+  border-radius: 18px;
+  border: 1px solid var(--border);
+  background: linear-gradient(
+      180deg,
+      color-mix(in oklab, var(--surface) 95%, transparent),
+      color-mix(in oklab, var(--bg) 65%, var(--surface))
+    );
+  box-shadow:
+    0 1px 0 color-mix(in oklab, #000 6%, transparent),
+    0 26px 60px color-mix(in oklab, #000 10%, transparent);
+  overflow: hidden;
+}
+
+.storyBandInner {
+  padding: 18px 18px;
+}
+
+.storyBandHead .proseHead {
+  margin-top: 0;
+}
+
+.storyBandGrid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.9fr;
+  gap: 18px;
+  align-items: start;
+}
+
+.storyBandMedia {
+  margin: 0;
+}
+
+.storyBandMedia img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 16px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  max-height: 420px;
+  object-fit: cover;
+  object-position: center top;
+}
+
+.storyEndCard {
+  margin: 30px 0 18px;
+  border-radius: 18px;
+  border: 1px solid var(--border);
+  background: color-mix(in oklab, var(--surface) 96%, transparent);
+  box-shadow: 0 2px 18px color-mix(in oklab, #000 6%, transparent);
+}
+
+.storyEndCardInner {
+  padding: 20px 18px 22px;
 }
 
 .button {
@@ -377,6 +611,64 @@
   .storyHeroImg,
   .storyInlineImg {
     border-radius: 16px;
+  }
+
+  .storyCard,
+  .storyHeroCard {
+    margin-left: 0;
+    margin-right: 0;
+    border-radius: 12px;
+  }
+
+  .storyCardImage,
+  .storyHeroCardImage {
+    margin-bottom: -14px;
+    border-radius: 12px 12px 0 0;
+  }
+
+  .storyCardImage img,
+  .storyHeroCardImage img {
+    border-radius: 12px 12px 0 0;
+    max-height: 260px;
+  }
+
+  .storyHeroCardImage img {
+    max-height: 280px;
+  }
+
+  .storyCardBody,
+  .storyHeroCardBody {
+    padding: 22px 16px 26px;
+  }
+
+  .storyChapter,
+  .storyBandGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .storyChapterAlt .storyChapterMedia {
+    order: 0;
+  }
+
+  .storyChapterMedia {
+    position: static;
+  }
+
+  .storyChapterMedia img {
+    max-height: 320px;
+    border-radius: 16px;
+  }
+
+  .storyBandInner {
+    padding: 16px 14px;
+  }
+
+  .storyBandMedia img {
+    max-height: 300px;
+  }
+
+  .storyPullQuote {
+    padding: 14px 14px;
   }
 }
 
