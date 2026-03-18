@@ -12,6 +12,7 @@ export function Layout() {
     () => [
       { to: '/', label: 'Home' },
       { to: '/la-mia-storia', label: 'La mia storia' },
+      { to: '/la-mia-formazione', label: 'Formazione' },
       { to: '/testimonianze', label: 'Testimonianze' },
       { to: '/percorsi', label: 'Percorsi' },
       { to: '/contatti-e-dove-lavoro', label: 'Contatti e dove lavoro' },

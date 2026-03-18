@@ -771,3 +771,314 @@
     padding: 16px 14px;
   }
 }
+
+/* ==========================
+   La mia formazione (UI)
+   ========================== */
+
+.eduPage {
+  position: relative;
+}
+
+.eduHeader {
+  position: relative;
+}
+
+.eduHeader::before {
+  content: '';
+  position: absolute;
+  inset: -18px -18px auto -18px;
+  height: 420px;
+  min-height: 420px;
+  border-radius: 22px;
+  background:
+    radial-gradient(1200px 260px at 20% 0%, color-mix(in oklab, var(--surface) 70%, transparent), transparent 55%),
+    radial-gradient(900px 260px at 80% 30%, color-mix(in oklab, var(--bg) 70%, white), transparent 60%),
+    linear-gradient(
+      180deg,
+      color-mix(in oklab, var(--surface) 85%, transparent),
+      transparent
+    );
+  border: 1px solid color-mix(in oklab, var(--border) 55%, transparent);
+  box-shadow:
+    0 1px 0 color-mix(in oklab, #000 6%, transparent),
+    0 28px 70px color-mix(in oklab, #000 10%, transparent);
+  pointer-events: none;
+  z-index: -1;
+}
+
+.eduNav {
+  margin-top: 18px;
+}
+
+.eduHeroImg {
+  margin-top: 20px;
+  margin-bottom: 0;
+}
+
+.eduLayout {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 22px;
+  align-items: start;
+  margin-top: 18px;
+}
+
+.eduAside {
+  position: sticky;
+  top: 92px;
+  align-self: start;
+}
+
+.eduAsideCard {
+  border-radius: 18px;
+  border: 1px solid var(--border);
+  background: linear-gradient(
+      180deg,
+      color-mix(in oklab, var(--surface) 95%, transparent),
+      color-mix(in oklab, var(--bg) 55%, var(--surface))
+    );
+  box-shadow:
+    0 1px 0 color-mix(in oklab, #000 6%, transparent),
+    0 26px 60px color-mix(in oklab, #000 10%, transparent);
+  padding: 18px 16px;
+}
+
+.eduAsideTitle {
+  font-size: 22px;
+  font-weight: 900;
+  letter-spacing: -0.01em;
+  line-height: 1.1;
+  margin: 0 0 10px;
+}
+
+.eduAsideText {
+  margin-top: 10px;
+  opacity: 0.92;
+}
+
+.eduAsideDivider {
+  height: 1px;
+  margin: 14px 0;
+  background: color-mix(in oklab, var(--border) 70%, transparent);
+}
+
+.eduPills {
+  list-style: none;
+  padding: 0;
+  margin: 14px 0 0;
+  display: grid;
+  gap: 10px;
+}
+
+.eduPill {
+  display: grid;
+  gap: 2px;
+  padding: 12px 12px;
+  border-radius: 16px;
+  border: 1px solid color-mix(in oklab, var(--border) 75%, transparent);
+  background: color-mix(in oklab, var(--surface) 92%, transparent);
+  box-shadow: 0 1px 0 color-mix(in oklab, #000 5%, transparent);
+}
+
+.eduPillK {
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  opacity: 0.85;
+  font-weight: 800;
+}
+
+.eduPillV {
+  font-weight: 800;
+  letter-spacing: -0.01em;
+}
+
+.eduProse {
+  max-width: 100%;
+}
+
+.eduBlock {
+  position: relative;
+  padding: 18px 0 8px;
+  margin: 18px 0 0;
+  border-top: 1px solid color-mix(in oklab, var(--border) 70%, transparent);
+}
+
+.eduBlock:first-of-type {
+  border-top: 0;
+  padding-top: 0;
+  margin-top: 0;
+}
+
+.eduBlockHead {
+  display: grid;
+  grid-template-columns: 56px 1fr;
+  gap: 12px;
+  align-items: start;
+  margin-bottom: 12px;
+}
+
+.eduIndex {
+  width: 56px;
+  height: 56px;
+  display: grid;
+  place-items: center;
+  border-radius: 18px;
+  border: 1px solid var(--border);
+  background: color-mix(in oklab, var(--surface) 92%, transparent);
+  box-shadow:
+    0 1px 0 color-mix(in oklab, #000 6%, transparent),
+    0 18px 44px color-mix(in oklab, #000 10%, transparent);
+  font-weight: 900;
+  letter-spacing: 0.06em;
+}
+
+.eduProse .eduH2,
+.eduBlock .proseHead.eduH2 {
+  margin-top: 0;
+}
+
+.eduSubtitle {
+  margin-top: 4px;
+  opacity: 0.9;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.eduCard {
+  border-radius: 18px;
+  border: 1px solid var(--border);
+  background: color-mix(in oklab, var(--surface) 96%, transparent);
+  box-shadow:
+    0 1px 0 color-mix(in oklab, #000 6%, transparent),
+    0 26px 70px color-mix(in oklab, #000 10%, transparent);
+  overflow: hidden;
+}
+
+.eduCardGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+}
+
+.eduCardCol {
+  padding: 16px 16px;
+  border-bottom: 1px solid color-mix(in oklab, var(--border) 65%, transparent);
+}
+
+.eduCardCol:nth-child(1) {
+  border-right: 1px solid color-mix(in oklab, var(--border) 65%, transparent);
+}
+
+.eduCardColWide {
+  grid-column: 1 / -1;
+  background: linear-gradient(
+    180deg,
+    color-mix(in oklab, var(--surface) 95%, transparent),
+    color-mix(in oklab, var(--bg) 55%, var(--surface))
+  );
+}
+
+.eduH3 {
+  margin: 0 0 8px;
+  font-size: 16px;
+  font-weight: 900;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  opacity: 0.92;
+}
+
+.eduTechnique {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 12px;
+  padding: 16px 16px 18px;
+  background: linear-gradient(
+    180deg,
+    color-mix(in oklab, var(--bg) 55%, var(--surface)),
+    color-mix(in oklab, var(--surface) 96%, transparent)
+  );
+}
+
+.eduTechniqueBadge {
+  align-self: start;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 10px;
+  border-radius: 999px;
+  border: 1px solid color-mix(in oklab, var(--border) 75%, transparent);
+  background: color-mix(in oklab, var(--surface) 92%, transparent);
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: 900;
+}
+
+.eduTechniqueTitle {
+  font-weight: 900;
+  letter-spacing: -0.01em;
+}
+
+.eduTechniqueText {
+  margin-top: 8px;
+  opacity: 0.94;
+}
+
+.eduClosing {
+  margin-top: 26px;
+  padding-top: 22px;
+  border-top: 1px solid color-mix(in oklab, var(--border) 70%, transparent);
+}
+
+.eduClosingCard {
+  border-radius: 18px;
+  border: 1px solid var(--border);
+  background: linear-gradient(
+      180deg,
+      color-mix(in oklab, var(--surface) 96%, transparent),
+      color-mix(in oklab, var(--bg) 60%, var(--surface))
+    );
+  box-shadow:
+    0 1px 0 color-mix(in oklab, #000 6%, transparent),
+    0 28px 70px color-mix(in oklab, #000 10%, transparent);
+  padding: 18px 16px 20px;
+}
+
+@media (max-width: 980px) {
+  .eduLayout {
+    grid-template-columns: 1fr;
+  }
+
+  .eduAside {
+    position: static;
+  }
+}
+
+@media (max-width: 820px) {
+  .eduHeader::before {
+    inset: -14px -14px auto -14px;
+    height: 380px;
+    min-height: 380px;
+    border-radius: 18px;
+  }
+
+  .eduBlockHead {
+    grid-template-columns: 50px 1fr;
+  }
+
+  .eduIndex {
+    width: 50px;
+    height: 50px;
+    border-radius: 16px;
+  }
+
+  .eduCardGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .eduCardCol:nth-child(1) {
+    border-right: none;
+  }
+}

@@ -3,6 +3,7 @@ import './App.css'
 import { Layout } from './Layout'
 import { ContattiEDoveLavoro } from './pages/ContattiEDoveLavoro'
 import { Home } from './pages/Home'
+import { LaMiaFormazione } from './pages/LaMiaFormazione'
 import { LaMiaStoria } from './pages/LaMiaStoria'
 import { NotFound } from './pages/NotFound'
 import { Percorsi } from './pages/Percorsi'
@@ -15,6 +16,7 @@ export default function App() {
       <Route element={<Layout />}>
         <Route index element={<Home />} />
         <Route path="/la-mia-storia" element={<LaMiaStoria />} />
+        <Route path="/la-mia-formazione" element={<LaMiaFormazione />} />
         <Route path="/testimonianze" element={<Testimonianze />} />
         <Route path="/percorsi" element={<Percorsi />} />
         <Route path="/contatti-e-dove-lavoro" element={<ContattiEDoveLavoro />} />
