@@ -31,7 +31,7 @@ export function OffertaSection() {
         </p>
 
         <aside className="sessioneStrategicaPainInlineCta" aria-label="Invito alla candidatura">
-          <a className="sessioneStrategicaPainInlineCtaBtn" href="#offerta-divider">
+          <a className="sessioneStrategicaPainInlineCtaBtn" href="#offerta-divider" data-open-sessione-popup="true">
             Candidati alla Sessione Strategica Scontata
           </a>
         </aside>

@@ -1295,6 +1295,220 @@
   margin-top: 12px;
 }
 
+.sessioneStrategicaModalBodyLock {
+  overflow: hidden;
+}
+
+.sessioneStrategicaModal {
+  position: fixed;
+  inset: 0;
+  z-index: 1200;
+  width: 100vw;
+  height: 100dvh;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.sessioneStrategicaModalBackdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(24, 13, 20, 0.32);
+  -webkit-backdrop-filter: blur(14px) saturate(0.86);
+  backdrop-filter: blur(14px) saturate(0.86);
+}
+
+.sessioneStrategicaModalPanel {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: min(calc(100vw - 40px), 680px);
+  max-height: min(92vh, 900px);
+  overflow: auto;
+  z-index: 1;
+  padding: 20px 20px 18px;
+  border-radius: 22px;
+  border: 1px solid color-mix(in oklab, #f2cedb 68%, transparent);
+  background:
+    radial-gradient(circle at 10% 0%, color-mix(in oklab, #ffd6e7 54%, transparent) 0 20%, transparent 52%),
+    radial-gradient(circle at 100% 16%, color-mix(in oklab, #e8ddff 52%, transparent) 0 18%, transparent 54%),
+    linear-gradient(160deg, #fff 0%, #fff8fb 46%, #f9f2ff 100%);
+  box-shadow:
+    0 28px 70px color-mix(in oklab, #280f1c 40%, transparent),
+    inset 0 1px 0 color-mix(in oklab, #fff 86%, transparent);
+}
+
+.sessioneStrategicaModalClose {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  width: 42px;
+  height: 42px;
+  border-radius: 999px;
+  border: 1px solid color-mix(in oklab, #cf3e72 44%, transparent);
+  background: color-mix(in oklab, #fff4f9 78%, #fff);
+  color: #912950;
+  font-size: 28px;
+  line-height: 1;
+  cursor: pointer;
+  transition:
+    transform 0.22s ease,
+    background 0.22s ease,
+    box-shadow 0.22s ease;
+}
+
+.sessioneStrategicaModalClose:hover {
+  transform: translateY(-1px);
+  background: color-mix(in oklab, #ffe5ef 82%, #fff);
+  box-shadow: 0 10px 22px color-mix(in oklab, #b53361 18%, transparent);
+}
+
+.sessioneStrategicaModalClose:focus-visible {
+  outline: 2px solid color-mix(in oklab, #cf3e72 66%, transparent);
+  outline-offset: 2px;
+}
+
+.sessioneStrategicaModalTitle {
+  margin: 0;
+  font-size: clamp(30px, 3.3vw, 44px);
+  line-height: 1.02;
+  letter-spacing: -0.025em;
+  color: #23171d;
+}
+
+.sessioneStrategicaModalSubtitle {
+  margin: 8px 0 0;
+  max-width: 54ch;
+  font-size: clamp(16px, 1.2vw, 19px);
+  line-height: 1.38;
+  color: #4a3240;
+}
+
+.sessioneStrategicaModalForm {
+  margin-top: 14px;
+  display: grid;
+  gap: 10px;
+}
+
+.sessioneStrategicaModalFieldGrid {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.sessioneStrategicaModalField {
+  display: grid;
+  gap: 5px;
+}
+
+.sessioneStrategicaModalField span {
+  font-size: 14px;
+  font-weight: 700;
+  color: #3b2832;
+}
+
+.sessioneStrategicaModalField input {
+  width: 100%;
+  border-radius: 12px;
+  border: 1px solid color-mix(in oklab, #ebd6de 74%, transparent);
+  background: color-mix(in oklab, #fff 86%, #fff6fa);
+  color: #23171d;
+  padding: 10px 12px;
+  font-size: 16px;
+  line-height: 1.4;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+
+.sessioneStrategicaModalField input::placeholder {
+  color: #8e7683;
+}
+
+.sessioneStrategicaModalField input:focus-visible {
+  outline: 0;
+  border-color: color-mix(in oklab, #cf3e72 66%, transparent);
+  box-shadow: 0 0 0 3px color-mix(in oklab, #cf3e72 16%, transparent);
+  background: #fff;
+}
+
+.sessioneStrategicaModalConsent {
+  margin-top: 0;
+  display: inline-flex;
+  align-items: flex-start;
+  gap: 10px;
+  color: #3c2a33;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.sessioneStrategicaModalConsent input {
+  margin: 2px 0 0;
+  accent-color: #cf3e72;
+}
+
+.sessioneStrategicaModalConsentLink {
+  color: #8f2950;
+  font-weight: 700;
+  text-underline-offset: 2px;
+}
+
+.sessioneStrategicaModalConsentLink:hover {
+  color: #b13261;
+}
+
+.sessioneStrategicaModalConsentLink:focus-visible {
+  outline: 2px solid color-mix(in oklab, #cf3e72 62%, transparent);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+.sessioneStrategicaModalSubmit {
+  margin-top: 24px;
+  border: 1px solid color-mix(in oklab, #cf3e72 82%, #a5335b);
+  border-radius: 12px;
+  background: #f5548e;
+  color: #fff;
+  min-height: 52px;
+  padding: 10px 14px;
+  font-family: Inter, 'Arial Black', system-ui, sans-serif;
+  font-weight: 950;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  font-size: 15px;
+  line-height: 1.2;
+  cursor: pointer;
+  box-shadow: 0 12px 24px color-mix(in oklab, #cf3e72 22%, transparent);
+  transition:
+    transform 0.22s ease,
+    box-shadow 0.22s ease,
+    background 0.22s ease;
+}
+
+.sessioneStrategicaModalSubmit:hover {
+  transform: translateY(-1px);
+  background: #ef3f80;
+  box-shadow: 0 14px 28px color-mix(in oklab, #cf3e72 30%, transparent);
+}
+
+.sessioneStrategicaModalSubmit:focus-visible {
+  outline: 2px solid color-mix(in oklab, #cf3e72 72%, transparent);
+  outline-offset: 3px;
+}
+
+.sessioneStrategicaModalSubmit:disabled {
+  opacity: 0.7;
+  cursor: wait;
+}
+
+.sessioneStrategicaModalFeedback {
+  margin: 10px 0 0;
+  font-size: 14px;
+  line-height: 1.4;
+  color: #5a3a49;
+}
+
 @keyframes sessioneStrategicaPainType {
   from {
     clip-path: inset(0 100% 0 0);
@@ -1854,6 +2068,60 @@
     font-size: 17px;
   }
 
+  .sessioneStrategicaModal {
+    padding: 12px;
+  }
+
+  .sessioneStrategicaModalPanel {
+    width: min(calc(100vw - 24px), 680px);
+    border-radius: 16px;
+    padding: 16px 12px 12px;
+  }
+
+  .sessioneStrategicaModalClose {
+    top: 10px;
+    right: 10px;
+    width: 38px;
+    height: 38px;
+    font-size: 24px;
+  }
+
+  .sessioneStrategicaModalTitle {
+    font-family: Inter, 'Arial Black', system-ui, sans-serif;
+    font-weight: 950;
+    letter-spacing: -0.01em;
+    font-size: clamp(28px, 7vw, 35px);
+  }
+
+  .sessioneStrategicaModalSubtitle {
+    margin-top: 8px;
+    font-size: 15px;
+  }
+
+  .sessioneStrategicaModalForm {
+    margin-top: 12px;
+    gap: 9px;
+  }
+
+  .sessioneStrategicaModalFieldGrid {
+    grid-template-columns: 1fr;
+    gap: 9px;
+  }
+
+  .sessioneStrategicaModalField input {
+    font-size: 15px;
+    padding: 10px 11px;
+  }
+
+  .sessioneStrategicaModalConsent {
+    font-size: 13px;
+  }
+
+  .sessioneStrategicaModalSubmit {
+    min-height: 50px;
+    font-size: 14px;
+  }
+
   .sessioneStrategicaPainSection .sessioneStrategicaSectionInner {
     padding: 8px 0;
   }
@@ -1969,6 +2237,12 @@
   .sessioneStrategicaFaqItem,
   .sessioneStrategicaFaqAnswerWrap,
   .sessioneStrategicaFaqIcon {
+    transition: none;
+  }
+
+  .sessioneStrategicaModalClose,
+  .sessioneStrategicaModalSubmit,
+  .sessioneStrategicaModalField input {
     transition: none;
   }
 
