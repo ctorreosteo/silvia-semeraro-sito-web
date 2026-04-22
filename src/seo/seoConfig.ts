@@ -9,6 +9,8 @@ export type SeoConfig = {
   ogType: 'website' | 'article'
   ogImage: SeoOgImage
   robots?: string
+  keywords?: string
+  jsonLd?: unknown | unknown[]
 }
 
 const SITE_NAME = 'Silvia Semeraro'
@@ -87,6 +89,75 @@ export const seoByPathname: Record<string, SeoConfig> = {
       'Informativa cookie sul trattamento e l’utilizzo dei cookie. Per qualsiasi domanda puoi contattarmi via email.',
     ogType: 'website',
     ogImage: SEO.DEFAULT_OG_IMAGE,
+  },
+  '/sessione-strategica': {
+    title: 'Sessione Strategica Ansia e Attacchi di Panico | Silvia Semeraro',
+    description:
+      'Sessione Strategica 1:1 di 90 minuti per capire cosa mantiene attiva ansia e attacchi di panico e definire un piano personalizzato. In studio a Torino o online.',
+    ogType: 'article',
+    ogImage: { src: '/Immagini/foto1.png', alt: 'Sessione Strategica con Silvia Semeraro' },
+    keywords:
+      'sessione strategica ansia, attacchi di panico, mental coach ansia, gestione ansia Torino, ansia e panico online, percorso ansia personalizzato',
+    jsonLd: [
+      {
+        '@context': 'https://schema.org',
+        '@type': 'Service',
+        name: 'Sessione Strategica Ansia e Attacchi di Panico',
+        serviceType: 'Sessione strategica individuale',
+        description:
+          'Sessione 1:1 di 90 minuti con analisi personalizzata della situazione, identificazione dei trigger e piano operativo iniziale.',
+        provider: {
+          '@type': 'Person',
+          name: 'Silvia Semeraro',
+        },
+        areaServed: ['Torino', 'Italia'],
+        availableChannel: [
+          {
+            '@type': 'ServiceChannel',
+            serviceLocation: {
+              '@type': 'Place',
+              name: 'Torino',
+            },
+          },
+        ],
+        offers: {
+          '@type': 'Offer',
+          priceCurrency: 'EUR',
+          price: '59',
+          availability: 'https://schema.org/LimitedAvailability',
+        },
+      },
+      {
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        mainEntity: [
+          {
+            '@type': 'Question',
+            name: 'Ho già provato altre terapie: perché dovrei fare questa sessione?',
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: 'La Sessione Strategica è pensata per fare chiarezza con un’analisi personalizzata e capire se il metodo è adatto al tuo caso prima di qualsiasi percorso.',
+            },
+          },
+          {
+            '@type': 'Question',
+            name: 'La sessione si può fare online o in presenza?',
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: 'Sì, la sessione è disponibile sia in presenza a Torino sia online in videochiamata, con la stessa efficacia.',
+            },
+          },
+          {
+            '@type': 'Question',
+            name: 'Quanto dura la Sessione Strategica?',
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: 'La Sessione Strategica dura 90 minuti ed è focalizzata su analisi, chiarezza e piano d’azione iniziale.',
+            },
+          },
+        ],
+      },
+    ],
   },
   '/sessione-strategica/grazie': {
     title: 'Richiesta ricevuta | Sessione Strategica',

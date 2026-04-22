@@ -13,6 +13,14 @@ function upsertMetaName(name: string, content: string): void {
   el.setAttribute('content', content)
 }
 
+function removeMetaName(name: string): void {
+  const selector = `meta[name="${name}"]`
+  const el = document.head.querySelector(selector)
+  if (el) {
+    el.remove()
+  }
+}
+
 function upsertMetaProperty(property: string, content: string): void {
   const selector = `meta[property="${property}"]`
   let el = document.head.querySelector(selector) as HTMLMetaElement | null
@@ -77,6 +85,11 @@ function buildJsonLd(config: SeoConfig, url: string, siteUrl: string): unknown {
   ]
 }
 
+function normalizeJsonLd(value: unknown | unknown[] | undefined): unknown[] {
+  if (!value) return []
+  return Array.isArray(value) ? value : [value]
+}
+
 export function SeoManager() {
   const location = useLocation()
 
@@ -93,6 +106,12 @@ export function SeoManager() {
 
     upsertMetaName('description', config.description)
     upsertMetaName('author', getSeoSiteName())
+    if (config.keywords) {
+      upsertMetaName('keywords', config.keywords)
+    } else {
+      removeMetaName('keywords')
+    }
+    upsertMetaName('language', 'it-IT')
 
     upsertMetaProperty('og:title', config.title)
     upsertMetaProperty('og:description', config.description)
@@ -108,12 +127,15 @@ export function SeoManager() {
     upsertMetaName('twitter:title', config.title)
     upsertMetaName('twitter:description', config.description)
     upsertMetaName('twitter:image', `${origin}${config.ogImage.src}`)
+    upsertMetaName('twitter:image:alt', config.ogImage.alt)
 
     upsertMetaName('robots', config.robots ?? 'index,follow')
 
     upsertLinkRel('canonical', pageUrl)
 
-    upsertJsonLd('seo-json-ld', buildJsonLd(config, pageUrl, siteUrl))
+    const baseJsonLd = buildJsonLd(config, pageUrl, siteUrl)
+    const routeJsonLd = normalizeJsonLd(config.jsonLd)
+    upsertJsonLd('seo-json-ld', [...normalizeJsonLd(baseJsonLd), ...routeJsonLd])
   }, [location.pathname, location.search])
 
   return null
