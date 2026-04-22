@@ -1,8 +1,15 @@
+import { useEffect } from 'react'
+
 const WHATSAPP_MESSAGE =
   'Buongiorno Dr.ssa Semeraro, volevo sapere quando avrebbe posto per la sessione strategica. Grazie e a presto'
 const WHATSAPP_LINK = `https://wa.me/393479336648?text=${encodeURIComponent(WHATSAPP_MESSAGE)}`
 
 export function SessioneStrategicaThankYou() {
+  useEffect(() => {
+    const fbq = (window as Window & { fbq?: (...args: unknown[]) => void }).fbq
+    fbq?.('track', 'Lead')
+  }, [])
+
   return (
     <article className="sessioneStrategicaThankYouPage" aria-label="Conferma invio richiesta sessione strategica">
       <section className="sessioneStrategicaThankYouCard">
