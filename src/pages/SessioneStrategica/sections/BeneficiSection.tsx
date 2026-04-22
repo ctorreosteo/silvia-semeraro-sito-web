@@ -101,7 +101,12 @@ export function BeneficiSection() {
               ))}
             </ul>
             <p className="sessioneStrategicaBeneficiBlockSwipeHint" aria-hidden="true">
-              <span>&larr;</span> SCORRI PER VEDERE ANCHE L&apos;ALTRO RIQUADRO <span>&rarr;</span>
+              <span>&larr;</span>
+              <span className="sessioneStrategicaBeneficiSwipeHintText">
+                SCORRI PER VEDERE ANCHE{' '}
+                <span className="sessioneStrategicaBeneficiSwipeHintSecondLine">L&apos;ALTRO RIQUADRO</span>
+              </span>
+              <span>&rarr;</span>
             </p>
           </article>
 
@@ -115,7 +120,12 @@ export function BeneficiSection() {
               ))}
             </ul>
             <p className="sessioneStrategicaBeneficiBlockSwipeHint" aria-hidden="true">
-              <span>&larr;</span> SCORRI PER VEDERE ANCHE L&apos;ALTRO RIQUADRO <span>&rarr;</span>
+              <span>&larr;</span>
+              <span className="sessioneStrategicaBeneficiSwipeHintText">
+                SCORRI PER VEDERE ANCHE{' '}
+                <span className="sessioneStrategicaBeneficiSwipeHintSecondLine">L&apos;ALTRO RIQUADRO</span>
+              </span>
+              <span>&rarr;</span>
             </p>
           </article>
         </div>
