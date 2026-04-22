@@ -1548,7 +1548,7 @@
 
   .sessioneStrategicaChiMediaImg {
     object-fit: cover;
-    object-position: center 58%;
+    object-position: center 36%;
     transform: scale(1.05);
     transform-origin: center;
   }

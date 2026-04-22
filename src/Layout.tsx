@@ -60,15 +60,17 @@ export function Layout() {
       <SeoManager />
       <header className="header">
         <NavLink className="brand" to="/" aria-label="Homepage">
-          <img
-            className="brandLogo"
-            src="/Logo.png"
-            width={44}
-            height={44}
-            alt="Silvia Semeraro"
-          />
-          <span className="brandText">Silvia Semeraro</span>
+          <span className="brandLogoFrame" aria-hidden="true">
+            <img
+              className="brandLogo"
+              src="/Logo.png"
+              width={44}
+              height={44}
+              alt="Silvia Semeraro"
+            />
+          </span>
         </NavLink>
+        <span className="brandText">Silvia Semeraro</span>
         <nav className="nav" aria-label="Principale">
           {navItems.map((item) => (
             <NavLink key={item.to} className={getNavClassName} to={item.to}>
