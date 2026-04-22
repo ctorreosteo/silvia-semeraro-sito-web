@@ -88,6 +88,14 @@ export const seoByPathname: Record<string, SeoConfig> = {
     ogType: 'website',
     ogImage: SEO.DEFAULT_OG_IMAGE,
   },
+  '/sessione-strategica/grazie': {
+    title: 'Richiesta ricevuta | Sessione Strategica',
+    description:
+      'Grazie per la tua richiesta della Sessione Strategica. Verrai ricontattata al piu presto per la conferma e i prossimi passi.',
+    ogType: 'website',
+    ogImage: { src: '/Immagini/foto17.png', alt: 'Silvia Semeraro' },
+    robots: 'noindex,follow',
+  },
   '*': {
     title: 'Pagina non trovata | Silvia Semeraro',
     description: 'La pagina che cerchi non esiste (o è stata spostata).',

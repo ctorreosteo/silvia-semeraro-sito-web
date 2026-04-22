@@ -1509,6 +1509,115 @@
   color: #5a3a49;
 }
 
+.sessioneStrategicaThankYouPage {
+  width: min(100%, 860px);
+  margin: 0 auto;
+  padding: 28px 0 44px;
+}
+
+.sessioneStrategicaThankYouCard {
+  display: grid;
+  gap: 16px;
+  border-radius: 20px;
+  border: 1px solid color-mix(in oklab, #f2cedb 72%, transparent);
+  background: transparent;
+  box-shadow:
+    0 20px 48px color-mix(in oklab, #4d1f31 14%, transparent),
+    inset 0 1px 0 color-mix(in oklab, #fff 84%, transparent);
+  padding: 26px 24px;
+}
+
+.sessioneStrategicaThankYouEyebrow {
+  margin: 0;
+  font-size: 13px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-family: Inter, 'Arial Black', system-ui, sans-serif;
+  font-weight: 950;
+  color: #b53b67;
+}
+
+.sessioneStrategicaThankYouTitle {
+  margin: 0;
+  font-size: clamp(32px, 4vw, 48px);
+  line-height: 1.06;
+  letter-spacing: -0.02em;
+  font-family: Inter, 'Arial Black', system-ui, sans-serif;
+  font-weight: 950;
+  color: #23171d;
+}
+
+.sessioneStrategicaThankYouText {
+  margin: 0;
+  max-width: 62ch;
+  font-size: clamp(18px, 1.7vw, 24px);
+  line-height: 1.42;
+  color: #4a3240;
+}
+
+.sessioneStrategicaThankYouPhoneHint {
+  margin: 2px 0 0;
+  font-size: clamp(16px, 1.3vw, 20px);
+  line-height: 1.35;
+  font-weight: 700;
+  color: #3e2a35;
+}
+
+.sessioneStrategicaThankYouPhone {
+  margin: 2px 0 32px;
+  font-size: clamp(28px, 3.3vw, 42px);
+  line-height: 1.1;
+  letter-spacing: 0.01em;
+  font-family: Inter, 'Arial Black', system-ui, sans-serif;
+  font-weight: 950;
+  color: #1f7d43;
+}
+
+.sessioneStrategicaThankYouWhatsappHint {
+  margin: -2px 0 0;
+  max-width: 62ch;
+  font-size: clamp(16px, 1.3vw, 20px);
+  line-height: 1.4;
+  color: #4a3240;
+}
+
+.sessioneStrategicaThankYouWhatsappCta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  text-decoration: none;
+  width: fit-content;
+  min-height: 56px;
+  padding: 14px 18px;
+  border-radius: 12px;
+  border: 1px solid color-mix(in oklab, #1f7d43 72%, transparent);
+  background: linear-gradient(140deg, #1f7d43 0%, #24a657 100%);
+  color: #fff;
+  font-family: Inter, 'Arial Black', system-ui, sans-serif;
+  font-size: 15px;
+  line-height: 1.2;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  font-weight: 900;
+  box-shadow: 0 12px 26px color-mix(in oklab, #1f7d43 24%, transparent);
+  transition:
+    transform 0.22s ease,
+    box-shadow 0.22s ease,
+    filter 0.22s ease;
+}
+
+.sessioneStrategicaThankYouWhatsappCta:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.02);
+  box-shadow: 0 14px 30px color-mix(in oklab, #1f7d43 30%, transparent);
+}
+
+.sessioneStrategicaThankYouWhatsappCta:focus-visible {
+  outline: 2px solid color-mix(in oklab, #1f7d43 70%, transparent);
+  outline-offset: 3px;
+}
+
 @keyframes sessioneStrategicaPainType {
   from {
     clip-path: inset(0 100% 0 0);
@@ -2120,6 +2229,41 @@
   .sessioneStrategicaModalSubmit {
     min-height: 50px;
     font-size: 14px;
+  }
+
+  .sessioneStrategicaThankYouPage {
+    padding: 16px 0 28px;
+  }
+
+  .sessioneStrategicaThankYouCard {
+    border-radius: 14px;
+    gap: 12px;
+    padding: 18px 14px;
+  }
+
+  .sessioneStrategicaThankYouTitle {
+    font-size: clamp(30px, 7.2vw, 38px);
+    letter-spacing: -0.01em;
+  }
+
+  .sessioneStrategicaThankYouText {
+    font-size: 17px;
+  }
+
+  .sessioneStrategicaThankYouPhoneHint {
+    font-size: 15px;
+  }
+
+  .sessioneStrategicaThankYouPhone {
+    font-size: clamp(30px, 8.4vw, 36px);
+  }
+
+  .sessioneStrategicaThankYouWhatsappHint {
+    font-size: 15px;
+  }
+
+  .sessioneStrategicaThankYouWhatsappCta {
+    width: 100%;
   }
 
   .sessioneStrategicaPainSection .sessioneStrategicaSectionInner {

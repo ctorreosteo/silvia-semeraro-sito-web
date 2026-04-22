@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useState, type FormEvent, type MouseEvent } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import './sessioneStrategica.css'
 import { BeneficiSection } from './sections/BeneficiSection'
 import { ChiESilviaSection } from './sections/ChiESilviaSection'
@@ -9,6 +9,7 @@ import { OffertaSection } from './sections/OffertaSection'
 import { PainPointsSection } from './sections/PainPointsSection'
 
 export function SessioneStrategica() {
+  const navigate = useNavigate()
   const [isFormPopupOpen, setIsFormPopupOpen] = useState(false)
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitMessage, setSubmitMessage] = useState<string | null>(null)
@@ -74,7 +75,8 @@ export function SessioneStrategica() {
       void response
 
       form.reset()
-      setSubmitMessage('Richiesta inviata con successo. Ti ricontatterò entro 24h lavorative.')
+      closeFormPopup()
+      navigate('/sessione-strategica/grazie')
     } catch {
       setSubmitMessage('Non sono riuscita a inviare i dati. Riprova tra qualche secondo.')
     } finally {

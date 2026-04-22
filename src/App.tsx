@@ -12,6 +12,7 @@ import { Testimonianze } from './pages/Testimonianze'
 import { CookiePolicy } from './pages/CookiePolicy'
 import { PrivacyPolicy } from './pages/PrivacyPolicy'
 import { SessioneStrategica } from './pages/SessioneStrategica/SessioneStrategica'
+import { SessioneStrategicaThankYou } from './pages/SessioneStrategica/SessioneStrategicaThankYou'
 
 export default function App() {
   return (
@@ -27,6 +28,7 @@ export default function App() {
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="/cookie-policy" element={<CookiePolicy />} />
         <Route path="/sessione-strategica" element={<SessioneStrategica />} />
+        <Route path="/sessione-strategica/grazie" element={<SessioneStrategicaThankYou />} />
         <Route path="*" element={<NotFound />} />
       </Route>
     </Routes>
