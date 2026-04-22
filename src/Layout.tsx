@@ -13,6 +13,23 @@ function getFooterNavClassName({ isActive }: { isActive: boolean }) {
 export function Layout() {
   const location = useLocation()
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const isSessioneStrategicaPage = location.pathname === '/sessione-strategica'
+
+  useEffect(() => {
+    if (typeof window === 'undefined') return
+
+    // Prevent browsers from restoring previous scroll position on reload/back-forward.
+    const { history } = window
+    if (!history || !('scrollRestoration' in history)) return
+
+    const previous = history.scrollRestoration
+    history.scrollRestoration = 'manual'
+    window.scrollTo({ top: 0, left: 0, behavior: 'auto' })
+
+    return () => {
+      history.scrollRestoration = previous
+    }
+  }, [])
 
   useEffect(() => {
     // When navigating to a new route, ensure the page starts from the top.
@@ -121,7 +138,7 @@ export function Layout() {
         </div>
       ) : null}
 
-      <main className="main">
+      <main className={isSessioneStrategicaPage ? 'main mainSessioneStrategica' : 'main'}>
         <Outlet />
       </main>
 

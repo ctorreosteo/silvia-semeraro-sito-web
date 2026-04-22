@@ -218,6 +218,12 @@
   min-width: 0;
 }
 
+.mainSessioneStrategica {
+  width: 100%;
+  max-width: none;
+  margin: 0;
+}
+
 .hero {
   padding: 28px 0 22px;
 }

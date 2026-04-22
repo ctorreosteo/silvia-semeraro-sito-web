@@ -1,0 +1,2017 @@
+.sessioneStrategicaPage {
+  display: grid;
+  gap: 0;
+  padding: 8px 0 22px;
+  background: transparent;
+}
+
+.sessioneStrategicaPage > *:not(.sessioneStrategicaHero) {
+  margin-top: 128px;
+}
+
+.sessioneStrategicaPage > .sessioneStrategicaOffertaDivider {
+  margin-top: 170px;
+}
+
+.sessioneStrategicaPage > .sessioneStrategicaOffertaDivider + .sessioneStrategicaOffertaSection {
+  margin-top: 116px;
+}
+
+.sessioneStrategicaOffertaDivider {
+  position: relative;
+  width: min(100%, 860px);
+  margin-inline: auto;
+  display: grid;
+  place-items: center;
+  isolation: isolate;
+  scroll-margin-top: 132px;
+}
+
+.sessioneStrategicaOffertaDivider::before {
+  content: '';
+  width: 100%;
+  height: 2px;
+  border-radius: 999px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    color-mix(in oklab, #cf3e72 34%, transparent) 20%,
+    color-mix(in oklab, #cf3e72 72%, #f5a3c0) 50%,
+    color-mix(in oklab, #cf3e72 34%, transparent) 80%,
+    transparent 100%
+  );
+  box-shadow:
+    0 0 0 1px color-mix(in oklab, #ffffff 64%, transparent),
+    0 0 20px color-mix(in oklab, #cf3e72 28%, transparent);
+}
+
+.sessioneStrategicaOffertaDividerIcon {
+  position: absolute;
+  width: 42px;
+  height: 42px;
+  border-radius: 999px;
+  display: grid;
+  place-items: center;
+  font-size: 20px;
+  line-height: 1;
+  color: #ffffff;
+  background: linear-gradient(155deg, #f474a3 0%, #cf3e72 55%, #a52f5d 100%);
+  border: 1px solid color-mix(in oklab, #a52f5d 44%, transparent);
+  box-shadow:
+    0 10px 24px color-mix(in oklab, #b43a68 32%, transparent),
+    inset 0 1px 0 color-mix(in oklab, #fff 84%, transparent);
+}
+
+.sessioneStrategicaSection {
+  min-height: 180px;
+  border-radius: 12px;
+  border: 1px solid color-mix(in oklab, #ebd6de 72%, transparent);
+  background: #fff;
+  box-shadow: none;
+}
+
+.sessioneStrategicaSectionInner {
+  padding: 22px;
+}
+
+.sessioneStrategicaSectionInner h2 {
+  margin: 0;
+  font-size: clamp(28px, 4vw, 38px);
+  letter-spacing: -0.02em;
+  color: #23171d;
+}
+
+.sessioneStrategicaHero {
+  min-height: 0;
+  border-width: 2px;
+  border-color: color-mix(in oklab, #f2c8d7 80%, transparent);
+  background: linear-gradient(180deg, #fff, #fff9fb);
+}
+
+.sessioneStrategicaHeroShell {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+  grid-template-areas:
+    'copy media'
+    'actions media';
+  gap: 16px;
+  align-items: stretch;
+  padding: 18px;
+}
+
+.sessioneStrategicaHeroCopy {
+  grid-area: copy;
+  min-width: 0;
+}
+
+.sessioneStrategicaHeroActions {
+  grid-area: actions;
+  min-width: 0;
+  width: 100%;
+}
+
+.sessioneStrategicaHeroCtaBlock {
+  width: fit-content;
+  margin-top: 20px;
+}
+
+.sessioneStrategicaHeroCtaBlock::after {
+  content: 'Per sole 10 persone al mese';
+  display: block;
+  margin-top: 8px;
+  text-align: center;
+  font-size: 22px;
+  line-height: 1.3;
+  font-style: italic !important;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-weight: 500;
+  color: #6f4b5b;
+}
+
+.sessioneStrategicaHeroTitle {
+  margin: 0;
+  font-size: clamp(34px, 4.2vw, 58px);
+  line-height: 1.02;
+  letter-spacing: -0.025em;
+  color: #1f141a;
+  position: relative;
+  background: linear-gradient(112deg, #1f141a 0%, #1f141a 34%, #b33c68 48%, #1f141a 66%, #1f141a 100%);
+  background-size: 230% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  opacity: 0;
+  filter: blur(7px);
+  transform: translateY(18px) scale(0.985);
+  animation:
+    sessioneStrategicaHeroTitleReveal 0.92s cubic-bezier(0.2, 0.82, 0.2, 1) 80ms both,
+    sessioneStrategicaHeroTitleShimmer 2.4s ease 540ms both;
+}
+
+.sessioneStrategicaHeroLead {
+  margin: 12px 0 0;
+  font-size: clamp(20px, 2vw, 25px);
+  line-height: 1.35;
+  color: #4b3540;
+  max-width: 62ch;
+}
+
+.sessioneStrategicaHeroCta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-top: 18px;
+  padding: 15px 20px;
+  border-radius: 10px;
+  border: 1px solid color-mix(in oklab, #cf3e72 82%, #a5335b);
+  text-decoration: none;
+  font-family: Inter, 'Arial Black', system-ui, sans-serif;
+  font-weight: 950;
+  text-transform: uppercase;
+  letter-spacing: 0.015em;
+  font-size: 20px;
+  line-height: 1.1;
+  color: #fff;
+  background: #f5548e;
+  box-shadow: 0 9px 20px color-mix(in oklab, #cf3e72 22%, transparent);
+  animation: sessioneStrategicaCtaBreathe 3.2s cubic-bezier(0.22, 0.74, 0.34, 1) infinite;
+  will-change: transform, box-shadow;
+  transition:
+    background 0.25s ease,
+    box-shadow 0.25s ease,
+    transform 0.25s ease;
+}
+
+.sessioneStrategicaHeroCta:hover {
+  background: #ef3f80;
+  box-shadow: 0 12px 24px color-mix(in oklab, #cf3e72 27%, transparent);
+  animation-play-state: paused;
+  transform: translateY(-1px);
+}
+
+.sessioneStrategicaHeroGuarantee {
+  margin: 8px 0 0;
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight: 800;
+  color: #b53b67;
+  text-align: center;
+}
+
+.sessioneStrategicaHeroBullets {
+  margin: 16px 0 0;
+  padding: 0 0 0 4px;
+  list-style: none;
+  display: grid;
+  gap: 8px;
+}
+
+.sessioneStrategicaHeroBullets li {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  margin: 0;
+  padding: 4px 0;
+  border: 0;
+  background: transparent;
+  color: #3b2a32;
+  line-height: 1.42;
+  font-size: 19px;
+}
+
+.sessioneStrategicaHeroBullets li::before {
+  content: '❤';
+  position: static;
+  width: 14px;
+  height: 14px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  line-height: 1;
+  color: #f5548e;
+  flex: 0 0 auto;
+  margin-top: 4px;
+}
+
+.sessioneStrategicaHeroBulletText {
+  display: block;
+  min-width: 0;
+}
+
+.heroEmphasisStrong {
+  font-weight: 700;
+}
+
+.heroEmphasisItalic {
+  font-style: italic;
+}
+
+.heroEmphasisUnderline {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.sessioneStrategicaHeroMedia {
+  grid-area: media;
+  margin: 0;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 0;
+  background: #fff;
+  box-shadow: none;
+}
+
+.sessioneStrategicaChiSection {
+  min-height: 0;
+}
+
+.sessioneStrategicaChiCard {
+  position: relative;
+  border-radius: 14px;
+  border: 1px solid color-mix(in oklab, #ebd6de 72%, transparent);
+  overflow: hidden;
+  box-shadow: 0 18px 44px color-mix(in oklab, #4d1f31 12%, transparent);
+  background: transparent;
+  isolation: isolate;
+}
+
+.sessioneStrategicaChiCard::before {
+  content: '';
+  position: absolute;
+  inset: -24% -30%;
+  z-index: -1;
+  background:
+    radial-gradient(circle at 18% 24%, color-mix(in oklab, #f9ccdc 74%, transparent) 0 28%, transparent 58%),
+    radial-gradient(circle at 78% 16%, color-mix(in oklab, #f08ab0 42%, transparent) 0 24%, transparent 62%),
+    radial-gradient(circle at 48% 82%, color-mix(in oklab, #f8d9e5 52%, transparent) 0 26%, transparent 60%);
+  opacity: 0.26;
+  transform: translate3d(0, 0, 0);
+  animation: sessioneStrategicaChiAuraDrift 12s ease-in-out infinite alternate;
+}
+
+.sessioneStrategicaChiMedia {
+  margin: 0;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  max-height: 620px;
+  overflow: hidden;
+  background: #f8eef2;
+}
+
+.sessioneStrategicaChiMedia picture {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.sessioneStrategicaChiMediaImg {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center top;
+  transform: scale(1.03);
+  transform-origin: center;
+}
+
+.sessioneStrategicaChiSection .sessioneStrategicaChiMedia {
+  opacity: 1;
+  transform: none;
+}
+
+.sessioneStrategicaChiSection .sessioneStrategicaChiBody {
+  opacity: 0;
+  transform: translateY(26px);
+}
+
+.sessioneStrategicaChiSection.is-visible .sessioneStrategicaChiBody {
+  animation: sessioneStrategicaChiRevealUp 0.95s cubic-bezier(0.2, 0.82, 0.2, 1) 110ms both;
+}
+
+.sessioneStrategicaChiMediaImg {
+  animation: sessioneStrategicaChiPortraitFloat 9s ease-in-out 260ms infinite alternate;
+}
+
+.sessioneStrategicaChiBody {
+  padding: 30px 22px 22px;
+  background: #fff;
+}
+
+.sessioneStrategicaChiTitle {
+  margin: 0;
+  font-size: clamp(30px, 4vw, 44px);
+  line-height: 1.06;
+  letter-spacing: -0.02em;
+  font-weight: 950;
+  color: #23171d;
+}
+
+.sessioneStrategicaChiSubtitle {
+  margin: 12px 0 0;
+  font-size: clamp(19px, 2vw, 25px);
+  line-height: 1.36;
+  color: #4b3540;
+}
+
+.sessioneStrategicaChiList {
+  list-style: none;
+  margin: 18px 0 0;
+  padding: 0;
+  display: grid;
+  gap: 12px;
+  counter-reset: chi-card-step;
+}
+
+.sessioneStrategicaChiList li {
+  --chi-item-delay: 0ms;
+  --chi-item-shift-x: -34px;
+  border: 1px solid color-mix(in oklab, #ebd6de 72%, transparent);
+  border-radius: 10px;
+  padding: 14px;
+  background: linear-gradient(180deg, #fff, #fff8fb);
+  counter-increment: chi-card-step;
+  opacity: 0;
+  transform: translate3d(var(--chi-item-shift-x), 20px, 0) scale(0.985);
+  transition:
+    opacity 0.72s ease var(--chi-item-delay),
+    transform 0.72s cubic-bezier(0.2, 0.78, 0.2, 1) var(--chi-item-delay),
+    box-shadow 0.28s ease,
+    border-color 0.28s ease;
+}
+
+.sessioneStrategicaChiList li:nth-child(even) {
+  --chi-item-shift-x: 34px;
+}
+
+.sessioneStrategicaChiList li.is-visible {
+  opacity: 1;
+  transform: translate3d(0, 0, 0) scale(1);
+}
+
+.sessioneStrategicaChiList li:hover {
+  border-color: color-mix(in oklab, #cf3e72 38%, transparent);
+  box-shadow: 0 12px 28px color-mix(in oklab, #cf3e72 14%, transparent);
+}
+
+.sessioneStrategicaChiList h3 {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: clamp(21px, 2.2vw, 28px);
+  line-height: 1.24;
+  color: #23171d;
+}
+
+.sessioneStrategicaChiList h3::before {
+  content: counter(chi-card-step);
+  width: 32px;
+  height: 32px;
+  flex: 0 0 32px;
+  border-radius: 999px;
+  display: grid;
+  place-items: center;
+  font-size: 15px;
+  line-height: 1;
+  font-family: Inter, 'Arial Black', system-ui, sans-serif;
+  font-weight: 950;
+  color: #8f2950;
+  background: color-mix(in oklab, #f2c8d7 58%, #fff);
+  border: 1px solid color-mix(in oklab, #cf3e72 58%, transparent);
+  transform: scale(0.92);
+  opacity: 0.86;
+}
+
+.sessioneStrategicaChiList li.is-visible h3::before {
+  animation: sessioneStrategicaChiStepPop 0.72s cubic-bezier(0.24, 0.82, 0.2, 1) calc(var(--chi-item-delay) + 70ms) both;
+}
+
+.sessioneStrategicaChiList p {
+  margin: 8px 0 0;
+  font-size: clamp(18px, 1.45vw, 21px);
+  line-height: 1.45;
+  color: #3e2a35;
+}
+
+.sessioneStrategicaChiClosing {
+  margin: 16px 0 0;
+  padding-top: 14px;
+  border-top: 1px solid color-mix(in oklab, #ebd6de 72%, transparent);
+  font-size: clamp(19px, 1.6vw, 23px);
+  line-height: 1.42;
+  color: #2e1f28;
+  font-weight: 700;
+}
+
+.sessioneStrategicaOffertaSection {
+  position: relative;
+  overflow: visible;
+  isolation: isolate;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.sessioneStrategicaOffertaSection::before,
+.sessioneStrategicaOffertaSection::after {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  pointer-events: none;
+  border-radius: 999px;
+  filter: blur(2px);
+}
+
+.sessioneStrategicaOffertaSection::before {
+  width: min(44vw, 540px);
+  height: min(44vw, 540px);
+  left: -140px;
+  top: -120px;
+  background: radial-gradient(circle, color-mix(in oklab, #ffd7ec 70%, transparent) 0 36%, transparent 72%);
+  opacity: 0.75;
+}
+
+.sessioneStrategicaOffertaSection::after {
+  width: min(40vw, 480px);
+  height: min(40vw, 480px);
+  right: -120px;
+  bottom: -140px;
+  background: radial-gradient(circle, color-mix(in oklab, #e4d8ff 76%, transparent) 0 34%, transparent 74%);
+  opacity: 0.72;
+}
+
+.sessioneStrategicaOffertaInner {
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  border-radius: 24px;
+  border: 1px solid color-mix(in oklab, #f0d3df 72%, transparent);
+  padding: 34px 28px;
+  background:
+    radial-gradient(circle at 14% 10%, color-mix(in oklab, #ffd7ea 56%, transparent) 0 24%, transparent 56%),
+    radial-gradient(circle at 88% 14%, color-mix(in oklab, #eadbff 50%, transparent) 0 22%, transparent 58%),
+    radial-gradient(circle at 72% 86%, color-mix(in oklab, #ffd6e8 42%, transparent) 0 20%, transparent 56%),
+    linear-gradient(138deg, #fffefd 0%, #fff8fc 31%, #f9f1ff 66%, #fff5fa 100%);
+  box-shadow:
+    0 -14px 30px -20px color-mix(in oklab, #4f2036 30%, transparent),
+    -10px 0 24px -18px color-mix(in oklab, #4f2036 22%, transparent),
+    10px 0 24px -18px color-mix(in oklab, #4f2036 22%, transparent),
+    0 16px 30px color-mix(in oklab, #4f2036 22%, transparent),
+    0 42px 78px color-mix(in oklab, #4f2036 28%, transparent),
+    0 76px 120px color-mix(in oklab, #4f2036 20%, transparent),
+    0 105px 150px -55px color-mix(in oklab, #3f1529 46%, transparent),
+    inset 0 1px 0 color-mix(in oklab, #fff 88%, transparent),
+    inset 0 -1px 0 color-mix(in oklab, #c79db0 24%, transparent);
+}
+
+.sessioneStrategicaOffertaInner::before {
+  content: '';
+  position: absolute;
+  inset: -30% 44% auto -24%;
+  height: 78%;
+  pointer-events: none;
+  border-radius: 999px;
+  background: radial-gradient(circle, color-mix(in oklab, #ffd8ea 64%, transparent) 0 38%, transparent 72%);
+  opacity: 0.72;
+}
+
+.sessioneStrategicaOffertaInner::after {
+  content: '';
+  position: absolute;
+  inset: auto -16% -48% 46%;
+  height: 80%;
+  pointer-events: none;
+  border-radius: 999px;
+  background: radial-gradient(circle, color-mix(in oklab, #e1d4ff 56%, transparent) 0 36%, transparent 74%);
+  opacity: 0.74;
+}
+
+.sessioneStrategicaOffertaTitle {
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  max-width: 30ch;
+  font-size: clamp(36px, 4.3vw, 58px);
+  line-height: 1.04;
+  letter-spacing: -0.03em;
+  font-family: Inter, 'Arial Black', system-ui, sans-serif;
+  font-weight: 950;
+  color: #241723;
+}
+
+.sessioneStrategicaOffertaSubtitle {
+  position: relative;
+  z-index: 1;
+  margin: 16px 0 0;
+  max-width: 74ch;
+  font-size: clamp(20px, 1.75vw, 27px);
+  line-height: 1.44;
+  color: #4a3240;
+}
+
+.sessioneStrategicaOffertaList {
+  position: relative;
+  z-index: 1;
+  list-style: none;
+  margin: 22px 0 0;
+  padding: 0;
+  display: grid;
+  gap: 11px;
+}
+
+.sessioneStrategicaOffertaList li {
+  position: relative;
+  margin: 0;
+  padding: 14px 14px 14px 54px;
+  border-radius: 14px;
+  border: 1px solid color-mix(in oklab, #ebcfdb 78%, transparent);
+  background: color-mix(in oklab, #fff 90%, #fff4f9);
+  box-shadow:
+    inset 0 1px 0 color-mix(in oklab, #fff 78%, transparent),
+    0 10px 24px color-mix(in oklab, #5d2f44 12%, transparent);
+  font-size: clamp(19px, 1.55vw, 23px);
+  line-height: 1.45;
+  color: #2f2029;
+}
+
+.sessioneStrategicaOffertaList li::before {
+  content: '✓';
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  width: 24px;
+  height: 24px;
+  border-radius: 999px;
+  display: grid;
+  place-items: center;
+  transform: translateY(-50%);
+  font-size: 15px;
+  line-height: 1;
+  font-weight: 950;
+  color: #ffffff;
+  background: linear-gradient(170deg, #6ddf8b 0%, #27b55b 100%);
+  box-shadow: 0 8px 18px color-mix(in oklab, #28b65d 36%, transparent);
+}
+
+.sessioneStrategicaOffertaPrice {
+  position: relative;
+  z-index: 1;
+  margin: 22px 0 0;
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.sessioneStrategicaOffertaPriceNow {
+  font-family: Inter, 'Arial Black', system-ui, sans-serif;
+  font-weight: 950;
+  font-size: clamp(42px, 4.55vw, 67px);
+  line-height: 1;
+  letter-spacing: -0.03em;
+  color: #1f7d43;
+  text-shadow: 0 8px 22px color-mix(in oklab, #44c770 22%, transparent);
+}
+
+.sessioneStrategicaOffertaPriceWas {
+  font-size: clamp(35px, 3vw, 45px);
+  line-height: 1.2;
+  font-style: italic;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-weight: 500;
+  color: #cf2e2e;
+  text-decoration: line-through;
+  text-decoration-thickness: 2px;
+  text-decoration-color: color-mix(in oklab, #cf2e2e 76%, transparent);
+}
+
+.sessioneStrategicaOffertaSection .sessioneStrategicaPainInlineCta {
+  position: relative;
+  z-index: 1;
+  margin-top: 34px;
+}
+
+.sessioneStrategicaBeneficiSection {
+  min-height: 0;
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.sessioneStrategicaBeneficiSection .sessioneStrategicaSectionInner {
+  padding: 8px 0;
+}
+
+.sessioneStrategicaBeneficiSection .sessioneStrategicaPainInlineCta {
+  margin-top: 44px;
+}
+
+.sessioneStrategicaBeneficiSection::before,
+.sessioneStrategicaBeneficiSection::after {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  pointer-events: none;
+  border-radius: 999px;
+  filter: blur(2px);
+}
+
+.sessioneStrategicaBeneficiSection::before {
+  width: min(42vw, 520px);
+  height: min(42vw, 520px);
+  top: -120px;
+  left: -130px;
+  background: radial-gradient(circle, color-mix(in oklab, #f5a8c4 52%, transparent) 0 34%, transparent 72%);
+  opacity: 0.45;
+}
+
+.sessioneStrategicaBeneficiSection::after {
+  width: min(36vw, 460px);
+  height: min(36vw, 460px);
+  right: -120px;
+  bottom: -180px;
+  background: radial-gradient(circle, color-mix(in oklab, #f08ab0 44%, transparent) 0 30%, transparent 72%);
+  opacity: 0.42;
+}
+
+.sessioneStrategicaBeneficiHeader {
+  max-width: 90ch;
+}
+
+.sessioneStrategicaBeneficiTitle {
+  margin: 0;
+  font-size: clamp(31px, 4vw, 46px);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: #2b1a23;
+  background: linear-gradient(118deg, #22161d 0%, #b53b67 42%, #23171d 74%, #22161d 100%);
+  background-size: 220% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-wrap: balance;
+}
+
+.sessioneStrategicaBeneficiLead {
+  margin: 14px 0 0;
+  font-size: clamp(19px, 1.7vw, 24px);
+  line-height: 1.45;
+  color: #3d2934;
+  max-width: 76ch;
+}
+
+.sessioneStrategicaBeneficiGrid {
+  margin: 24px 0 0;
+  display: flex;
+  gap: 22px;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x mandatory;
+  scroll-padding-inline: 2px;
+  scrollbar-width: thin;
+  padding-bottom: 6px;
+}
+
+.sessioneStrategicaBeneficiBlock {
+  flex: 0 0 min(100%, 760px);
+  scroll-snap-align: start;
+  position: relative;
+  border-radius: 18px;
+  border: 1px solid color-mix(in oklab, #f2cedb 72%, transparent);
+  background: linear-gradient(
+    160deg,
+    color-mix(in oklab, #fff 46%, transparent) 0%,
+    color-mix(in oklab, #fff2f8 52%, transparent) 46%,
+    color-mix(in oklab, #ffe9f2 46%, transparent) 100%
+  );
+  backdrop-filter: blur(8px);
+  box-shadow:
+    0 20px 44px color-mix(in oklab, #4d1f31 12%, transparent),
+    inset 0 1px 0 color-mix(in oklab, #fff 80%, transparent);
+  padding: 22px;
+}
+
+.sessioneStrategicaBeneficiBlockTitle {
+  margin: 0;
+  font-size: clamp(22px, 2vw, 30px);
+  line-height: 1.22;
+  letter-spacing: -0.01em;
+  color: #23171d;
+  position: relative;
+  padding-bottom: 10px;
+}
+
+.sessioneStrategicaBeneficiBlockTitle::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  max-width: 220px;
+  height: 2px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #cf3e72 0%, #f498b9 55%, transparent 100%);
+  opacity: 0.8;
+}
+
+.sessioneStrategicaBeneficiBlockSubtitle {
+  margin: 12px 0 0;
+  font-size: clamp(17px, 1.35vw, 20px);
+  line-height: 1.4;
+  color: #8f2950;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+}
+
+.sessioneStrategicaBeneficiList {
+  list-style: none;
+  margin: 16px 0 0;
+  padding: 0;
+  display: grid;
+  gap: 12px;
+}
+
+.sessioneStrategicaBeneficiList li {
+  position: relative;
+  margin: 0;
+  border-radius: 12px;
+  border: 1px solid color-mix(in oklab, #ebd6de 64%, transparent);
+  background: linear-gradient(
+    180deg,
+    color-mix(in oklab, #fff 62%, transparent),
+    color-mix(in oklab, #fff6fa 58%, transparent)
+  );
+  backdrop-filter: blur(4px);
+  padding: 13px 13px 13px 18px;
+  font-size: clamp(18px, 1.5vw, 21px);
+  line-height: 1.45;
+  color: #3e2a35;
+  box-shadow: 0 10px 22px color-mix(in oklab, #4d1f31 7%, transparent);
+}
+
+.sessioneStrategicaBeneficiList li::before {
+  content: '';
+  position: absolute;
+  top: 10px;
+  bottom: 10px;
+  left: 8px;
+  width: 3px;
+  border-radius: 999px;
+  background: linear-gradient(180deg, #cf3e72 0%, #f497b8 100%);
+  opacity: 0.9;
+}
+
+.sessioneStrategicaBeneficiBlockSwipeHint {
+  margin: 14px 0 0;
+  padding: 11px 14px;
+  border-radius: 12px;
+  border: 1px solid color-mix(in oklab, #c8376a 44%, transparent);
+  background: linear-gradient(135deg, #8f1f47 0%, #cf3e72 55%, #e85f8f 100%);
+  color: #fff8fc;
+  font-size: clamp(14px, 1.1vw, 16px);
+  font-weight: 800;
+  letter-spacing: 0.01em;
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  box-shadow: 0 10px 24px color-mix(in oklab, #8f1f47 36%, transparent);
+}
+
+.sessioneStrategicaBeneficiBlockSwipeHint span {
+  font-size: 18px;
+  line-height: 1;
+}
+
+.sessioneStrategicaBeneficiClosing {
+  margin: 30px 0 0;
+  padding: 18px 20px;
+  border-radius: 14px;
+  border: 1px solid color-mix(in oklab, #ebd6de 64%, transparent);
+  font-size: clamp(19px, 1.6vw, 23px);
+  line-height: 1.42;
+  color: #2d1f28;
+  font-weight: 700;
+  max-width: 78ch;
+  background: linear-gradient(165deg, color-mix(in oklab, #fff 55%, transparent), color-mix(in oklab, #ffeef6 54%, transparent));
+  backdrop-filter: blur(4px);
+  box-shadow: 0 16px 34px color-mix(in oklab, #4d1f31 10%, transparent);
+}
+
+.sessioneStrategicaPainSection {
+  min-height: 0;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.sessioneStrategicaPainHeader {
+  max-width: 92ch;
+}
+
+.sessioneStrategicaPainTitle {
+  margin: 0;
+  font-size: clamp(30px, 4vw, 46px);
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+  color: #23171d;
+  text-wrap: balance;
+}
+
+.sessioneStrategicaPainTitleScript {
+  position: relative;
+  display: inline-block;
+  color: transparent;
+  --typing-duration: 2.9s;
+}
+
+.sessioneStrategicaPainTitleScript::before {
+  content: attr(data-text);
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  white-space: normal;
+  color: #23171d;
+  overflow: hidden;
+  animation: sessioneStrategicaPainType var(--typing-duration) steps(56, end) both;
+}
+
+.sessioneStrategicaPainTitleScript::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: -0.06em;
+  width: 0.08em;
+  height: auto;
+  background: #cf3e72;
+  border-radius: 999px;
+  box-shadow: 0 0 10px color-mix(in oklab, #cf3e72 52%, transparent);
+  animation:
+    sessioneStrategicaPainCaret var(--typing-duration) steps(56, end) both,
+    sessioneStrategicaPainBlink 0.85s step-end infinite;
+}
+
+.sessioneStrategicaPainLead {
+  margin: 12px 0 0;
+  font-size: clamp(19px, 1.7vw, 24px);
+  line-height: 1.46;
+  color: #4b3540;
+  max-width: 76ch;
+}
+
+.sessioneStrategicaPainGrid {
+  margin: 20px auto 0;
+  max-width: 800px;
+  display: grid;
+  gap: 18px;
+}
+
+.sessioneStrategicaPainStep {
+  --pain-step-delay: 0ms;
+  display: grid;
+  gap: 14px;
+  opacity: 0;
+  transform: translateY(44px) scale(0.96);
+  transition:
+    opacity 0.78s ease var(--pain-step-delay),
+    transform 0.78s cubic-bezier(0.2, 0.78, 0.2, 1) var(--pain-step-delay);
+}
+
+.sessioneStrategicaPainStep.is-visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.sessioneStrategicaPainCard {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  border-radius: 14px;
+  border: 1px solid color-mix(in oklab, #ebd6de 72%, transparent);
+  background: color-mix(in oklab, #fff 94%, #fff8fb);
+  box-shadow: 0 12px 34px color-mix(in oklab, #4d1f31 9%, transparent);
+  padding: 20px;
+}
+
+.sessioneStrategicaPainCardIcon {
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 25px;
+  line-height: 1;
+  background:
+    radial-gradient(circle at 24% 22%, color-mix(in oklab, #fff 75%, transparent) 0 18%, transparent 40%),
+    linear-gradient(145deg, #fff, #ffe8f0 52%, #ffd7e7);
+  border: 1px solid color-mix(in oklab, #cf3e72 24%, transparent);
+  box-shadow:
+    0 8px 18px color-mix(in oklab, #cf3e72 17%, transparent),
+    inset 0 1px 0 color-mix(in oklab, #fff 88%, transparent);
+  opacity: 0;
+  transform: translateY(8px) scale(0.9) rotate(-8deg);
+}
+
+.sessioneStrategicaPainCardTitle {
+  margin: 12px 0 0;
+  font-size: clamp(21px, 2vw, 28px);
+  line-height: 1.24;
+  letter-spacing: -0.01em;
+  color: #23171d;
+  position: relative;
+  display: block;
+  background: linear-gradient(120deg, #23171d 0%, #a5335b 42%, #23171d 78%);
+  background-size: 220% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  opacity: 0.28;
+  filter: blur(1.5px);
+  transform: translateY(7px);
+}
+
+.sessioneStrategicaPainCardTitle::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -0.18em;
+  width: 100%;
+  height: 0.08em;
+  border-radius: 999px;
+  transform-origin: left center;
+  transform: scaleX(0);
+  background: linear-gradient(90deg, transparent 0%, #cf3e72 35%, #f58fb2 65%, transparent 100%);
+  opacity: 0.7;
+}
+
+.sessioneStrategicaPainCardText {
+  margin: 10px 0 0;
+  font-size: clamp(18px, 1.5vw, 21px);
+  line-height: 1.46;
+  color: #3e2a35;
+}
+
+.sessioneStrategicaPainInlineCta {
+  margin: 30px auto 0;
+  max-width: 800px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.sessioneStrategicaPainInlineCta::after {
+  content: 'Per sole 10 persone al mese';
+  display: block;
+  width: 100%;
+  margin-top: 8px;
+  text-align: center;
+  font-size: 22px;
+  line-height: 1.3;
+  font-style: italic !important;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-weight: 500;
+  color: #6f4b5b;
+}
+
+.sessioneStrategicaPainInlineCtaBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 10px;
+  border: 1px solid color-mix(in oklab, #cf3e72 82%, #a5335b);
+  background: #f5548e;
+  color: #fff;
+  font-family: Inter, 'Arial Black', system-ui, sans-serif;
+  font-weight: 950;
+  font-size: 18px;
+  line-height: 1.22;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 16px 16px;
+  min-height: 74px;
+  box-shadow: 0 9px 20px color-mix(in oklab, #cf3e72 22%, transparent);
+  animation: sessioneStrategicaCtaBreathe 3.2s cubic-bezier(0.22, 0.74, 0.34, 1) infinite;
+  will-change: transform, box-shadow;
+  transition:
+    background 0.25s ease,
+    box-shadow 0.25s ease,
+    transform 0.25s ease;
+}
+
+.sessioneStrategicaPainInlineCtaBtn:hover {
+  background: #ef3f80;
+  box-shadow: 0 12px 24px color-mix(in oklab, #cf3e72 27%, transparent);
+  animation-play-state: paused;
+  transform: translateY(-1px);
+}
+
+.sessioneStrategicaPainStep.is-visible .sessioneStrategicaPainInlineCta {
+  animation: sessioneStrategicaPainCtaFloat 0.7s ease calc(var(--pain-step-delay) + 120ms) both;
+}
+
+.sessioneStrategicaPainStep.is-visible .sessioneStrategicaPainCardIcon {
+  animation: sessioneStrategicaPainIconPop 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) calc(var(--pain-step-delay) + 70ms) both;
+}
+
+.sessioneStrategicaPainStep.is-visible .sessioneStrategicaPainCardTitle {
+  animation:
+    sessioneStrategicaPainTitleRise 0.8s cubic-bezier(0.2, 0.72, 0.2, 1) calc(var(--pain-step-delay) + 130ms) both,
+    sessioneStrategicaPainTitleShimmer 1.45s ease calc(var(--pain-step-delay) + 330ms) both;
+}
+
+.sessioneStrategicaPainStep.is-visible .sessioneStrategicaPainCardTitle::after {
+  animation: sessioneStrategicaPainTitleLine 0.8s cubic-bezier(0.23, 0.8, 0.25, 1) calc(var(--pain-step-delay) + 300ms) both;
+}
+
+.sessioneStrategicaPainClosing {
+  margin: 40px auto 28px;
+  max-width: 800px;
+  padding-top: 14px;
+  border-top: 1px solid color-mix(in oklab, #ebd6de 72%, transparent);
+  font-size: clamp(19px, 1.6vw, 23px);
+  line-height: 1.42;
+  color: #2e1f28;
+  font-weight: 700;
+}
+
+.sessioneStrategicaFaqSection {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.sessioneStrategicaFaqSection .sessioneStrategicaSectionInner {
+  padding: 0;
+}
+
+.sessioneStrategicaFaqSection::before,
+.sessioneStrategicaFaqSection::after {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  pointer-events: none;
+  border-radius: 999px;
+}
+
+.sessioneStrategicaFaqSection::before {
+  width: min(44vw, 540px);
+  height: min(44vw, 540px);
+  top: -180px;
+  left: -160px;
+  background: radial-gradient(circle, color-mix(in oklab, #f5a8c4 46%, transparent) 0 32%, transparent 70%);
+  opacity: 0.42;
+}
+
+.sessioneStrategicaFaqSection::after {
+  width: min(34vw, 420px);
+  height: min(34vw, 420px);
+  right: -120px;
+  bottom: -170px;
+  background: radial-gradient(circle, color-mix(in oklab, #f08ab0 40%, transparent) 0 28%, transparent 72%);
+  opacity: 0.38;
+}
+
+.sessioneStrategicaFaqHeader {
+  max-width: 92ch;
+}
+
+.sessioneStrategicaFaqTitle {
+  margin: 0;
+  font-size: clamp(31px, 4vw, 46px);
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+  color: #2b1a23;
+  background: linear-gradient(118deg, #22161d 0%, #b53b67 45%, #23171d 78%, #22161d 100%);
+  background-size: 220% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.sessioneStrategicaFaqSubtitle {
+  margin: 14px 0 0;
+  max-width: 80ch;
+  font-size: clamp(19px, 1.65vw, 24px);
+  line-height: 1.45;
+  color: #3d2934;
+}
+
+.sessioneStrategicaFaqList {
+  margin: 24px 0 64px;
+  display: grid;
+  gap: 14px;
+}
+
+.sessioneStrategicaFaqItem {
+  border-radius: 14px;
+  border: 1px solid color-mix(in oklab, #f2cedb 72%, transparent);
+  background: linear-gradient(
+    160deg,
+    color-mix(in oklab, #fff 46%, transparent) 0%,
+    color-mix(in oklab, #fff4f9 54%, transparent) 52%,
+    color-mix(in oklab, #ffecf4 44%, transparent) 100%
+  );
+  box-shadow:
+    0 16px 36px color-mix(in oklab, #4d1f31 12%, transparent),
+    inset 0 1px 0 color-mix(in oklab, #fff 84%, transparent);
+  backdrop-filter: blur(7px);
+  overflow: clip;
+  transition:
+    border-color 0.26s ease,
+    box-shadow 0.26s ease,
+    transform 0.26s ease;
+}
+
+.sessioneStrategicaFaqItem:hover {
+  border-color: color-mix(in oklab, #cf3e72 44%, transparent);
+  box-shadow:
+    0 20px 40px color-mix(in oklab, #cf3e72 18%, transparent),
+    inset 0 1px 0 color-mix(in oklab, #fff 92%, transparent);
+  transform: translateY(-1px);
+}
+
+.sessioneStrategicaFaqQuestion {
+  width: 100%;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 12px;
+  text-align: left;
+  padding: 18px 20px;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  color: #23171d;
+  font-family: inherit;
+  font-size: clamp(20px, 1.85vw, 26px);
+  line-height: 1.3;
+  letter-spacing: -0.012em;
+  font-weight: 900;
+}
+
+.sessioneStrategicaFaqQuestion:focus-visible {
+  outline: 2px solid color-mix(in oklab, #cf3e72 62%, transparent);
+  outline-offset: -2px;
+}
+
+.sessioneStrategicaFaqIcon {
+  width: 34px;
+  height: 34px;
+  border-radius: 999px;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid color-mix(in oklab, #cf3e72 42%, transparent);
+  background: color-mix(in oklab, #f7cfdd 44%, #fff);
+  color: transparent;
+  font-size: 0;
+  line-height: 0;
+  transform: rotate(0deg);
+  transition:
+    transform 0.38s cubic-bezier(0.2, 0.8, 0.2, 1),
+    background 0.24s ease,
+    border-color 0.24s ease;
+}
+
+.sessioneStrategicaFaqIcon::before,
+.sessioneStrategicaFaqIcon::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 14px;
+  height: 2px;
+  border-radius: 999px;
+  background: #8f2950;
+  transform: translate(-50%, -50%);
+}
+
+.sessioneStrategicaFaqIcon::after {
+  transform: translate(-50%, -50%) rotate(90deg);
+}
+
+.sessioneStrategicaFaqItem.is-open .sessioneStrategicaFaqIcon {
+  transform: rotate(45deg);
+  border-color: color-mix(in oklab, #cf3e72 64%, transparent);
+  background: color-mix(in oklab, #f5a8c4 48%, #fff);
+}
+
+.sessioneStrategicaFaqAnswerWrap {
+  display: grid;
+  grid-template-rows: 0fr;
+  opacity: 0;
+  transition:
+    grid-template-rows 0.38s cubic-bezier(0.2, 0.76, 0.2, 1),
+    opacity 0.3s ease;
+}
+
+.sessioneStrategicaFaqItem.is-open .sessioneStrategicaFaqAnswerWrap {
+  grid-template-rows: 1fr;
+  opacity: 1;
+}
+
+.sessioneStrategicaFaqAnswerInner {
+  overflow: hidden;
+}
+
+.sessioneStrategicaFaqAnswer {
+  margin: 0;
+  padding: 0 20px 18px;
+  border-top: 1px solid color-mix(in oklab, #ebd6de 74%, transparent);
+  font-size: clamp(18px, 1.45vw, 21px);
+  line-height: 1.52;
+  color: #3e2a35;
+}
+
+.sessioneStrategicaFaqClosing {
+  margin: 26px auto 0;
+  max-width: 900px;
+  padding-top: 14px;
+  border-top: 1px solid color-mix(in oklab, #ebd6de 72%, transparent);
+}
+
+.sessioneStrategicaFaqClosing p {
+  margin: 0;
+  font-size: clamp(18px, 1.5vw, 22px);
+  line-height: 1.52;
+  color: #2f2029;
+}
+
+.sessioneStrategicaFaqClosing p + p {
+  margin-top: 12px;
+}
+
+@keyframes sessioneStrategicaPainType {
+  from {
+    clip-path: inset(0 100% 0 0);
+  }
+  to {
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+@keyframes sessioneStrategicaPainCaret {
+  from {
+    transform: translateX(calc(-100% + 0.05em));
+  }
+  to {
+    transform: translateX(calc(100% + 0.1em));
+  }
+}
+
+@keyframes sessioneStrategicaPainBlink {
+  0%,
+  46% {
+    opacity: 1;
+  }
+  50%,
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes sessioneStrategicaPainCtaFloat {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes sessioneStrategicaPainTitleRise {
+  from {
+    opacity: 0.05;
+    filter: blur(8px);
+    transform: translateY(14px) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes sessioneStrategicaPainTitleShimmer {
+  from {
+    background-position: 100% 50%;
+    text-shadow: none;
+  }
+  to {
+    background-position: 0% 50%;
+    text-shadow: 0 3px 18px color-mix(in oklab, #cf3e72 20%, transparent);
+  }
+}
+
+@keyframes sessioneStrategicaPainTitleLine {
+  from {
+    transform: scaleX(0);
+    opacity: 0;
+  }
+  to {
+    transform: scaleX(1);
+    opacity: 0.7;
+  }
+}
+
+@keyframes sessioneStrategicaPainIconPop {
+  0% {
+    opacity: 0;
+    transform: translateY(8px) scale(0.9) rotate(-8deg);
+  }
+  60% {
+    opacity: 1;
+    transform: translateY(-3px) scale(1.06) rotate(2deg);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1) rotate(0);
+  }
+}
+
+@keyframes sessioneStrategicaCtaBreathe {
+  0%,
+  100% {
+    transform: translateY(0) scale(1);
+    box-shadow: 0 9px 20px color-mix(in oklab, #cf3e72 22%, transparent);
+  }
+  50% {
+    transform: translateY(-3px) scale(1.015);
+    box-shadow:
+      0 15px 26px color-mix(in oklab, #cf3e72 27%, transparent),
+      0 0 0 1px color-mix(in oklab, #fff 14%, transparent);
+  }
+}
+
+@keyframes sessioneStrategicaHeroTitleReveal {
+  from {
+    opacity: 0;
+    filter: blur(7px);
+    transform: translateY(18px) scale(0.985);
+  }
+  to {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes sessioneStrategicaHeroTitleShimmer {
+  from {
+    background-position: 100% 50%;
+    text-shadow: none;
+  }
+  to {
+    background-position: 0% 50%;
+    text-shadow: 0 4px 18px color-mix(in oklab, #cf3e72 20%, transparent);
+  }
+}
+
+@keyframes sessioneStrategicaChiRevealUp {
+  from {
+    opacity: 0;
+    transform: translateY(26px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes sessioneStrategicaChiAuraDrift {
+  0% {
+    transform: translate3d(-2.5%, -1%, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(2.5%, 2%, 0) scale(1.03);
+  }
+  100% {
+    transform: translate3d(4%, -2%, 0) scale(1.05);
+  }
+}
+
+@keyframes sessioneStrategicaChiPortraitFloat {
+  0% {
+    transform: scale(1.03) translateY(0);
+  }
+  50% {
+    transform: scale(1.06) translateY(-1.2%);
+  }
+  100% {
+    transform: scale(1.08) translateY(-2.6%);
+  }
+}
+
+@keyframes sessioneStrategicaChiStepPop {
+  0% {
+    opacity: 0.4;
+    transform: scale(0.72);
+    box-shadow: none;
+  }
+  60% {
+    opacity: 1;
+    transform: scale(1.12);
+    box-shadow: 0 0 0 8px color-mix(in oklab, #f7cfdd 62%, transparent);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+    box-shadow: 0 0 0 0 color-mix(in oklab, #f7cfdd 12%, transparent);
+  }
+}
+
+.sessioneStrategicaHeroMedia picture {
+  display: block;
+  height: 100%;
+}
+
+.sessioneStrategicaHeroMediaImg {
+  width: 100%;
+  height: 100%;
+  min-height: 520px;
+  display: block;
+  object-fit: cover;
+  object-position: center top;
+}
+
+@media (min-width: 901px) {
+  .sessioneStrategicaChiCard {
+    box-shadow: none;
+  }
+
+  .sessioneStrategicaSectionInner {
+    padding: 32px;
+  }
+
+  .sessioneStrategicaHeroShell {
+    padding: 30px;
+  }
+
+  .sessioneStrategicaHeroTitle,
+  .sessioneStrategicaChiTitle,
+  .sessioneStrategicaBeneficiTitle {
+    font-family: Inter, 'Arial Black', system-ui, sans-serif;
+    font-weight: 950;
+    letter-spacing: -0.02em;
+  }
+
+  .sessioneStrategicaHeroLead {
+    font-size: clamp(26px, 2.2vw, 32px);
+    line-height: 1.32;
+  }
+
+  .sessioneStrategicaHeroCta {
+    font-size: 24px;
+    padding: 18px 24px;
+  }
+
+  .sessioneStrategicaHeroGuarantee {
+    font-size: 15px;
+  }
+
+  .sessioneStrategicaHeroBullets li {
+    font-size: 24px;
+    line-height: 1.38;
+  }
+
+  .sessioneStrategicaChiBody {
+    padding: 48px 36px 36px;
+  }
+
+  .sessioneStrategicaChiMedia {
+    aspect-ratio: 5 / 3;
+    max-height: none;
+    overflow: hidden;
+  }
+
+  .sessioneStrategicaChiMedia picture,
+  .sessioneStrategicaChiMediaImg {
+    width: 100%;
+    height: 100%;
+  }
+
+  .sessioneStrategicaChiMediaImg {
+    object-fit: cover;
+    object-position: center 58%;
+    transform: scale(1.05);
+    transform-origin: center;
+  }
+
+  .sessioneStrategicaChiList {
+    gap: 14px;
+  }
+
+  .sessioneStrategicaChiList li {
+    padding: 20px;
+  }
+
+  .sessioneStrategicaOffertaInner {
+    padding: 44px 36px;
+  }
+
+  .sessioneStrategicaOffertaSection .sessioneStrategicaPainInlineCta {
+    margin-top: 40px;
+  }
+
+  .sessioneStrategicaPainSection .sessioneStrategicaSectionInner {
+    padding: 8px 0;
+  }
+
+  .sessioneStrategicaPainGrid {
+    gap: 22px;
+    margin-top: 24px;
+  }
+
+  .sessioneStrategicaPainClosing {
+    margin-top: 34px;
+    margin-bottom: 22px;
+  }
+
+  .sessioneStrategicaBeneficiBlock {
+    padding: 24px;
+  }
+
+}
+
+@media (max-width: 900px) {
+  .sessioneStrategicaPage {
+    gap: 0;
+  }
+
+  .sessioneStrategicaPage > .sessioneStrategicaOffertaDivider {
+    margin-top: 118px;
+  }
+
+  .sessioneStrategicaPage > .sessioneStrategicaOffertaDivider + .sessioneStrategicaOffertaSection {
+    margin-top: 72px;
+  }
+
+  .sessioneStrategicaOffertaDivider {
+    width: 100%;
+    scroll-margin-top: 106px;
+  }
+
+  .sessioneStrategicaOffertaDividerIcon {
+    width: 38px;
+    height: 38px;
+    font-size: 18px;
+  }
+
+  .sessioneStrategicaSection {
+    border-radius: 10px;
+  }
+
+  .sessioneStrategicaSectionInner {
+    padding: 16px;
+  }
+
+  .sessioneStrategicaHeroShell {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      'copy'
+      'media'
+      'actions';
+    gap: 12px;
+    padding: 16px;
+  }
+
+  .sessioneStrategicaHeroTitle {
+    font-size: clamp(30px, 7.2vw, 42px);
+    font-family: Inter, 'Arial Black', system-ui, sans-serif;
+    font-weight: 950;
+  }
+
+  .sessioneStrategicaHeroLead {
+    font-size: 19px;
+  }
+
+  .sessioneStrategicaHeroCta {
+    width: 100%;
+  }
+
+  .sessioneStrategicaHeroActions {
+    width: 100%;
+  }
+
+  .sessioneStrategicaHeroCtaBlock {
+    width: 100%;
+  }
+
+  .sessioneStrategicaHeroCtaBlock::after {
+    font-size: 20px;
+  }
+
+  .sessioneStrategicaHeroMediaImg {
+    min-height: 0;
+    height: 100%;
+    object-position: center center;
+  }
+
+  .sessioneStrategicaHeroMedia {
+    aspect-ratio: 16 / 9;
+  }
+
+  .sessioneStrategicaChiCard {
+    border-radius: 12px;
+  }
+
+  .sessioneStrategicaChiMedia {
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    max-height: none;
+  }
+
+  .sessioneStrategicaChiBody {
+    padding: 24px 16px 16px;
+  }
+
+  .sessioneStrategicaChiSubtitle {
+    font-size: 18px;
+  }
+
+  .sessioneStrategicaChiTitle {
+    letter-spacing: -0.01em;
+    font-family: Inter, 'Arial Black', system-ui, sans-serif;
+    font-weight: 950;
+  }
+
+  .sessioneStrategicaChiList {
+    gap: 10px;
+  }
+
+  .sessioneStrategicaChiList li {
+    padding: 12px;
+  }
+
+  .sessioneStrategicaChiList h3 {
+    font-size: 20px;
+  }
+
+  .sessioneStrategicaChiList h3::before {
+    width: 28px;
+    height: 28px;
+    flex-basis: 28px;
+    font-size: 13px;
+  }
+
+  .sessioneStrategicaChiList p,
+  .sessioneStrategicaChiClosing {
+    font-size: 17px;
+  }
+
+  .sessioneStrategicaOffertaSection {
+    border-radius: 0;
+  }
+
+  .sessioneStrategicaOffertaInner {
+    border-radius: 18px;
+    padding: 24px 16px;
+  }
+
+  .sessioneStrategicaOffertaTitle {
+    font-size: clamp(31px, 8.3vw, 44px);
+  }
+
+  .sessioneStrategicaOffertaSubtitle {
+    margin-top: 12px;
+    font-size: 18px;
+  }
+
+  .sessioneStrategicaOffertaList {
+    margin-top: 16px;
+    gap: 10px;
+  }
+
+  .sessioneStrategicaOffertaList li {
+    padding: 12px 12px 12px 44px;
+    font-size: 17px;
+  }
+
+  .sessioneStrategicaOffertaList li::before {
+    left: 12px;
+    width: 22px;
+    height: 22px;
+    font-size: 14px;
+  }
+
+  .sessioneStrategicaOffertaPrice {
+    margin-top: 16px;
+    gap: 10px;
+  }
+
+  .sessioneStrategicaOffertaPriceNow {
+    font-size: clamp(39px, 9.625vw, 51px);
+  }
+
+  .sessioneStrategicaOffertaPriceWas {
+    font-size: 30px;
+  }
+
+  .sessioneStrategicaOffertaSection .sessioneStrategicaPainInlineCta {
+    margin-top: 26px;
+  }
+
+  .sessioneStrategicaBeneficiTitle {
+    font-family: Inter, 'Arial Black', system-ui, sans-serif;
+    font-weight: 950;
+    letter-spacing: -0.01em;
+  }
+
+  .sessioneStrategicaBeneficiGrid {
+    gap: 14px;
+    margin-top: 18px;
+    padding-bottom: 4px;
+  }
+
+  .sessioneStrategicaBeneficiBlock {
+    flex-basis: 100%;
+    padding: 14px 12px;
+  }
+
+  .sessioneStrategicaBeneficiBlockSwipeHint {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+    padding: 9px 10px;
+    font-size: 13px;
+  }
+
+  .sessioneStrategicaBeneficiBlockSwipeHint span {
+    font-size: 16px;
+  }
+
+  .sessioneStrategicaBeneficiBlockTitle {
+    font-size: 22px;
+  }
+
+  .sessioneStrategicaBeneficiClosing {
+    padding: 13px 12px;
+  }
+
+  .sessioneStrategicaBeneficiLead,
+  .sessioneStrategicaBeneficiList li,
+  .sessioneStrategicaBeneficiClosing {
+    font-size: 17px;
+  }
+
+  .sessioneStrategicaFaqTitle {
+    font-family: Inter, 'Arial Black', system-ui, sans-serif;
+    font-weight: 950;
+    letter-spacing: -0.01em;
+  }
+
+  .sessioneStrategicaFaqSubtitle {
+    font-size: 17px;
+  }
+
+  .sessioneStrategicaFaqList {
+    margin-top: 18px;
+    gap: 10px;
+  }
+
+  .sessioneStrategicaFaqItem {
+    border-radius: 12px;
+  }
+
+  .sessioneStrategicaFaqQuestion {
+    padding: 14px 12px;
+    font-size: 20px;
+  }
+
+  .sessioneStrategicaFaqIcon {
+    width: 30px;
+    height: 30px;
+    font-size: 20px;
+  }
+
+  .sessioneStrategicaFaqAnswer {
+    padding: 0 12px 14px;
+    font-size: 17px;
+  }
+
+  .sessioneStrategicaFaqClosing {
+    margin-top: 20px;
+    padding-top: 12px;
+  }
+
+  .sessioneStrategicaFaqClosing p {
+    font-size: 17px;
+  }
+
+  .sessioneStrategicaPainSection .sessioneStrategicaSectionInner {
+    padding: 8px 0;
+  }
+
+  .sessioneStrategicaPainTitle {
+    font-family: Inter, 'Arial Black', system-ui, sans-serif;
+    font-weight: 950;
+    letter-spacing: -0.01em;
+  }
+
+  .sessioneStrategicaPainStep {
+    gap: 12px;
+  }
+
+  .sessioneStrategicaPainCard {
+    padding: 14px 12px;
+  }
+
+  .sessioneStrategicaPainCardIcon {
+    width: 42px;
+    height: 42px;
+    font-size: 22px;
+  }
+
+  .sessioneStrategicaPainInlineCta {
+    align-items: stretch;
+  }
+
+  .sessioneStrategicaPainInlineCtaBtn {
+    width: 100%;
+  }
+
+  .sessioneStrategicaPainInlineCta::after {
+    font-size: 20px;
+  }
+
+  .sessioneStrategicaPainLead,
+  .sessioneStrategicaPainCardText,
+  .sessioneStrategicaPainClosing {
+    font-size: 17px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sessioneStrategicaChiCard::before {
+    animation: none;
+  }
+
+  .sessioneStrategicaChiSection .sessioneStrategicaChiMedia,
+  .sessioneStrategicaChiSection .sessioneStrategicaChiBody,
+  .sessioneStrategicaChiSection.is-visible .sessioneStrategicaChiMedia,
+  .sessioneStrategicaChiSection.is-visible .sessioneStrategicaChiBody {
+    opacity: 1;
+    transform: none;
+    animation: none;
+  }
+
+  .sessioneStrategicaChiMediaImg,
+  .sessioneStrategicaChiSection.is-visible .sessioneStrategicaChiMediaImg {
+    transform: none;
+    animation: none;
+  }
+
+  .sessioneStrategicaChiList li,
+  .sessioneStrategicaChiList li.is-visible {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .sessioneStrategicaChiList h3::before,
+  .sessioneStrategicaChiList li.is-visible h3::before {
+    opacity: 1;
+    transform: none;
+    animation: none;
+  }
+
+  .sessioneStrategicaHeroTitle {
+    opacity: 1;
+    filter: none;
+    transform: none;
+    background: none;
+    -webkit-text-fill-color: initial;
+    color: #1f141a;
+    text-shadow: none;
+    animation: none;
+  }
+
+  .sessioneStrategicaBeneficiSection::before,
+  .sessioneStrategicaBeneficiSection::after {
+    filter: none;
+  }
+
+  .sessioneStrategicaOffertaSection::before,
+  .sessioneStrategicaOffertaSection::after {
+    filter: none;
+  }
+
+  .sessioneStrategicaBeneficiTitle {
+    background: none;
+    -webkit-text-fill-color: initial;
+    color: #23171d;
+  }
+
+  .sessioneStrategicaBeneficiBlock {
+    transition: none;
+  }
+
+  .sessioneStrategicaBeneficiList li {
+    transition: none;
+  }
+
+  .sessioneStrategicaFaqItem,
+  .sessioneStrategicaFaqAnswerWrap,
+  .sessioneStrategicaFaqIcon {
+    transition: none;
+  }
+
+  .sessioneStrategicaFaqItem:hover {
+    transform: none;
+  }
+
+  .sessioneStrategicaPainTitleScript::before,
+  .sessioneStrategicaPainTitleScript::after {
+    animation: none;
+  }
+
+  .sessioneStrategicaPainTitleScript {
+    color: #23171d;
+  }
+
+  .sessioneStrategicaPainStep {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .sessioneStrategicaPainStep.is-visible .sessioneStrategicaPainInlineCta {
+    animation: none;
+  }
+
+  .sessioneStrategicaPainCardTitle {
+    opacity: 1;
+    filter: none;
+    transform: none;
+    background: none;
+    -webkit-text-fill-color: initial;
+    color: #23171d;
+  }
+
+  .sessioneStrategicaPainCardTitle::after {
+    transform: none;
+    opacity: 0.4;
+  }
+
+  .sessioneStrategicaPainCardIcon {
+    opacity: 1;
+    transform: none;
+  }
+
+}
