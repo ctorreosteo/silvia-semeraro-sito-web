@@ -811,8 +811,8 @@
   margin: 14px 0 0;
   padding: 11px 14px;
   border-radius: 12px;
-  border: 1px solid color-mix(in oklab, #c8376a 44%, transparent);
-  background: linear-gradient(135deg, #8f1f47 0%, #cf3e72 55%, #e85f8f 100%);
+  border: 1px solid color-mix(in oklab, #5b5b5b 34%, transparent);
+  background: linear-gradient(145deg, #101114 0%, #1f2229 46%, #2f333b 100%);
   color: #fff8fc;
   font-size: clamp(14px, 1.1vw, 16px);
   font-weight: 800;
@@ -820,12 +820,22 @@
   display: inline-flex;
   align-items: center;
   gap: 9px;
-  box-shadow: 0 10px 24px color-mix(in oklab, #8f1f47 36%, transparent);
+  box-shadow:
+    0 10px 24px color-mix(in oklab, #13161d 30%, transparent),
+    inset 0 1px 0 color-mix(in oklab, #ffffff 20%, transparent);
 }
 
 .sessioneStrategicaBeneficiBlockSwipeHint span {
   font-size: 18px;
   line-height: 1;
+}
+
+.sessioneStrategicaBeneficiSwipeHintText {
+  display: inline;
+}
+
+.sessioneStrategicaBeneficiSwipeHintSecondLine {
+  display: inline;
 }
 
 .sessioneStrategicaBeneficiClosing {
@@ -2117,6 +2127,11 @@
 
   .sessioneStrategicaBeneficiBlockSwipeHint span {
     font-size: 16px;
+  }
+
+  .sessioneStrategicaBeneficiSwipeHintSecondLine {
+    display: block;
+    margin-top: 2px;
   }
 
   .sessioneStrategicaBeneficiBlockTitle {
