@@ -12,6 +12,7 @@
   --border: color-mix(in oklab, #000 14%, transparent);
   --code-bg: color-mix(in oklab, #fff 70%, transparent);
   --accent: #000000;
+  --font-weight-base: 500;
 
   --sans: 'Cormorant Garamond', ui-serif, Georgia, 'Times New Roman', Times,
     serif;
@@ -37,6 +38,7 @@
 
 body {
   margin: 0;
+  font-weight: var(--font-weight-base);
 }
 
 img,
